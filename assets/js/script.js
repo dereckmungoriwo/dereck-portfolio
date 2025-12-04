@@ -5,45 +5,46 @@ document.addEventListener('DOMContentLoaded', function() {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if(target) target.scrollIntoView({ behavior: 'smooth' });
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
 
-  // Active nav highlight
+  // Hero & Motto Fade-in
+  const fadeElements = document.querySelectorAll('.motto-text, .hero .card, .skill-pill, .hero-images .image-card');
+  fadeElements.forEach((el, i) => {
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 150 * i);
+  });
+
+  // Active Nav Highlight
   const currentPage = window.location.pathname.split('/').pop();
   document.querySelectorAll('.nav a').forEach(link => {
-    const linkPage = link.getAttribute('href');
-    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+    if (link.getAttribute('href') === currentPage || (currentPage === '' && link.getAttribute('href') === 'index.html')) {
       link.classList.add('active');
     } else link.classList.remove('active');
   });
 
-  // Fade-in elements
-  const fadeElements = document.querySelectorAll('.motto-text, .hero .card, .skill-pill');
-  fadeElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-  });
-  setTimeout(() => {
-    fadeElements.forEach((el,i) => {
-      setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, i*150);
-    });
-  },100);
-
   // Image fade-in
   document.querySelectorAll('img').forEach(img => {
     img.style.opacity = '0';
-    img.style.transition = 'opacity 0.8s ease';
-    if (img.complete) img.style.opacity='1';
-    else img.addEventListener('load', ()=> img.style.opacity='1');
+    img.style.transition = 'opacity 0.4s ease';
+    img.addEventListener('load', function() { this.style.opacity = '1'; });
   });
 
-  // Card hover
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mouseenter', () => card.style.transform='translateY(-4px)');
-    card.addEventListener('mouseleave', () => card.style.transform='translateY(0)');
-  });
+  // Intersection Observer for cards
+  const cards = document.querySelectorAll('.card, .motto-hero');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(card => observer.observe(card));
 
-  console.log('✅ Portfolio JS loaded');
+  console.log('✅ Dereck Mungoriwo Portfolio JS loaded!');
 });
