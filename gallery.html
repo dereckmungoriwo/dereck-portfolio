@@ -1,163 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gallery — Dereck Mungoriwo</title>
-<link rel="stylesheet" href="assets/css/styles.css">
-<style>
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .gallery-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 1px solid #e9f0f8;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: #fff;
-  }
-
-  .gallery-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(11,35,63,0.08);
-  }
-
-  .gallery-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid #e9f0f8;
-    transition: transform 0.3s ease;
-  }
-
-  .gallery-card:hover img {
-    transform: scale(1.05);
-  }
-
-  .gallery-caption {
-    padding: 12px;
-    font-size: 14px;
-    color: var(--muted);
-    font-weight: 600;
-    text-align: center;
-    font-style: italic;
-  }
-
-  @media (max-width: 480px) {
-    .gallery-card img {
-      height: 180px;
-    }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Dereck Mungoriwo</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-inner container">
-    <div class="logo">
-      <div class="logo-icon">DM</div>
-      <div>
-        <h1 style="margin:0;font-size:18px">Dereck Mungoriwo</h1>
-        <div style="color:var(--muted);font-size:13px">Culinary Professional · Data Analyst</div>
-      </div>
-    </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="resume.html">Resume</a>
-      <a href="projects.html">Projects</a>
-      <a href="gallery.html" class="active">Gallery</a>
-      <a href="contact.html" class="cta">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-inner container">
 
-<main class="container">
-  <section>
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      
-      <div class="gallery-card">
-        <img src="assets/images/gallery1.jpg" alt="Modern culinary presentation">
-        <div class="gallery-caption">Chicken Roulade, Creamy Spinach and Stuffed Feta Chicken Breast</div>
+      <div class="logo">
+        <div class="logo-icon">DM</div>
+        <div class="logo-text">
+          <h1 class="site-title">Dereck Mungoriwo</h1>
+          <p class="site-tagline">Culinary Professional · Data Analyst</p>
+        </div>
       </div>
 
-      <div class="gallery-card">
-        <img src="assets/images/gallery2.jpg" alt="Data-driven kitchen optimization">
-        <div class="gallery-caption">Ribeye Steak with Creamy Thyme Sauce</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery3.jpg" alt="Seasonal ingredient showcase">
-        <div class="gallery-caption">Grilled Beef Skewers with Chimichurri Sauce</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery4.jpg" alt="Data visualization dashboard">
-        <div class="gallery-caption">Pan-Seared Salmon & Prawn Linguine Pasta Tossed in a Creamy Sauce</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery5.jpg" alt="Cost-optimized recipe">
-        <div class="gallery-caption">Grilled Salmon with Creamy Garlic Sauce & Side Salad</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery6.jpg" alt="Efficient kitchen workflow">
-        <div class="gallery-caption">Succulent Shrimp Sautéed in a Bold, Aromatic Sauce, Served over Fluffy Rice</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery7.jpg" alt="Analytics-backed menu item">
-        <div class="gallery-caption">Seared Lamb Fillet with Grilled Mushrooms and a Velvety Mushroom Sauce</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery8.jpg" alt="Waste reduction innovation">
-        <div class="gallery-caption">Sous-Vide Salmon & Poached Egg with Wilted Spinach and Hollandaise Sauce</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery9.jpg" alt="Quality control execution">
-        <div class="gallery-caption">Caramelized Milk Bread French Toast with Maple Brown Syrup, Roasted Banana and Strawberries</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery10.jpg" alt="Profit-optimized dish">
-        <div class="gallery-caption">Deconstructed Biscoff Cheesecake with Speculoos Crumble, Mascarpone Mousse, and Salted Caramel Gel</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery11.jpg" alt="Data visualization results">
-        <div class="gallery-caption">Textured Lemon Cheesecake with Limoncello Gel</div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/images/gallery12.jpg" alt="Precision-crafted finale">
-        <div class="gallery-caption">Red Velvet Cupcake with Cocoa Sponge and Beetroot Gel</div>
-      </div>
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
 
     </div>
-  </section>
-</main>
+  </header>
 
-<footer class="footer">
-  <p>&copy; 2025 Dereck Mungoriwo · Culinary Professional · Data Analyst</p>
-  <div class="contact-links">
-    <a class="contact-link" href="mailto:contact@dereckmungoriwo.online">contact@dereckmungoriwo.online</a>
-    <a class="contact-link" href="mailto:dereck-mungoriwo@outlook.com">dereck-mungoriwo@outlook.com</a>
-    <a class="contact-link" href="https://www.linkedin.com/in/dereckmungoriwo" target="_blank">linkedin.com/in/dereckmungoriwo</a>
-    <a class="contact-link" href="https://twitter.com/55Cancri_exo" target="_blank">@55Cancri.exo</a>
-  </div>
-</footer>
 
-<script src="assets/js/script.js"></script>
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="container">
+
+    <section class="gallery-section">
+      <h2 class="section-title">Gallery</h2>
+
+      <div class="gallery-grid">
+
+        <!-- ===== ORIGINAL GALLERY ITEMS ===== -->
+        <div class="card">
+          <img src="assets/images/gallery1.jpg" alt="Chicken roulade with creamy spinach and stuffed feta">
+          <div class="gallery-caption">
+            Chicken Roulade, Creamy Spinach and Stuffed Feta Chicken Breast
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery2.jpg" alt="Ribeye steak with creamy thyme sauce">
+          <div class="gallery-caption">
+            Ribeye Steak with Creamy Thyme Sauce
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery3.jpg" alt="Grilled beef skewers with chimichurri sauce">
+          <div class="gallery-caption">
+            Grilled Beef Skewers with Chimichurri Sauce
+          </div>
+        </div>
+
+        <!-- ===== ADDITIONAL GALLERY ITEMS ===== -->
+        <div class="card">
+          <img src="assets/images/gallery4.jpg" alt="Pan-seared salmon and prawn linguine pasta">
+          <div class="gallery-caption">
+            Pan-Seared Salmon &amp; Prawn Linguine Pasta Tossed in a Creamy Sauce
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery5.jpg" alt="Grilled salmon with creamy garlic sauce and side salad">
+          <div class="gallery-caption">
+            Grilled Salmon with Creamy Garlic Sauce &amp; Side Salad
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery6.jpg" alt="Shrimp sautéed in aromatic sauce served with rice">
+          <div class="gallery-caption">
+            Succulent Shrimp Sautéed in a Bold, Aromatic Sauce, Served over Fluffy Rice
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery7.jpg" alt="Seared lamb fillet with grilled mushrooms and mushroom sauce">
+          <div class="gallery-caption">
+            Seared Lamb Fillet with Grilled Mushrooms and a Velvety Mushroom Sauce
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery8.jpg" alt="Sous-vide salmon with poached egg and hollandaise">
+          <div class="gallery-caption">
+            Sous-Vide Salmon &amp; Poached Egg with Toasted Roll, Wilted Spinach Emulsion &amp; Hollandaise Sauce
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery9.jpg" alt="Caramelized French toast with fruit and maple syrup">
+          <div class="gallery-caption">
+            Caramelized Milk Bread French Toast with Maple Brown Syrup, Roasted Banana and Strawberries
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery10.jpg" alt="Deconstructed Biscoff cheesecake">
+          <div class="gallery-caption">
+            Deconstructed Biscoff Cheesecake with Speculoos Crumble, Mascarpone Mousse, and Salted Caramel Gel
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery11.jpg" alt="Textured lemon cheesecake with limoncello gel">
+          <div class="gallery-caption">
+            Textured Lemon Cheesecake with Limoncello Gel
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/gallery12.jpg" alt="Red velvet cupcake with cocoa sponge and beetroot gel">
+          <div class="gallery-caption">
+            Red Velvet Cup Cake, Cocoa Sponge and Beetroot Gel
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>&copy; 2025 Dereck Mungoriwo · Culinary Professional · Data Analyst</p>
+
+    <div class="contact-links">
+
+      <a class="contact-link" href="mailto:contact@dereckmungoriwo.online" aria-label="Primary email">
+        contact@dereckmungoriwo.online
+      </a>
+
+      <a class="contact-link" href="mailto:dereck-mungoriwo@outlook.com" aria-label="Secondary email">
+        dereck-mungoriwo@outlook.com
+      </a>
+
+      <a class="contact-link" href="https://www.linkedin.com/in/dereckmungoriwo" target="_blank" aria-label="LinkedIn profile">
+        linkedin.com/in/dereckmungoriwo
+      </a>
+
+      <a class="contact-link" href="https://twitter.com/55Cancri_exo" target="_blank" aria-label="Twitter profile">
+        @55Cancri.exo
+      </a>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
 </body>
 </html>
-
