@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+  // Hero fade-in
+  const fadeElements = document.querySelectorAll('.motto-text, .hero .card, .skill-pill');
+  fadeElements.forEach((el, index) => {
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 150 * index);
+  });
+});
+
   // Active nav highlight
   const currentPage = window.location.pathname.split('/').pop();
   document.querySelectorAll('.nav a').forEach(link => {
