@@ -1,235 +1,225 @@
-/* Professional light theme for Dereck Mungoriwo */
-:root{
-  --navy:#0b233f; --sea-green:#2e8b57; --white:#ffffff; --gold:#d4af37;
-  --muted:#6b7a89; --container:1100px; --radius:12px;
+:root {
+  --primary: #1a73e8;
+  --secondary: #f0f0f0;
+  --muted: #6c757d;
+  --text: #212121;
+  --bg: #fff;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--navy);background:linear-gradient(180deg,var(--white),#f6f8fb);line-height:1.6}
-.container{max-width:var(--container);margin:0 auto;padding:32px}
-.header{background:var(--white);border-bottom:1px solid #e6eef7;position:sticky;top:0;z-index:40;box-shadow:0 2px 8px rgba(11,35,63,0.04)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.logo{display:flex;gap:12px;align-items:center}
-.logo-icon{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,var(--sea-green),#123256);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:18px}
-.nav{display:flex;gap:12px;align-items:center}
-.nav a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:600;font-size:15px;text-decoration:none}
-.nav a.active, .nav a.cta{background:var(--sea-green);color:var(--white)}
-.hero{display:flex;gap:36px;align-items:center;padding:48px 0}
-.hero .left{flex:1}
-.hero h1{font-size:36px;margin-bottom:8px}
-.p{color:var(--muted)}
-.card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:0 2px 12px rgba(11,35,63,0.04);border:1px solid #e9f0f8}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:16px}
-.skills-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.skill-pill{background:#e9f7f0;border-radius:8px;padding:10px 14px;font-weight:700;color:var(--sea-green)}
-.footer{padding:28px 0;color:var(--muted);font-size:14px;border-top:1px solid #e6eef7;margin-top:40px;text-align:center}
-.contact-links{display:flex;gap:12px;justify-content:center;margin-top:12px}
-.contact-link{display:flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none}
-.contact-link svg{fill:var(--sea-green)}
 
-/* Visual Motto Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  background: var(--bg);
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.nav a {
+  margin-left: 20px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.nav a.cta {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.nav a.active {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.left {
+  flex: 1 1 300px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.skill-pill {
+  background: var(--secondary);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+.card {
+  background: var(--secondary);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
 .motto-hero {
   text-align: center;
-  padding: 60px 0 40px;
-  background: linear-gradient(135deg, #f8fdfa 0%, #f0f7ff 100%);
-  border-radius: var(--radius);
-  margin-bottom: 40px;
-  border: 1px solid #e9f0f8;
+  padding: 40px 16px;
+  background: #f9f9f9;
+  margin-top: 12px;
 }
 
 .motto-text {
-  font-size: 2.8rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--sea-green), #123256);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 
 .motto-decoration {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 15px;
-  max-width: 400px;
-  margin: 0 auto;
+  align-items: center;
+  gap: 6px;
 }
 
 .decoration-line {
-  height: 3px;
-  flex: 1;
-  border-radius: 2px;
-}
-
-.culinary-line {
-  background: linear-gradient(90deg, var(--sea-green), transparent);
-}
-
-.data-line {
-  background: linear-gradient(90deg, transparent, #123256);
+  height: 2px;
+  width: 40px;
+  background: var(--primary);
 }
 
 .decoration-dot {
-  width: 8px;
-  height: 8px;
+  height: 6px;
+  width: 6px;
+  background: var(--primary);
   border-radius: 50%;
-  background: var(--gold);
 }
 
-/* Resume Heading Colors */
-.resume-heading {
-  padding-bottom: 8px;
-  margin-bottom: 16px;
-  border-bottom: 3px solid;
-  font-size: 1.5rem;
-}
-
-.resume-heading.professional-summary {
-  border-color: var(--sea-green);
-  color: var(--sea-green);
-}
-
-.resume-heading.experience {
-  border-color: #d4af37;
-  color: #d4af37;
-}
-
-.resume-heading.education {
-  border-color: #2c5aa0;
-  color: #2c5aa0;
-}
-
-.resume-heading.certifications {
-  border-color: #8a2be2;
-  color: #8a2be2;
-}
-
-.resume-heading.skills {
-  border-color: #ff6b35;
-  color: #ff6b35;
-}
-
-/* Line Bullets */
-.line-bullets {
-  list-style: none;
-  padding-left: 0;
-}
-
-.line-bullets li {
-  padding: 8px 0;
-  padding-left: 24px;
-  position: relative;
-  border-bottom: 1px solid #e9f0f8;
-}
-
-.line-bullets li:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 2px;
-  background: var(--sea-green);
-}
-
-.line-bullets li:last-child {
-  border-bottom: none;
-}
-
-/* Gallery Grid */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
   margin-top: 16px;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Hover effects */
-.nav a:not(.active):hover {
-  background: #f0f7ff;
-  color: var(--sea-green);
-}
-
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(11,35,63,0.08);
-}
-
-/* Responsive adjustments */
-@media (max-width: 880px){
-  .hero{flex-direction:column;text-align:center}
-  .nav{gap:8px}
-}
-
-@media (max-width: 768px) {
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .header-inner {
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .contact-links {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .motto-text {
-    font-size: 2rem;
-  }
-  
-  .motto-decoration {
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .motto-text {
-    font-size: 1.6rem;
-  }
-  
-  .container {
-    padding: 20px;
-  }
-}
-/* Gallery Caption Styles */
 .gallery-caption {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #e9f0f8;
-  font-size: 14px;
+  margin-top: 6px;
+  font-size: 13px;
   color: var(--muted);
   text-align: center;
-  font-weight: 600;
-  font-style: italic;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 16px;
+.resume-heading {
+  margin-top: 24px;
+  font-size: 18px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 4px;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
+.line-bullets {
+  list-style-type: disc;
+  margin-left: 16px;
+}
+
+.footer {
+  background: var(--secondary);
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 24px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+  fill: #fff;
+  width: 28px;
+  height: 28px;
+}
+
+.whatsapp-float .tooltip {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
 }
