@@ -1,8 +1,7 @@
-// Enhanced interactivity for Dereck Mungoriwo portfolio
 document.addEventListener('DOMContentLoaded', function() {
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Add loading animation to images
+  // Image fade-in animation
   const images = document.querySelectorAll('img');
   images.forEach(img => {
     img.addEventListener('load', function() {
@@ -32,9 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     img.style.transition = 'opacity 0.3s ease';
   });
 
-  // Add intersection observer for fade-in animations
+  // Intersection Observer for fade-in cards and motto
   const fadeElements = document.querySelectorAll('.card, .motto-hero');
-  
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
