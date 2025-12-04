@@ -10,11 +10,11 @@
 
 <header class="header">
   <div class="header-inner container">
-    <div class="logo logo-home">
-      <div class="logo-icon">DM</div>
-      <div class="logo-text">
-        <h1>Dereck Mungoriwo</h1>
-        <p>Culinary Professional · Data Analyst</p>
+    <div class="logo logo-home" style="background:var(--primary); padding:6px 12px; border-radius:6px;">
+      <div class="logo-icon" style="color:#fff;">DM</div>
+      <div>
+        <h1 style="margin:0;font-size:18px; color:#fff;">Dereck Mungoriwo</h1>
+        <div style="font-size:13px; color:#fff;">Culinary Professional · Data Analyst</div>
       </div>
     </div>
     <nav class="nav">
@@ -29,67 +29,57 @@
 </header>
 
 <main class="container">
-
-  <!-- ===== MOTTO HERO ===== -->
   <section class="motto-hero">
-    <h1 class="motto-text">Where Culinary Art Meets Data Precision</h1>
-    <div class="motto-decoration">
-      <div class="decoration-line"></div>
-      <div class="decoration-dot"></div>
-      <div class="decoration-line"></div>
+    <div class="motto-container">
+      <h1 class="motto-text">Where Culinary Art Meets Data Precision</h1>
+      <div class="motto-decoration">
+        <div class="decoration-line culinary-line"></div>
+        <div class="decoration-dot"></div>
+        <div class="decoration-line data-line"></div>
+      </div>
+      <p style="margin-top:16px; font-size:16px; color:#333;">
+        I craft menus, optimize kitchens, and build dashboards that turn culinary intuition into measurable success.
+      </p>
     </div>
-    <p>I craft menus, optimize kitchens, and build dashboards that turn culinary intuition into measurable success.</p>
   </section>
 
-  <!-- ===== HERO: LEFT + RIGHT ===== -->
   <section class="hero">
     <div class="left">
-      <h2>Dereck Mungoriwo</h2>
-      <p>I transform kitchens and menus into data-driven operations. Combining culinary artistry with analytical insight, I ensure every dish and every decision counts.</p>
-
-      <div class="skills-section">
-        <h3>Culinary Skills</h3>
-        <div class="skills-grid">
-          <div class="skill-pill">Menu Engineering</div>
-          <div class="skill-pill">Kitchen Efficiency</div>
-          <div class="skill-pill">Food Costing</div>
-          <div class="skill-pill">Menu Design</div>
-          <div class="skill-pill">Plating Techniques</div>
-        </div>
-      </div>
-
-      <div class="skills-section">
-        <h3>Tech Skills</h3>
-        <div class="skills-grid">
-          <div class="skill-pill">Python</div>
-          <div class="skill-pill">SQL</div>
-          <div class="skill-pill">Power BI</div>
-          <div class="skill-pill">Data Visualization</div>
-          <div class="skill-pill">Predictive Analytics</div>
-        </div>
+      <h1>Dereck Mungoriwo</h1>
+      <p style="margin-top:8px; font-size:16px;">
+        I transform kitchens and menus into data-driven operations. Combining culinary artistry with analytical insight, I ensure every dish and every decision counts.
+      </p>
+      <div style="margin-top:14px" class="skills-grid">
+        <div class="skill-pill">Menu Engineering</div>
+        <div class="skill-pill">Kitchen Efficiency</div>
+        <div class="skill-pill">Food Costing</div>
+        <div class="skill-pill">Python & SQL</div>
+        <div class="skill-pill">Data Visualization</div>
+        <div class="skill-pill">Predictive Analytics</div>
       </div>
     </div>
-
-    <div class="right">
-      <div class="card">
-        <img src="assets/images/profile.jpg" alt="Profile Picture">
-        <div>Available for culinary consultancy, menu engineering, and operational optimization.</div>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/dashboard.png" alt="Dashboard">
-        <div>Power BI Culinary Dashboard Tracking KPIs, Waste, and Inventory</div>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/plated-dish.png" alt="Plated Dish">
-        <div>Signature Dish: Combining Creativity, Precision, and Presentation</div>
-      </div>
-
-      <a href="https://wa.me/27717184048" target="_blank" class="cta" style="margin-top:12px; display:inline-block; text-align:center;">Chat on WhatsApp</a>
+    <div class="card" style="width:360px;">
+      <img src="assets/images/profile.jpg" alt="Profile" style="width:100%; border-radius:10px;">
+      <p style="margin-top:12px; color:var(--muted); font-size:14px;">
+        Available for culinary consultancy, menu engineering, and operational optimization.
+      </p>
+      <a href="https://wa.me/27717184048" target="_blank" class="cta" style="margin-top:12px; display:inline-block;">Chat on WhatsApp</a>
     </div>
   </section>
 
+  <section style="margin-top:28px">
+    <h2>Featured Dashboard</h2>
+    <div class="card">
+      <img src="assets/images/dashboard.png" alt="Dashboard" style="width:100%; border-radius:8px;">
+    </div>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2>Featured Dish</h2>
+    <div class="card">
+      <img src="assets/images/plated-dish.png" alt="Plated Dish" style="width:100%; border-radius:8px;">
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
