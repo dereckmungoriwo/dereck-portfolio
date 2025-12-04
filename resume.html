@@ -1,125 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Resume — Dereck Mungoriwo</title>
-<link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Dereck Mungoriwo</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-inner container">
-    <div class="logo">
-      <div class="logo-icon">DM</div>
-      <div>
-        <h1 style="margin:0;font-size:18px">Dereck Mungoriwo</h1>
-        <div style="color:var(--muted);font-size:13px">Culinary Professional · Data Analyst</div>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-inner container">
+
+      <div class="logo">
+        <div class="logo-icon">DM</div>
+        <div class="logo-text">
+          <h1 class="site-title">Dereck Mungoriwo</h1>
+          <p class="site-tagline">Culinary Professional · Data Analyst</p>
+        </div>
       </div>
-    </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="resume.html" class="active">Resume</a>
-      <a href="projects.html">Projects</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="cta">Contact</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <section>
-    <h2 class="resume-heading professional-summary">Professional Summary</h2>
-    <p>Experienced Culinary Professional and Data Analyst combining menu innovation with operational efficiency. Skilled in Python, SQL, and data visualization to drive measurable improvements.</p>
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html" class="active">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
 
-    <h2 class="resume-heading experience">Experience</h2>
-    <div class="card">
-      <h3>Chef De Partie & Data Analyst | Iris Garden</h3>
-      <ul class="line-bullets">
-        <li>Managed line stations (grill & sauté), delivering 500+ dishes during busy schedules.</li>
-        <li>Coordinated pastry production, preparing, baking, and decorating pastries and desserts</li>
-        <li>Delivered catering for specialty events, serving up to 200 pax per occasion</li>
-        <li>Analyzed operational data to enhance kitchen efficiency.</li>
-        <li>Trained staff on culinary and data best practices.</li>
-        <li>Collaborated on seasonal menu rollouts, recipe creation, and food cost analysis</li>
-        <li>Reduced food waste by 10% and optimized cost using FIFO rotation and inventory management</li>
-        <li>Maintained 100% compliance with HACCP & Public Health standards through daily cleaning routines</li>
-        <li>Implemented cost-control dashboards lowering food waste by 10%.</li>
-      </ul>
     </div>
-    <div class="card">
-      <h3>Commis Chef | Casa Toscana Lodge</h3>
-      <ul class="line-bullets">
-        <li>Coordinated meal preparation and plating for breakfast, lunch, and six-course à la carte dinner menus.</li>
-        <li>Supported banquets and themed events, serving 400+ guests at each function.</li>
-        <li>Streamlined mise en place and ingredient prep (washing, peeling, chopping, portioning).</li>
-        <li>Operated and maintained kitchen equipment (food processors, ovens, grills, mixers.</li>
-        <li>Managed procurement and inventory, including stock audits and delivery inspections.</li>
-      </ul>
-    </div>
-      <div class="card">
-      <h3>Chef Trainee/Internship| Protea Hotels by Marriott®·</h3>
-      <ul class="line-bullets">
-        <li>Supported preparing meals for breakfast, fine dining, banquets & conferences.</li>
-        <li>Developed culinary skills and cooking techniques, including sous vide, grilling, sauteing, and plating.</li>
-        <li>Trained staff on culinary and data best practices.</li>
-      </ul>
-    </div>
-    
-    <h2 class="resume-heading education">Education</h2>
-    <div class="card">
-      <h3>Diploma in Professional Cookery & Kitchen Management</h3>
-      <p>International hotel School</p>
-    </div>
-    <div class="card">
-      <h3>Supply Chain Management</h3>
-      <p>Rutgers University</p>
-    </div>
-     <div class="card">
-      <h3>Data Science</h3>
-      <p>The Johns Hopkins University</p>
-    </div>
+  </header>
 
-    <h2 class="resume-heading certifications">Certifications</h2>
-    <div class="card">
-      <ul class="line-bullets">
-        <li>IBM DATA Analyst Certification(CCP)</li>
-        <li>Microsoft Power BI Certification(DAS)</li>
-        <li>Microsoft Excel Certification</li>
-        <li>Microsoft IT Support Specialist<li/>
-        <li>ServSafe Food Handler Certification(FSH)</li>
-      </ul>
-    </div>
 
-    <h2 class="resume-heading skills">Skills & Tools</h2>
-    <div class="card">
-      <div class=" Culinary skills-grid">
-        <div class="skill-pill">Menu Engineering</div>
-        <div class="skill-pill">Kitchen Efficiency</div>
-        <div class="skill-pill">Food Costing</div>
-        <div class="skill-pill">Advanced Cooking Techniques</div>
-        <div class="skill-pill">Knife & Cutiing Skills</div>
-        <div class="skill-pill">Recipe Development</div>
-        <div class="skill-pill">Inventory Control</div>
-        <div class="skill-pill">HACCP & Public Health</div>
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="container resume-page">
+
+    <!-- ===== SUMMARY ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Professional Summary</h2>
+      <p>
+        Experienced Culinary Professional and Data Analyst combining menu innovation with operational efficiency.
+        Skilled in Python, SQL, and data visualization to drive measurable improvements.
+      </p>
+    </section>
+
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Experience</h2>
+
+      <div class="card resume-card">
+        <h3>Chef De Partie & Data Analyst | Iris Garden</h3>
+        <ul class="line-bullets">
+          <li>Managed grill and sauté stations, delivering 500+ dishes during peak service.</li>
+          <li>Coordinated pastry production for high-volume dessert service.</li>
+          <li>Delivered catering for events of up to 200 guests.</li>
+          <li>Analyzed operational data to improve kitchen efficiency.</li>
+          <li>Trained junior staff on culinary and data best practices.</li>
+          <li>Collaborated on seasonal menu rollouts and food cost analysis.</li>
+          <li>Reduced food waste by 10% using FIFO and inventory tracking.</li>
+          <li>Maintained 100% HACCP & Public Health compliance.</li>
+        </ul>
       </div>
-    </div>
-     <div class="card">
-      <div class="Technical Skills-grid">
-        <div class="skill-pill">Python, R, SQL, Html, JavaScript, CSS</div>
-        <div class="skill-pill">Excel, Power BI, Jupyter, Pandas, NumPy, SciKit-learn, Git</div>
 
-    <p style="margin-top:16px;">
-      <a href="assets/pdf/Dereck_Mungoriwo_Resume.pdf" download class="cta">Download Resume (PDF)</a>
-    </p>
-  </section>
-</main>
+      <div class="card resume-card">
+        <h3>Commis Chef | Casa Toscana Lodge</h3>
+        <ul class="line-bullets">
+          <li>Prepared and plated breakfast, lunch, and six-course dinner menus.</li>
+          <li>Supported banquets and themed events for 400+ guests.</li>
+          <li>Streamlined mise en place and portion control.</li>
+          <li>Operated food processors, ovens, grills, and mixers.</li>
+          <li>Managed procurement, stock audits, and delivery inspections.</li>
+        </ul>
+      </div>
 
-<footer class="footer">
-  <p>&copy; 2025 Dereck Mungoriwo · Culinary Professional · Data Analyst</p>
-</footer>
+      <div class="card resume-card">
+        <h3>Chef Trainee / Internship | Protea Hotels by Marriott®</h3>
+        <ul class="line-bullets">
+          <li>Prepared meals for breakfast, fine dining, banquets, and conferences.</li>
+          <li>Developed skills in sous vide, grilling, sautéing, and advanced plating.</li>
+          <li>Supported hygiene monitoring and service standards.</li>
+        </ul>
+      </div>
+    </section>
 
-<script src="assets/js/script.js"></script>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Education</h2>
+
+      <div class="card resume-card">
+        <h3>Diploma in Professional Cookery & Kitchen Management</h3>
+        <p>International Hotel School</p>
+      </div>
+
+      <div class="card resume-card">
+        <h3>Supply Chain Management</h3>
+        <p>Rutgers University</p>
+      </div>
+
+      <div class="card resume-card">
+        <h3>Data Science</h3>
+        <p>The Johns Hopkins University</p>
+      </div>
+    </section>
+
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Certifications</h2>
+
+      <div class="card resume-card">
+        <ul class="line-bullets">
+          <li>IBM Data Analyst Certification (CCP)</li>
+          <li>Microsoft Power BI Certification (DAS)</li>
+          <li>Microsoft Excel Certification</li>
+          <li>Microsoft IT Support Specialist</li>
+          <li>ServSafe Food Handler Certification (FSH)</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ===== SKILLS ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Skills & Tools</h2>
+
+      <div class="card resume-card">
+        <h4>Culinary Skills</h4>
+        <div class="skills-grid">
+          <div class="skill-pill">Menu Engineering</div>
+          <div class="skill-pill">Kitchen Efficiency</div>
+          <div class="skill-pill">Food Costing</div>
+          <div class="skill-pill">Advanced Cooking Techniques</div>
+          <div class="skill-pill">Knife & Cutting Skills</div>
+          <div class="skill-pill">Recipe Development</div>
+          <div class="skill-pill">Inventory Control</div>
+          <div class="skill-pill">HACCP & Public Health</div>
+        </div>
+      </div>
+
+      <div class="card resume-card">
+        <h4>Technical Skills</h4>
+        <div class="skills-grid">
+          <div class="skill-pill">Python, R, SQL, HTML, JavaScript, CSS</div>
+          <div class="skill-pill">Excel, Power BI, Jupyter, Pandas, NumPy, Scikit-learn, Git</div>
+        </div>
+      </div>
+
+      <p class="resume-download">
+        <a href="assets/pdf/Dereck_Mungoriwo_Resume.pdf" download class="cta">
+          Download Resume (PDF)
+        </a>
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>&copy; 2025 Dereck Mungoriwo · Culinary Professional · Data Analyst</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
