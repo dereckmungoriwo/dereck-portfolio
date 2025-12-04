@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scrolling
+  // --- Smooth scrolling for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -8,58 +8,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-  // Hero fade-in
-  const fadeElements = document.querySelectorAll('.motto-text, .hero .card, .skill-pill');
-  fadeElements.forEach((el, index) => {
-    setTimeout(() => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }, 150 * index);
-  });
-});
-
-  // Active nav highlight
+  // --- Active nav highlight ---
   const currentPage = window.location.pathname.split('/').pop();
   document.querySelectorAll('.nav a').forEach(link => {
-    if (link.getAttribute('href') === currentPage || (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
       link.classList.add('active');
     } else link.classList.remove('active');
   });
 
-  // Image fade-in
-  document.querySelectorAll('img').forEach(img => {
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.3s ease';
-    img.addEventListener('load', function() { this.style.opacity = '1'; });
+  // --- Fade-in animation for hero elements and skill pills ---
+  const heroFade = document.querySelectorAll('.motto-text, .hero .card, .skill-pill');
+  heroFade.forEach((el, i) => {
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 150 * i);
   });
 
-  // Fade-in cards and motto
+  // --- Intersection Observer for all other cards and motto sections ---
   const fadeElements = document.querySelectorAll('.card, .motto-hero');
-  const fadeObserver = new IntersectionObserver(entries => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  fadeElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeObserver.observe(el);
-  });
-
-  // --- Fade-in animation for cards and motto ---
-  const fadeElements = document.querySelectorAll('.card, .motto-hero');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target); // optional: stop observing once animated
+        obs.unobserve(entry.target); // stop observing once visible
       }
     });
   }, { threshold: 0.1 });
@@ -71,7 +45,18 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(el);
   });
 
-  // --- Optional: Card hover elevation ---
+  // --- Image fade-in ---
+  document.querySelectorAll('img').forEach(img => {
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.8s ease';
+    if (img.complete) {
+      img.style.opacity = '1';
+    } else {
+      img.addEventListener('load', () => img.style.opacity = '1');
+    }
+  });
+
+  // --- Card hover elevation ---
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-4px)');
     card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0)');
