@@ -1,9 +1,10 @@
 :root {
-  --primary: #1a73e8;
+  --primary: #2E8B57; /* Sea Green as main accent */
   --secondary: #f0f0f0;
   --muted: #6c757d;
   --text: #212121;
   --bg: #fff;
+  --cta-hover: #246B45; /* Darker sea green for hover */
 }
 
 body {
@@ -18,6 +19,11 @@ body {
 a {
   text-decoration: none;
   color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--cta-hover);
 }
 
 .container {
@@ -57,6 +63,7 @@ a {
   margin-left: 20px;
   font-size: 14px;
   color: var(--text);
+  transition: color 0.2s ease;
 }
 
 .nav a.cta {
@@ -64,6 +71,10 @@ a {
   color: #fff;
   padding: 6px 14px;
   border-radius: 4px;
+}
+
+.nav a.cta:hover {
+  background: var(--cta-hover);
 }
 
 .nav a.active {
@@ -91,7 +102,8 @@ a {
 }
 
 .skill-pill {
-  background: var(--secondary);
+  background: var(--primary);
+  color: #fff;
   padding: 6px 12px;
   border-radius: 16px;
   font-size: 12px;
@@ -102,6 +114,12 @@ a {
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
 }
 
 .motto-hero {
@@ -115,6 +133,7 @@ a {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 12px;
+  color: var(--primary);
 }
 
 .motto-decoration {
@@ -201,25 +220,4 @@ a {
   text-decoration: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   z-index: 1000;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
-.whatsapp-float svg {
-  fill: #fff;
-  width: 28px;
-  height: 28px;
-}
-
-.whatsapp-float .tooltip {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-  }
-}
+  transition: transform 0.3s
