@@ -225,3 +225,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   console.log('✅ Portfolio JS loaded successfully!');
 });
+
+// Mobile Navigation Toggle
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav');
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+}
