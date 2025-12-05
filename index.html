@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Home — Dereck Mungoriwo</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Schema for Gallery -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Gallery Name",
+    "image": ["assets/images/image1.jpg", "assets/images/image2.jpg"]
+  }
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -18,6 +37,7 @@
         <p>Culinary Professional · Data Analyst</p>
       </div>
     </div>
+    <button class="nav-toggle" aria-label="Open navigation menu">☰</button>
     <nav class="nav">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
@@ -51,7 +71,7 @@
     <!-- Left Column: Profile + Skills -->
     <div class="left">
       <div class="profile-card">
-        <img src="assets/images/profile.jpg" alt="Profile">
+        <img src="assets/images/profile.jpg" loading="lazy" alt="Profile of Dereck Mungoriwo">
         <div class="profile-content">
           <div class="image-description">Available for culinary consultancy, menu engineering, and operational optimization.</div>
           <a href="https://wa.me/27717184048" target="_blank" class="cta">Chat on WhatsApp</a>
@@ -87,11 +107,11 @@
     <div class="right hero-images">
       <div class="image-row">
         <div class="image-card">
-          <img src="assets/images/dashboard.png" alt="Dashboard">
+          <img src="assets/images/dashboard.png" loading="lazy" alt="Dashboard showing kitchen performance and KPIs">
           <div class="image-description">Data dashboard measuring kitchen performance and operational KPIs.</div>
         </div>
         <div class="image-card">
-          <img src="assets/images/plated-dish.png" alt="Plated Dish">
+          <img src="assets/images/plated-dish.png" loading="lazy" alt="Signature plated dish">
           <div class="image-description">Signature dish showcasing culinary creativity and presentation skills.</div>
         </div>
       </div>
