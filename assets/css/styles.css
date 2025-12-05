@@ -378,6 +378,78 @@ main {
   transform: translateY(0);
 }
 
+/* ================= GALLERY SECTION ================= */
+.gallery-section {
+  margin: 60px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.gallery-grid .card {
+  background: var(--bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-grid .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-grid .card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-grid .card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  padding: 20px;
+  font-size: 0.95rem;
+  color: var(--text);
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+
 /* ================= FOOTER ================= */
 .footer {
   background: var(--text);
@@ -459,6 +531,11 @@ main {
   .motto-text {
     font-size: 2rem;
   }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -485,6 +562,10 @@ main {
     font-size: 1.8rem;
   }
   
+  .section-title {
+    font-size: 2rem;
+  }
+  
   .motto-subtext {
     font-size: 1.1rem;
   }
@@ -495,6 +576,11 @@ main {
   
   .image-card {
     height: 250px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
   }
   
   .contact-links {
@@ -513,6 +599,10 @@ main {
     font-size: 1.5rem;
   }
   
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
   .motto-subtext {
     font-size: 1rem;
   }
@@ -523,6 +613,14 @@ main {
   
   .skill-pill {
     font-size: 0.85rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-grid .card img {
+    height: 200px;
   }
   
   .whatsapp-float {
