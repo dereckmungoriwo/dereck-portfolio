@@ -1150,3 +1150,9 @@ main {
     height: 26px;
   }
 }
+
+/* Change ONLY the description in profile card */
+.profile-content .image-description {
+  color: white !important;
+  font-weight: 500;
+}
