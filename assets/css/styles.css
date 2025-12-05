@@ -496,3 +496,13 @@ a:hover { color:var(--cta-hover); }
     height: 26px;
   }
 }
+
+.profile-tagline {
+  background: rgba(46,139,87,0.1);
+  color: var(--text);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: center;
+}
