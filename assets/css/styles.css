@@ -1,385 +1,98 @@
 :root {
   --primary: #2E8B57;
   --secondary: #f0f0f0;
-  --muted: #6c757d;
   --text: #212121;
   --bg: #fff;
   --cta-hover: #246B45;
 }
 
-/* ================= CSS RESET ================= */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ================= BODY ================= */
+/* ================= RESET ================= */
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 body {
   font-family: 'Arial', sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
-  font-size: 16px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-size:16px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
 /* ================= LINKS ================= */
-a {
-  text-decoration: none;
-  color: var(--primary);
-  transition: all 0.2s ease;
-}
-
-a:hover {
-  color: var(--cta-hover);
-}
+a { text-decoration:none; color:var(--primary); transition: all 0.2s ease; }
+a:hover { color:var(--cta-hover); }
 
 /* ================= CONTAINER ================= */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+.container { width:100%; max-width:1200px; margin:0 auto; padding:0 20px; }
 
 /* ================= HEADER ================= */
-.header {
-  background: var(--bg);
-  padding: 16px 0;
-  border-bottom: 1px solid #e0e0e0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
+.header { background:var(--bg); padding:16px 0; border-bottom:1px solid #e0e0e0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.05);}
+.header-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* ================= HERO SECTION ================= */
-.hero {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  margin-bottom: 60px;
-}
-
-.left {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.right {
-  flex: 2;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+/* ================= HERO ================= */
+.hero { display:flex; gap:40px; align-items:flex-start; margin-bottom:60px; }
+.left { flex:1; display:flex; flex-direction:column; gap:30px; min-width:300px; }
+.right { flex:2; display:flex; flex-direction:column; gap:30px; min-width:300px; }
 
 /* ================= PROFILE + ABOUT ================= */
-.profile-about-wrapper {
-  display: flex;
-  gap: 25px;
-  align-items: flex-start;
-}
-
+.profile-about-wrapper { display:flex; gap:25px; align-items:flex-start; flex-wrap:wrap; }
 .profile-card {
-  flex: 0 0 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--bg);
-  border-radius: 12px;
-  padding: 30px 20px 25px 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  text-align: center;
+  flex:0 0 220px; text-align:center;
+  display:flex; flex-direction:column; align-items:center;
+  padding:20px; border-radius:12px; background:var(--bg);
+  box-shadow:0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;
 }
-
 .profile-card img {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  border: 4px solid var(--primary);
-  box-shadow: 0 6px 20px rgba(46, 139, 87, 0.15);
-  transition: all 0.3s ease;
+  width:160px; height:160px; border-radius:50%;
+  object-fit:cover; border:4px solid var(--primary);
+  box-shadow:0 6px 20px rgba(46,139,87,0.15); transition: all 0.3s ease;
 }
-
-.profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
-
-.profile-card:hover img {
-  transform: scale(1.03);
-  box-shadow: 0 8px 25px rgba(46, 139, 87, 0.25);
-}
+.profile-card:hover { transform: translateY(-5px); box-shadow:0 8px 30px rgba(0,0,0,0.12); }
+.profile-card:hover img { transform: scale(1.03); box-shadow:0 8px 25px rgba(46,139,87,0.25); }
 
 .about-card {
-  flex: 1;
-  padding: 30px 25px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex:1; padding:25px 20px; display:flex; flex-direction:column;
+  justify-content:flex-start; border-radius:12px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.1); max-height:400px; overflow-y:auto;
 }
+.about-card::-webkit-scrollbar { width:6px; }
+.about-card::-webkit-scrollbar-thumb { background: rgba(46,139,87,0.4); border-radius:3px; }
 
 /* ================= SKILLS ================= */
-.skills-section {
-  background: var(--bg);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill-pill {
-  background: var(--primary);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  cursor: default;
-}
-
-.skill-pill:hover {
-  background: var(--cta-hover);
-  transform: translateY(-2px);
-}
+.skills-section { background:var(--bg); padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
+.skills-grid { display:flex; flex-wrap:wrap; gap:10px; }
+.skill-pill { background:var(--primary); color:white; padding:8px 16px; border-radius:20px; font-size:0.9rem; font-weight:500; cursor:default; transition: all 0.2s ease; }
+.skill-pill:hover { background:var(--cta-hover); transform:translateY(-2px); }
 
 /* ================= HERO IMAGES ================= */
-.hero-images .image-row {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
+.hero-images .image-row { display:flex; flex-direction:column; gap:25px; }
 .image-card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-  width: 100%;
-  height: auto;
-  max-height: 350px; /* limit large images */
+  position:relative; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease; width:100%; height:300px;
 }
-
-.image-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.image-card:hover {
-  transform: translateY(-5px);
-}
-
-.image-card:hover img {
-  transform: scale(1.05);
-}
-
+.image-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease; }
+.image-card:hover { transform:translateY(-5px); }
+.image-card:hover img { transform:scale(1.05); }
 .image-description {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(46,139,87,0.9);
-  color: white;
-  padding: 15px;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
+  position:absolute; bottom:0; left:0; right:0;
+  background: rgba(46,139,87,0.9); color:white; padding:15px;
+  font-size:0.95rem; line-height:1.4; transform:translateY(100%); transition:transform 0.3s ease;
 }
+.image-card:hover .image-description { transform:translateY(0); }
 
-.image-card:hover .image-description {
-  transform: translateY(0);
-}
-
-/* ================= DESKTOP HERO IMAGE REORDER ================= */
+/* ================= HERO IMAGE ORDER ================= */
 @media screen and (min-width: 1200px) {
-  .hero-images .image-row {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  /* Signature dish first, dashboard below */
-  .hero-images .image-card:first-child {
-    order: 2;
-  }
-
-  .hero-images .image-card:last-child {
-    order: 1;
-  }
+  .signature-dish { order:1; }
+  .dashboard { order:2; }
 }
 
 /* ================= RESPONSIVE ================= */
-@media screen and (max-width: 1024px) {
-  .hero {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .left, .right {
-    width: 100%;
-  }
-
-  .hero-images .image-row {
-    flex-direction: column;
-  }
-
-  .image-card {
-    max-height: 300px;
-  }
+@media screen and (max-width:1024px) { .hero { flex-direction:column; } }
+@media screen and (max-width:768px) {
+  .profile-about-wrapper { flex-direction:column; gap:20px; }
+  .profile-card, .about-card { width:100%; }
+  .image-card { height:250px; }
 }
-
-@media screen and (max-width: 768px) {
-  .profile-about-wrapper {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .profile-card {
-    flex: none;
-    width: 100%;
-  }
-
-  .about-card {
-    width: 100%;
-  }
-
-  .image-card {
-    max-height: 250px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .image-card {
-    max-height: 200px;
-  }
-}
-
-/* ================= HERO DESKTOP REFINEMENT ================= */
-@media screen and (min-width: 1200px) {
-
-  /* Hero container */
-  .hero {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-  }
-
-  /* Left column: Profile + About + Skills */
-  .left {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    flex: 1;
-  }
-
-  /* Profile + About side by side */
-  .profile-about-wrapper {
-    display: flex;
-    gap: 25px;
-    align-items: flex-start;
-  }
-
-  .profile-card {
-    flex: 0 0 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 25px 20px;
-    max-height: 400px; /* prevents stretching too tall */
-    overflow-y: auto;  /* scroll if text is too long */
-    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
-  }
-
-  /* Skills sections below profile-about */
-  .skills-section {
-    margin-top: 20px;
-  }
-
-  /* Right column: Hero images */
-  .right.hero-images {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  /* Stack images vertically with correct order */
-  .hero-images .image-row {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .hero-images .signature-dish {
-    order: 1; /* signature dish first */
-  }
-
-  .hero-images .dashboard {
-    order: 2; /* dashboard below */
-  }
-
-  /* Limit image heights for desktop */
-  .hero-images .image-card {
-    height: 300px;
-  }
-
-  .hero-images .image-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-}
-
-/* Optional: About text scrollbar if too long on desktop */
-.about-card::-webkit-scrollbar {
-  width: 6px;
-}
-
-.about-card::-webkit-scrollbar-thumb {
-  background: rgba(46, 139, 87, 0.4);
-  border-radius: 3px;
-}
-
+@media screen and (max-width:480px) { .image-card { height:200px; } }
