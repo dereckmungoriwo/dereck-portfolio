@@ -1175,3 +1175,38 @@ main {
 .gallery-item {
   will-change: transform;
 }
+
+/* ================= ABOUT NEXT TO PROFILE ON DESKTOP ================= */
+@media screen and (min-width: 1200px) {
+  .hero {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex: 1;
+  }
+
+  .profile-card {
+    flex: 0 0 220px; /* profile image width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-card {
+    flex: 1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 25px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  }
+}
+
