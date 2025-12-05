@@ -3,20 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // ================= MOBILE NAVIGATION TOGGLE =================
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
+  const header = document.querySelector('.header');
 
   if (navToggle && nav) {
     navToggle.addEventListener('click', function(e) {
       e.stopPropagation();
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
       nav.classList.toggle('active');
+      
+      // Change icon
+      this.innerHTML = isExpanded ? '☰' : '✕';
     });
 
-    // Close mobile menu when clicking outside
+    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
       if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
         nav.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '☰';
       }
     });
 
@@ -25,42 +30,59 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener('click', function() {
         nav.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '☰';
       });
+    });
+
+    // Prevent clicks inside nav from closing immediately
+    nav.addEventListener('click', function(e) {
+      e.stopPropagation();
     });
   }
 
   // ================= SMOOTH SCROLLING =================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '#!') return;
       
-      const target = document.querySelector(targetId);
+      const target = document.querySelector(href);
       if (target) {
+        e.preventDefault();
         target.scrollIntoView({ 
           behavior: 'smooth',
           block: 'start'
         });
+        
+        // Update URL without page jump
+        history.pushState(null, null, href);
       }
     });
   });
 
   // ================= ACTIVE NAV HIGHLIGHT =================
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav a').forEach(link => {
-    const linkPage = link.getAttribute('href');
+  function updateActiveNav() {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
     
-    // Remove existing active class
-    link.classList.remove('active');
-    
-    // Check if current page matches link
-    if (currentPage === linkPage || 
-        (currentPage === '' && linkPage === 'index.html') ||
-        (currentPage === 'index.html' && linkPage === 'index.html')) {
-      link.classList.add('active');
-    }
-  });
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.classList.remove('active');
+      const linkHref = link.getAttribute('href');
+      
+      // Handle index/home page
+      if ((currentPage === 'index.html' || currentPage === '' || currentPage === '/') && 
+          (linkHref === 'index.html' || linkHref === './' || linkHref === '/')) {
+        link.classList.add('active');
+      }
+      // Handle other pages
+      else if (currentPage === linkHref) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  // Run on load
+  updateActiveNav();
 
   // ================= HOME PAGE ANIMATIONS =================
   const isHomePage = window.location.pathname.endsWith('index.html') || 
@@ -68,185 +90,271 @@ document.addEventListener('DOMContentLoaded', function() {
                      window.location.pathname === '';
 
   if (isHomePage) {
-    // Hero & Motto Fade-in
+    // Hero & Motto Fade-in with staggered delay
     const fadeElements = document.querySelectorAll('.motto-text, .motto-subtext, .profile-card, .about-card, .skills-section, .image-card');
-    fadeElements.forEach((el, i) => {
+    
+    fadeElements.forEach((el, index) => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'all 0.6s ease-out';
       
+      // Stagger animation with different delays based on element type
+      let delay = 0;
+      if (el.classList.contains('motto-text')) delay = 200;
+      else if (el.classList.contains('motto-subtext')) delay = 400;
+      else if (el.classList.contains('profile-card')) delay = 600;
+      else if (el.classList.contains('about-card')) delay = 800;
+      else delay = 200 + (index * 100);
+      
       setTimeout(() => {
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
-      }, 100 * i);
+      }, delay);
     });
 
-    // Image fade-in on load
-    document.querySelectorAll('img').forEach(img => {
-      img.style.opacity = '0';
-      img.style.transition = 'opacity 0.5s ease';
+    // Image lazy loading with fade-in
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      // Skip if already loaded
       if (img.complete) {
         img.style.opacity = '1';
-      } else {
-        img.addEventListener('load', function() {
-          this.style.opacity = '1';
-        });
+        return;
+      }
+      
+      img.style.opacity = '0';
+      img.style.transition = 'opacity 0.5s ease-in-out';
+      
+      img.addEventListener('load', function() {
+        this.style.opacity = '1';
+      });
+      
+      // Fallback in case load event doesn't fire
+      setTimeout(() => {
+        img.style.opacity = '1';
+      }, 1000);
+    });
+  }
+
+  // ================= SCROLL ANIMATIONS FOR ALL PAGES =================
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        observer.unobserve(entry.target);
       }
     });
-  }
+  }, observerOptions);
 
-  // ================= SCROLL ANIMATIONS (OTHER PAGES) =================
-  if (!isHomePage) {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+  // Observe elements for scroll animations
+  const scrollElements = document.querySelectorAll(
+    '.project-card, .resume-card, .gallery-grid .card, .approach-item, .contact-list p'
+  );
+  
+  scrollElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+  });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+  // CSS for animate-in class
+  const style = document.createElement('style');
+  style.textContent = `
+    .animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  `;
+  document.head.appendChild(style);
 
-    // Observe elements that should animate on scroll
-    const elementsToObserve = document.querySelectorAll('.profile-card, .skills-section, .image-card, .project-card, .gallery-item');
-    elementsToObserve.forEach(element => {
-      element.style.opacity = '0';
-      element.style.transform = 'translateY(20px)';
-      element.style.transition = 'all 0.6s ease-out';
-      observer.observe(element);
-    });
-  }
-
-  // ================= WHATSAPP BUTTON TRACKING =================
+  // ================= WHATSAPP BUTTON ANALYTICS =================
   const whatsappButtons = document.querySelectorAll('.whatsapp-float, a[href*="wa.me"]');
   whatsappButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      console.log('📞 WhatsApp button clicked');
-      // Optional: Add Google Analytics tracking
+    button.addEventListener('click', function(e) {
+      console.log('📱 WhatsApp contact initiated');
+      
+      // Optional: Add analytics event
       if (typeof gtag !== 'undefined') {
         gtag('event', 'whatsapp_click', {
           'event_category': 'Contact',
           'event_label': 'WhatsApp Button',
-          'page_location': window.location.pathname
+          'value': 1
         });
       }
     });
   });
 
-  // ================= CONTACT CTA TRACKING =================
-  const contactButtons = document.querySelectorAll('a.cta');
-  contactButtons.forEach(button => {
+  // ================= CTA BUTTON ANALYTICS =================
+  const ctaButtons = document.querySelectorAll('a.cta:not([href*="wa.me"])');
+  ctaButtons.forEach(button => {
     button.addEventListener('click', function() {
-      console.log('🎯 CTA clicked:', this.textContent.trim());
-      // Optional: Add Google Analytics tracking
+      const buttonText = this.textContent.trim();
+      console.log(`🎯 CTA clicked: ${buttonText}`);
+      
+      // Optional: Add analytics event
       if (typeof gtag !== 'undefined') {
         gtag('event', 'cta_click', {
           'event_category': 'Engagement',
-          'event_label': this.textContent.trim(),
-          'page_location': window.location.pathname
+          'event_label': buttonText,
+          'value': 1
         });
       }
     });
   });
 
-  // ================= LAZY LOADING IMAGES =================
-  if ('loading' in HTMLImageElement.prototype) {
-    // Browser supports native lazy loading
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-      img.src = img.src;
+  // ================= HEADER SCROLL EFFECT =================
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 100) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Hide/show header on scroll direction
+    if (scrollTop > lastScrollTop && scrollTop > 200) {
+      // Scrolling down - hide header
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      // Scrolling up - show header
+      header.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+
+  // ================= IMAGE LAZY LOADING ENHANCEMENT =================
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const src = img.getAttribute('data-src');
+          if (src) {
+            img.src = src;
+            img.removeAttribute('data-src');
+          }
+          imageObserver.unobserve(img);
+        }
+      });
     });
-  } else {
-    // Fallback for older browsers
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      imageObserver.observe(img);
+    });
   }
 
-  // ================= FORM VALIDATION (if contact form exists) =================
+  // ================= FORM VALIDATION (FOR FUTURE CONTACT FORM) =================
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Basic validation
-      const name = this.querySelector('#name');
-      const email = this.querySelector('#email');
-      const message = this.querySelector('#message');
-      
+      const formData = new FormData(this);
       let isValid = true;
       
+      // Basic validation
+      const name = this.querySelector('[name="name"]');
+      const email = this.querySelector('[name="email"]');
+      const message = this.querySelector('[name="message"]');
+      
+      // Reset previous errors
+      this.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+      this.querySelectorAll('.error-message').forEach(el => el.remove());
+      
+      // Name validation
       if (!name.value.trim()) {
-        showError(name, 'Name is required');
+        showError(name, 'Please enter your name');
         isValid = false;
       }
       
-      if (!email.value.trim() || !isValidEmail(email.value)) {
-        showError(email, 'Valid email is required');
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailRegex.test(email.value)) {
+        showError(email, 'Please enter a valid email address');
         isValid = false;
       }
       
+      // Message validation
       if (!message.value.trim()) {
-        showError(message, 'Message is required');
+        showError(message, 'Please enter your message');
         isValid = false;
       }
       
       if (isValid) {
-        // Submit form (add your submission logic here)
-        console.log('✅ Form is valid, ready to submit');
-        this.submit();
+        // Submit form (you would replace this with actual submission)
+        console.log('Form submitted:', Object.fromEntries(formData));
+        alert('Thank you! Your message has been sent.');
+        this.reset();
       }
     });
   }
 
-  // Helper function for email validation
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  // Helper function to show error messages
+  // Helper function for form validation
   function showError(input, message) {
-    const formGroup = input.closest('.form-group');
-    const error = formGroup.querySelector('.error-message') || document.createElement('span');
-    error.className = 'error-message';
-    error.textContent = message;
-    error.style.color = '#e74c3c';
-    error.style.fontSize = '0.85rem';
-    error.style.marginTop = '5px';
-    error.style.display = 'block';
-    
-    if (!formGroup.querySelector('.error-message')) {
-      formGroup.appendChild(error);
-    }
-    
+    input.classList.add('error');
     input.style.borderColor = '#e74c3c';
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    errorDiv.style.color = '#e74c3c';
+    errorDiv.style.fontSize = '0.85rem';
+    errorDiv.style.marginTop = '5px';
+    
+    input.parentNode.appendChild(errorDiv);
     
     // Remove error on input
     input.addEventListener('input', function() {
-      error.remove();
-      input.style.borderColor = '';
+      this.classList.remove('error');
+      this.style.borderColor = '';
+      const errorMsg = this.parentNode.querySelector('.error-message');
+      if (errorMsg) errorMsg.remove();
     });
   }
 
-  console.log('✅ Portfolio JavaScript loaded successfully!');
+  // ================= SKILL PILL HOVER EFFECT =================
+  document.querySelectorAll('.skill-pill').forEach(pill => {
+    pill.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-3px) scale(1.05)';
+    });
+    
+    pill.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+
+  // ================= CURRENT YEAR IN FOOTER =================
+  const yearSpan = document.querySelector('#current-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  console.log('🚀 Portfolio JavaScript loaded successfully!');
 });
 
-// ================= HEADER SCROLL EFFECT (Optional) =================
-let lastScroll = 0;
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('.header');
-  const currentScroll = window.pageYOffset;
-  
-  if (currentScroll > 100) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-  
-  lastScroll = currentScroll;
+// ================= WINDOW RESIZE HANDLER =================
+let resizeTimer;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    // Close mobile menu on resize to desktop
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (window.innerWidth > 768 && nav && nav.classList.contains('active')) {
+      nav.classList.remove('active');
+      if (navToggle) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '☰';
+      }
+    }
+  }, 250);
 });
