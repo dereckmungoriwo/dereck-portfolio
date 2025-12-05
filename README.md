@@ -28,3 +28,38 @@ A modern, responsive portfolio website showcasing my dual expertise as a Culinar
 - **Version Control**: Git and GitHub
 
 ## 📁 Project Structure
+
+```
+
+dereck-mungoriwo-portfolio/
+│
+├──index.html              
+├──about.html              
+├──resume.html           
+├──projects.html           
+├──gallery.html
+Gallery  page
+├──contact.html
+Contact page
+│
+├──assets/
+│├── css/
+││   └── styles.css
+ stylesheet
+│├── js/
+││   └── script.js
+functionality
+│├── images/
+assets
+││   ├── profile.jpg
+││   ├── dashboard.png
+││   ├── plated-dish.png
+││   └── gallery/
+││       ├── gallery1.jpg
+││       └── ...         
+images
+│└── pdf/
+│└── Dereck_Mungoriwo_Resume.pdf Resume PDF
+│
+├──README.md               
+└──.gitignore          
