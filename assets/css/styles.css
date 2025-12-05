@@ -1210,3 +1210,57 @@ main {
   }
 }
 
+/* ================= DESKTOP HERO LAYOUT ================= */
+@media screen and (min-width: 1200px) {
+
+  /* Hero container: 2 main columns */
+  .hero {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  /* Left column: Profile + About + Skills */
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+  }
+
+  /* Profile + About side by side */
+  .profile-about-wrapper {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+  }
+
+  .profile-card {
+    flex: 0 0 220px; /* profile width */
+  }
+
+  .about-card {
+    flex: 1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px 20px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  }
+
+  /* Skills sections remain below profile-about */
+  .skills-section {
+    margin-top: 20px;
+  }
+
+  /* Right column: Hero images */
+  .right.hero-images {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+
