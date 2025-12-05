@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my dual expertise as a Culinary Professional and Data Analyst. The site demonstrates how culinary art meets data precision through clean design, interactive elements, and professional content.
 
-![Portfolio Preview](dereckmungoriwo.online
+![Portfolio Preview](https://via.dereckmungoriwo.com/800x450/2E8B57/FFFFFF?text=Dereck+Mungoriwo+Portfolio)
 
 ## 🌟 Features
 
