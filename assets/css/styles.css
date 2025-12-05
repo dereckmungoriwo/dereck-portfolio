@@ -288,3 +288,98 @@ a:hover {
     max-height: 200px;
   }
 }
+
+/* ================= HERO DESKTOP REFINEMENT ================= */
+@media screen and (min-width: 1200px) {
+
+  /* Hero container */
+  .hero {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  /* Left column: Profile + About + Skills */
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+  }
+
+  /* Profile + About side by side */
+  .profile-about-wrapper {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+  }
+
+  .profile-card {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 25px 20px;
+    max-height: 400px; /* prevents stretching too tall */
+    overflow-y: auto;  /* scroll if text is too long */
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  }
+
+  /* Skills sections below profile-about */
+  .skills-section {
+    margin-top: 20px;
+  }
+
+  /* Right column: Hero images */
+  .right.hero-images {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Stack images vertically with correct order */
+  .hero-images .image-row {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .hero-images .signature-dish {
+    order: 1; /* signature dish first */
+  }
+
+  .hero-images .dashboard {
+    order: 2; /* dashboard below */
+  }
+
+  /* Limit image heights for desktop */
+  .hero-images .image-card {
+    height: 300px;
+  }
+
+  .hero-images .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+/* Optional: About text scrollbar if too long on desktop */
+.about-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.about-card::-webkit-scrollbar-thumb {
+  background: rgba(46, 139, 87, 0.4);
+  border-radius: 3px;
+}
+
