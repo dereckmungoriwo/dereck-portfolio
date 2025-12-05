@@ -1263,4 +1263,22 @@ main {
   }
 }
 
+/* ================= DESKTOP HERO IMAGE REORDER ================= */
+@media screen and (min-width: 1200px) {
+  .hero-images .image-row {
+    display: flex;
+    flex-direction: column; /* stack images vertically */
+    gap: 30px;
+  }
+
+  .hero-images .image-card:first-child {
+    order: 2; /* dashboard moves below */
+  }
+
+  .hero-images .image-card:last-child {
+    order: 1; /* signature dish comes first */
+  }
+}
+
+
 
