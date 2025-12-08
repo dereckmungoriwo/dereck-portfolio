@@ -1,220 +1,724 @@
-<!-- ================= RESUME SECTION ================= -->
-<main class="container resume-page">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Dereck Mungoriwo</title>
+  <style>
+    :root {
+      --primary: #2E8B57;
+      --secondary: #f0f0f0;
+      --muted: #6c757d;
+      --text: #212121;
+      --bg: #fff;
+      --cta-hover: #246B45;
+    }
 
-  <!-- ===== SUMMARY ===== -->
-  <section class="resume-section">
-    <h2 class="resume-heading">Professional Summary</h2>
-    <p>
-      I am a multidisciplinary Culinary Professional and Data Analyst with extensive experience in high-volume kitchens,
-      fine dining, and data-driven operational optimization. My expertise bridges classical culinary training with modern
-      analytics, enabling me to design cost-efficient menus, streamline kitchen workflows, and transform operational data
-      into actionable insights.
-      <br><br>
-      With a strong foundation in food production, supply chain management, and data science, I bring a unique perspective
-      to hospitality and food operations — combining precision, creativity, and measurable performance. I thrive in fast-paced
-      environments where quality, consistency, and efficiency are non-negotiable, guided by a mindset of continuous
-      improvement through evidence-based decision-making.
-    </p>
-  </section>
+    /* ================= CSS RESET ================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  <!-- ===== EXPERIENCE ===== -->
-  <section class="resume-section">
-    <h2 class="resume-heading">Experience</h2>
+    /* ================= BODY ================= */
+    body {
+      font-family: 'Arial', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
+    /* ================= LINKS ================= */
+    a {
+      text-decoration: none;
+      color: var(--primary);
+      transition: all 0.2s ease;
+    }
 
-    <!-- ===== IRIS GARDEN ===== -->
-    <div class="card resume-card">
-      <h3>Chef de Partie & Data Analyst</h3>
-      <p><strong>Iris Garden – Sandton | Full-time</strong></p>
+    a:hover {
+      color: var(--cta-hover);
+    }
 
-      <div class="resume-two-col">
+    /* ================= CONTAINER ================= */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        <!-- LEFT COLUMN -->
-        <div>
-          <h4>Culinary Operations</h4>
-          <ul class="line-bullets">
-            <li>Led grill and sauté stations, producing 500+ dishes during peak service with consistent quality.</li>
-            <li>Prepared and decorated pastries and desserts, supporting full pastry production.</li>
-            <li>Delivered catering for 200+ guests for private and corporate events.</li>
-            <li>Supported seasonal menu development, recipe costing, and station workflow planning.</li>
-            <li>Trained junior cooks in hygiene, prep methods, and equipment handling.</li>
-            <li>Reduced food waste by 10% through portioning, FIFO rotation, and stock monitoring.</li>
-            <li>Maintained 100% HACCP compliance with daily checks and sanitation procedures.</li>
-          </ul>
+    /* ================= HEADER ================= */
+    .header {
+      background: var(--bg);
+      padding: 16px 0;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      font-weight: bold;
+      font-size: 24px;
+      color: #fff;
+      background: var(--primary);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .logo-text p {
+      margin: 4px 0 0 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nav a {
+      font-size: 1rem;
+      color: var(--text);
+      padding: 6px 0;
+      position: relative;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav a.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .nav a.cta {
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-left: 0;
+    }
+
+    .nav a.cta:hover {
+      background: var(--cta-hover);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    main {
+      flex: 1;
+      padding: 40px 0;
+    }
+
+    /* ================= RESUME PAGE ================= */
+    .resume-page {
+      max-width: 960px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 36px 20px !important;
+      font-family: 'Lato', 'Arial', sans-serif !important;
+      color: var(--text) !important;
+    }
+
+    .resume-section {
+      margin-bottom: 40px !important;
+      padding-bottom: 28px !important;
+      border-bottom: 1px solid #eee !important;
+    }
+
+    .resume-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .resume-heading {
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      color: var(--primary) !important;
+      margin-bottom: 20px !important;
+      padding-bottom: 10px !important;
+      border-bottom: 2px solid var(--primary) !important;
+      position: relative;
+    }
+
+    .resume-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--cta-hover);
+    }
+
+    .resume-card {
+      background: var(--bg) !important;
+      border-radius: 10px !important;
+      padding: 25px !important;
+      margin-bottom: 25px !important;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05) !important;
+      border-left: 4px solid var(--primary) !important;
+      transition: all 0.3s ease;
+    }
+
+    .resume-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .resume-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .resume-card h3::before {
+      content: '▸';
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .resume-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .resume-card p {
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .line-bullets {
+      list-style: none !important;
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    .line-bullets li {
+      position: relative !important;
+      padding-left: 25px !important;
+      margin-bottom: 10px !important;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .line-bullets li::before {
+      content: '' !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 10px !important;
+      width: 12px !important;
+      height: 2px !important;
+      background: var(--primary) !important;
+    }
+
+    .resume-two-col {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 2.5rem !important;
+      position: relative !important;
+      margin-top: 2rem !important;
+      padding: 1rem 0 !important;
+    }
+
+    .resume-two-col::before {
+      content: "" !important;
+      position: absolute !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 50% !important;
+      width: 2px !important;
+      background: #e5e5e5 !important;
+      transform: translateX(-1px) !important;
+    }
+
+    .edu-desc {
+      opacity: 0.85;
+      margin-top: 0.5rem;
+      line-height: 1.55;
+      font-size: 0.96rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .skill-pill {
+      background: rgba(46, 139, 87, 0.1);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid rgba(46, 139, 87, 0.2);
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+
+    .skill-pill:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .resume-download {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px dashed #ddd;
+    }
+
+    .resume-download .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .resume-download .cta:hover {
+      background: var(--cta-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(46, 139, 87, 0.2);
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      background: var(--text);
+      color: white;
+      padding: 40px 0 30px;
+      margin-top: 60px;
+    }
+
+    .footer p {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .contact-links {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 25px 20px 15px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-link {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: white !important;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      min-width: 140px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      font-weight: 500;
+    }
+
+    .contact-link[href^="mailto:"] {
+      background: rgba(46, 139, 87, 0.25);
+      border: 1px solid rgba(46, 139, 87, 0.4);
+    }
+
+    .contact-link[href*="linkedin.com"] {
+      background: rgba(10, 102, 194, 0.25);
+      border: 1px solid rgba(10, 102, 194, 0.4);
+    }
+
+    .contact-link .icon {
+      font-size: 1.1em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+    }
+
+    .contact-link[href^="mailto:"] .icon {
+      color: #4CAF50;
+    }
+
+    .contact-link[href*="linkedin.com"] .icon {
+      color: #0A66C2;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      opacity: 1 !important;
+      color: white !important;
+    }
+
+    .contact-link[href^="mailto:"]:hover {
+      background: rgba(46, 139, 87, 0.4);
+      border-color: rgba(46, 139, 87, 0.8);
+    }
+
+    .contact-link[href*="linkedin.com"]:hover {
+      background: rgba(10, 102, 194, 0.4);
+      border-color: rgba(10, 102, 194, 0.8);
+    }
+
+    /* ================= RESPONSIVE DESIGN ================= */
+    @media (max-width: 820px) {
+      .resume-two-col {
+        grid-template-columns: 1fr !important;
+      }
+      .resume-two-col::before { 
+        display: none !important; 
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .footer .contact-link {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-icon">DM</div>
+        <div class="logo-text">
+          <h1>Dereck Mungoriwo</h1>
+          <p>Culinary Professional & Data Analyst</p>
         </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html" class="active">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- RIGHT COLUMN -->
-        <div>
-          <h4>Technical & Data-Driven Impact</h4>
-          <ul class="line-bullets">
-            <li>Built Excel and Power BI dashboards for food cost, variance tracking, and sales analytics.</li>
-            <li>Performed menu engineering analysis to improve pricing and remove low-margin items.</li>
-            <li>Created ingredient-level demand forecasting models using Excel/Python.</li>
-            <li>Optimized supplier purchasing through trend analysis and cost accuracy checks.</li>
-            <li>Developed digital kitchen logs, prep sheets, and waste-tracking systems.</li>
-            <li>Identified workflow bottlenecks and redesigned station layout for faster service.</li>
-          </ul>
+  <!-- ================= RESUME SECTION ================= -->
+  <main class="container resume-page">
+
+    <!-- ===== SUMMARY ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Professional Summary</h2>
+      <p>
+        I am a multidisciplinary Culinary Professional and Data Analyst with extensive experience in high-volume kitchens,
+        fine dining, and data-driven operational optimization. My expertise bridges classical culinary training with modern
+        analytics, enabling me to design cost-efficient menus, streamline kitchen workflows, and transform operational data
+        into actionable insights.
+        <br><br>
+        With a strong foundation in food production, supply chain management, and data science, I bring a unique perspective
+        to hospitality and food operations — combining precision, creativity, and measurable performance. I thrive in fast-paced
+        environments where quality, consistency, and efficiency are non-negotiable, guided by a mindset of continuous
+        improvement through evidence-based decision-making.
+      </p>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Experience</h2>
+
+      <!-- ===== IRIS GARDEN ===== -->
+      <div class="resume-card">
+        <h3>Chef de Partie & Data Analyst</h3>
+        <p><strong>Iris Garden – Sandton | Full-time</strong></p>
+
+        <div class="resume-two-col">
+          <!-- LEFT COLUMN -->
+          <div>
+            <h4>Culinary Operations</h4>
+            <ul class="line-bullets">
+              <li>Led grill and sauté stations, producing 500+ dishes during peak service with consistent quality.</li>
+              <li>Prepared and decorated pastries and desserts, supporting full pastry production.</li>
+              <li>Delivered catering for 200+ guests for private and corporate events.</li>
+              <li>Supported seasonal menu development, recipe costing, and station workflow planning.</li>
+              <li>Trained junior cooks in hygiene, prep methods, and equipment handling.</li>
+              <li>Reduced food waste by 10% through portioning, FIFO rotation, and stock monitoring.</li>
+              <li>Maintained 100% HACCP compliance with daily checks and sanitation procedures.</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div>
+            <h4>Technical & Data-Driven Impact</h4>
+            <ul class="line-bullets">
+              <li>Built Excel and Power BI dashboards for food cost, variance tracking, and sales analytics.</li>
+              <li>Performed menu engineering analysis to improve pricing and remove low-margin items.</li>
+              <li>Created ingredient-level demand forecasting models using Excel/Python.</li>
+              <li>Optimized supplier purchasing through trend analysis and cost accuracy checks.</li>
+              <li>Developed digital kitchen logs, prep sheets, and waste-tracking systems.</li>
+              <li>Identified workflow bottlenecks and redesigned station layout for faster service.</li>
+            </ul>
+          </div>
         </div>
+      </div>
 
+      <!-- ===== CASA TOSCANA ===== -->
+      <div class="resume-card">
+        <h3>Commis Chef</h3>
+        <p><strong>Casa Toscana Lodge – Pretoria | Contract</strong></p>
+
+        <div class="resume-two-col">
+          <!-- LEFT COLUMN -->
+          <div>
+            <h4>Culinary Operations</h4>
+            <ul class="line-bullets">
+              <li>Prepared and plated dishes across breakfast, lunch, and 6-course dinner service.</li>
+              <li>Executed banquets for 400+ guests with consistent presentation and timing.</li>
+              <li>Streamlined mise en place for high-volume production.</li>
+              <li>Operated professional kitchen equipment safely and efficiently.</li>
+              <li>Maintained strict hygiene and temperature logs.</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div>
+            <h4>Procurement & Inventory Management</h4>
+            <ul class="line-bullets">
+              <li>Assisted with daily ordering based on forecasted event and menu demand.</li>
+              <li>Performed stock audits, expiry checks, and shelf monitoring.</li>
+              <li>Verified quality, weight, and temperature of incoming deliveries.</li>
+              <li>Monitored portion control and ingredient usage to support cost accuracy.</li>
+              <li>Implemented FIFO rotation to reduce spoilage and improve freshness.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PROTEA HOTELS ===== -->
+      <div class="resume-card">
+        <h3>Chef Trainee / Internship</h3>
+        <p><strong>Protea Hotel by Marriott® Fire & Ice – Menlyn | Internship</strong></p>
+
+        <div class="resume-two-col">
+          <!-- LEFT COLUMN -->
+          <div>
+            <h4>Culinary Operations</h4>
+            <ul class="line-bullets">
+              <li>Assisted across buffet, fine dining, banqueting, and conference production.</li>
+              <li>Developed strong technique in sauté, grill, braising, sous-vide, and plating.</li>
+              <li>Supported high-volume production while maintaining consistency and timing.</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div>
+            <h4>Operational & Kitchen Support</h4>
+            <ul class="line-bullets">
+              <li>Followed standardized recipes for cost control and waste reduction.</li>
+              <li>Managed mise en place and station setup for multiple shifts.</li>
+              <li>Maintained hygiene standards through sanitation and equipment care.</li>
+              <li>Supported stock checks and basic inventory operations.</li>
+              <li>Documented temperatures and cleaning schedules per HACCP standards.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Education</h2>
+
+      <div class="resume-card">
+        <h3>Diploma in Professional Cookery & Kitchen Management</h3>
+        <p>International Hotel School</p>
+        <p class="edu-desc">Comprehensive training covering classical culinary techniques, kitchen management, food safety, and high-volume production systems.</p>
+      </div>
+
+      <div class="resume-card">
+        <h3>Supply Chain Management</h3>
+        <p>Rutgers University</p>
+        <p class="edu-desc">Focused on procurement strategy, logistics, inventory flow, forecasting, and cost optimization across modern supply chains.</p>
+      </div>
+
+      <div class="resume-card">
+        <h3>Data Science Specialization</h3>
+        <p>Johns Hopkins University</p>
+        <p class="edu-desc">Trained in Python, statistical modeling, machine learning fundamentals, and data-driven decision-making for real-world applications.</p>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Certifications</h2>
+
+      <div class="resume-card">
+        <ul class="line-bullets">
+          <li>IBM Data Analyst Certification</li>
+          <li>Microsoft Power BI Certification</li>
+          <li>Microsoft Excel Certification</li>
+          <li>Microsoft IT Support Specialist</li>
+          <li>ServSafe Food Handler Certification</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="resume-section">
+      <h2 class="resume-heading">Skills & Tools</h2>
+
+      <div class="resume-card">
+        <h4>Culinary & Operational Skills</h4>
+        <div class="skills-grid">
+          <div class="skill-pill">Menu Engineering</div>
+          <div class="skill-pill">Recipe Development</div>
+          <div class="skill-pill">Food Costing</div>
+          <div class="skill-pill">Yield Analysis</div>
+          <div class="skill-pill">Workflow Optimization</div>
+          <div class="skill-pill">Pastry & Dessert Production</div>
+          <div class="skill-pill">Inventory Control</div>
+          <div class="skill-pill">Procurement</div>
+          <div class="skill-pill">HACCP Compliance</div>
+          <div class="skill-pill">Menu Forecasting</div>
+        </div>
+      </div>
+
+      <div class="resume-card">
+        <h4>Technical Skills & Tools</h4>
+        <div class="skills-grid">
+          <div class="skill-pill">Python</div>
+          <div class="skill-pill">SQL</div>
+          <div class="skill-pill">Excel</div>
+          <div class="skill-pill">Power BI</div>
+          <div class="skill-pill">Pandas</div>
+          <div class="skill-pill">NumPy</div>
+          <div class="skill-pill">Data Visualization</div>
+          <div class="skill-pill">Web Development</div>
+          <div class="skill-pill">Git</div>
+        </div>
+      </div>
+
+      <p class="resume-download">
+        <a href="assets/pdf/Dereck_Mungoriwo_Resume.pdf" download class="cta">
+          Download Resume (PDF)
+        </a>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Dereck Mungoriwo. All rights reserved.</p>
+      <div class="contact-links">
+        <a href="mailto:dereck@exam.com" class="contact-link">
+          <span class="icon">✉</span> Email
+        </a>
+        <a href="https://linkedin.com/in/dereckmungoriwo" class="contact-link">
+          <span class="icon">💼</span> LinkedIn
+        </a>
+        <a href="https://twitter.com/dereckmungoriwo" class="contact-link">
+          <span class="icon">🐦</span> Twitter
+        </a>
       </div>
     </div>
+  </footer>
 
-
-
-    <!-- ===== CASA TOSCANA ===== -->
-    <div class="card resume-card">
-      <h3>Commis Chef</h3>
-      <p><strong>Casa Toscana Lodge – Pretoria | Contract</strong></p>
-
-      <div class="resume-two-col">
-
-        <!-- LEFT COLUMN -->
-        <div>
-          <h4>Culinary Operations</h4>
-          <ul class="line-bullets">
-            <li>Prepared and plated dishes across breakfast, lunch, and 6-course dinner service.</li>
-            <li>Executed banquets for 400+ guests with consistent presentation and timing.</li>
-            <li>Streamlined mise en place for high-volume production.</li>
-            <li>Operated professional kitchen equipment safely and efficiently.</li>
-            <li>Maintained strict hygiene and temperature logs.</li>
-          </ul>
-        </div>
-
-        <!-- RIGHT COLUMN -->
-        <div>
-          <h4>Procurement & Inventory Management</h4>
-          <ul class="line-bullets">
-            <li>Assisted with daily ordering based on forecasted event and menu demand.</li>
-            <li>Performed stock audits, expiry checks, and shelf monitoring.</li>
-            <li>Verified quality, weight, and temperature of incoming deliveries.</li>
-            <li>Monitored portion control and ingredient usage to support cost accuracy.</li>
-            <li>Implemented FIFO rotation to reduce spoilage and improve freshness.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-
-
-    <!-- ===== PROTEA HOTELS ===== -->
-    <div class="card resume-card">
-      <h3>Chef Trainee / Internship</h3>
-      <p><strong>Protea Hotel by Marriott® Fire & Ice – Menlyn | Internship</strong></p>
-
-      <div class="resume-two-col">
-
-        <!-- LEFT COLUMN -->
-        <div>
-          <h4>Culinary Operations</h4>
-          <ul class="line-bullets">
-            <li>Assisted across buffet, fine dining, banqueting, and conference production.</li>
-            <li>Developed strong technique in sauté, grill, braising, sous-vide, and plating.</li>
-            <li>Supported high-volume production while maintaining consistency and timing.</li>
-          </ul>
-        </div>
-
-        <!-- RIGHT COLUMN -->
-        <div>
-          <h4>Operational & Kitchen Support</h4>
-          <ul class="line-bullets">
-            <li>Followed standardized recipes for cost control and waste reduction.</li>
-            <li>Managed mise en place and station setup for multiple shifts.</li>
-            <li>Maintained hygiene standards through sanitation and equipment care.</li>
-            <li>Supported stock checks and basic inventory operations.</li>
-            <li>Documented temperatures and cleaning schedules per HACCP standards.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
-
-
-  <!-- ===== EDUCATION ===== -->
-  <section class="resume-section">
-    <h2 class="resume-heading">Education</h2>
-
-    <div class="card resume-card">
-      <h3>Diploma in Professional Cookery & Kitchen Management</h3>
-      <p>International Hotel School</p>
-      <p class="edu-desc">Comprehensive training covering classical culinary techniques, kitchen management, food safety, and high-volume production systems.</p>
-    </div>
-
-    <div class="card resume-card">
-      <h3>Supply Chain Management</h3>
-      <p>Rutgers University</p>
-      <p class="edu-desc">Focused on procurement strategy, logistics, inventory flow, forecasting, and cost optimization across modern supply chains.</p>
-    </div>
-
-    <div class="card resume-card">
-      <h3>Data Science Specialization</h3>
-      <p>Johns Hopkins University</p>
-      <p class="edu-desc">Trained in Python, statistical modeling, machine learning fundamentals, and data-driven decision-making for real-world applications.</p>
-    </div>
-  </section>
-
-
-  <!-- ===== CERTIFICATIONS ===== -->
-  <section class="resume-section">
-    <h2 class="resume-heading">Certifications</h2>
-
-    <div class="card resume-card">
-      <ul class="line-bullets">
-        <li>IBM Data Analyst Certification</li>
-        <li>Microsoft Power BI Certification</li>
-        <li>Microsoft Excel Certification</li>
-        <li>Microsoft IT Support Specialist</li>
-        <li>ServSafe Food Handler Certification</li>
-      </ul>
-    </div>
-  </section>
-
-
-  <!-- ===== SKILLS ===== -->
-  <section class="resume-section">
-    <h2 class="resume-heading">Skills & Tools</h2>
-
-    <div class="card resume-card">
-      <h4>Culinary & Operational Skills</h4>
-      <div class="skills-grid">
-        <div class="skill-pill">Menu Engineering</div>
-        <div class="skill-pill">Recipe Development</div>
-        <div class="skill-pill">Food Costing</div>
-        <div class="skill-pill">Yield Analysis</div>
-        <div class="skill-pill">Workflow Optimization</div>
-        <div class="skill-pill">Pastry & Dessert Production</div>
-        <div class="skill-pill">Inventory Control</div>
-        <div class="skill-pill">Procurement</div>
-        <div class="skill-pill">HACCP Compliance</div>
-        <div class="skill-pill">Menu Forecasting</div>
-      </div>
-    </div>
-
-    <div class="card resume-card">
-      <h4>Technical Skills & Tools</h4>
-      <div class="skills-grid">
-        <div class="skill-pill">Python</div>
-        <div class="skill-pill">SQL</div>
-        <div class="skill-pill">Excel</div>
-        <div class="skill-pill">Power BI</div>
-        <div class="skill-pill">Pandas</div>
-        <div class="skill-pill">NumPy</div>
-        <div class="skill-pill">Data Visualization</div>
-        <div class="skill-pill">Web Development</div>
-        <div class="skill-pill">Git</div>
-      </div>
-    </div>
-
-    <p class="resume-download">
-      <a href="assets/pdf/Dereck_Mungoriwo_Resume.pdf" download class="cta">
-        Download Resume (PDF)
-      </a>
-    </p>
-
-  </section>
-
-</main>
+</body>
+</html>
