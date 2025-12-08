@@ -1250,3 +1250,200 @@ main {
     flex-wrap: wrap;
     gap: 10px;
 }
+
+/* ================= FOOTER CONTACTS FIX - WITH ICONS ================= */
+/* Reset and override any conflicting styles */
+.footer {
+    background: var(--text);
+    color: white;
+    padding: 40px 0 30px;
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+/* Contact links container */
+.footer .contact-links {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px 20px 15px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Individual contact link styling */
+.footer .contact-link {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white !important;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 140px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-weight: 500;
+}
+
+/* Style for email links */
+.footer .contact-link[href^="mailto:"] {
+    background: rgba(46, 139, 87, 0.25); /* Using your --primary color */
+    border: 1px solid rgba(46, 139, 87, 0.4);
+}
+
+/* Style for LinkedIn */
+.footer .contact-link[href*="linkedin.com"] {
+    background: rgba(10, 102, 194, 0.25);
+    border: 1px solid rgba(10, 102, 194, 0.4);
+}
+
+/* Style for Twitter */
+.footer .contact-link[href*="twitter.com"] {
+    background: rgba(29, 161, 242, 0.25);
+    border: 1px solid rgba(29, 161, 242, 0.4);
+}
+
+/* Icon styling */
+.footer .contact-link .icon {
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+}
+
+/* Email icon color */
+.footer .contact-link[href^="mailto:"] .icon {
+    color: #4CAF50;
+}
+
+/* LinkedIn icon color */
+.footer .contact-link[href*="linkedin.com"] .icon {
+    color: #0A66C2;
+}
+
+/* Twitter icon color */
+.footer .contact-link[href*="twitter.com"] .icon {
+    color: #1DA1F2;
+}
+
+/* Hover effects for all links */
+.footer .contact-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    opacity: 1 !important;
+    color: white !important;
+    text-decoration: none;
+}
+
+/* Hover colors for email links */
+.footer .contact-link[href^="mailto:"]:hover {
+    background: rgba(46, 139, 87, 0.4);
+    border-color: rgba(46, 139, 87, 0.8);
+}
+
+/* Hover colors for LinkedIn */
+.footer .contact-link[href*="linkedin.com"]:hover {
+    background: rgba(10, 102, 194, 0.4);
+    border-color: rgba(10, 102, 194, 0.8);
+}
+
+/* Hover colors for Twitter */
+.footer .contact-link[href*="twitter.com"]:hover {
+    background: rgba(29, 161, 242, 0.4);
+    border-color: rgba(29, 161, 242, 0.8);
+}
+
+/* Hover icon effects */
+.footer .contact-link:hover .icon {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 30px 0 20px;
+    }
+    
+    .footer .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+    
+    .footer .contact-link {
+        width: 100%;
+        max-width: 300px;
+        white-space: normal;
+        word-break: break-word;
+        padding: 12px 20px;
+        min-width: unset;
+        font-size: 0.9rem;
+    }
+    
+    .footer p {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .footer .contact-links {
+        gap: 15px;
+    }
+    
+    .footer .contact-link {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        min-width: 130px;
+    }
+}
+
+/* Desktop optimization */
+@media screen and (min-width: 1025px) {
+    .footer .contact-links {
+        gap: 25px;
+    }
+    
+    .footer .contact-link {
+        padding: 12px 24px;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+}
+
+/* Debug/Override - Force display if still hidden */
+.footer a.contact-link,
+.footer .contact-link {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
