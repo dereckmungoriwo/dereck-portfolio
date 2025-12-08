@@ -358,3 +358,20 @@ window.addEventListener('resize', function() {
     }
   }, 250);
 });
+
+// Add icons to contact links
+document.addEventListener('DOMContentLoaded', function() {
+    const contactLinks = document.querySelectorAll('.footer .contact-link');
+    
+    contactLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        
+        if (href.includes('mailto:')) {
+            link.innerHTML = `<span class="icon">📧</span> ${link.textContent}`;
+        } else if (href.includes('linkedin.com')) {
+            link.innerHTML = `<span class="icon">💼</span> ${link.textContent}`;
+        } else if (href.includes('twitter.com')) {
+            link.innerHTML = `<span class="icon">🐦</span> ${link.textContent}`;
+        }
+    });
+});
