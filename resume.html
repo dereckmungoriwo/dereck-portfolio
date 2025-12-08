@@ -5,236 +5,313 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resume — Dereck Mungoriwo</title>
   <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+  <style>
+    /* ===== Luxury Resume Styling ===== */
+    body {
+      font-family: 'Lato', sans-serif;
+      color: #333;
+      background: #f9f9f9;
+      line-height: 1.7;
+    }
 
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .resume-heading {
+      font-size: 2rem;
+      color: #2E8B57;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .resume-section {
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .highlight-questions li {
+      margin-bottom: 0.75rem;
+      list-style: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
+    .highlight-questions li::before {
+      content: "✨";
+      margin-right: 0.5rem;
+      color: #DAA520;
+    }
+
+    .experience-columns {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .experience-column {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+
+    .experience-column h4 {
+      color: #2E8B57;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .line-bullets li {
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .line-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #2E8B57;
+      font-size: 1.2rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-pill {
+      display: inline-block;
+      background: linear-gradient(135deg, #2E8B57, #3CB371);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .skill-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .resume-download a.cta {
+      display: inline-block;
+      background: #2E8B57;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 3rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .resume-download a.cta:hover {
+      background: #246B45;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="header">
-    <div class="header-inner container">
+<main class="container resume-page">
 
-      <div class="logo">
-        <div class="logo-icon">DM</div>
-        <div class="logo-text">
-          <h1 class="site-title">Dereck Mungoriwo</h1>
-          <p class="site-tagline">Culinary Professional · Data Analyst</p>
+  <!-- ===== PROFESSIONAL SUMMARY ===== -->
+  <section class="resume-section" aria-labelledby="summary">
+    <h2 id="summary" class="resume-heading">Professional Summary</h2>
+    <p>
+      I am a <strong>Culinary Professional & Data Analyst</strong> blending hands-on kitchen expertise 
+      with <em>data-driven operational precision</em>. I design cost-efficient menus, optimize kitchen workflows, 
+      and transform operational data into actionable insights that elevate performance, profitability, and guest experience.
+    </p>
+    <ul class="highlight-questions">
+      <li>Why do certain dishes succeed?</li>
+      <li>How can operations run smarter?</li>
+      <li>Where can technology elevate the food industry beyond tradition?</li>
+    </ul>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="resume-section" aria-labelledby="experience">
+    <h2 id="experience" class="resume-heading">Experience</h2>
+
+    <!-- IRIS GARDEN -->
+    <div class="card resume-card experience-card">
+      <h3>Chef de Partie & Data Analyst</h3>
+      <p><strong>Iris Garden – Sandton | Full-time</strong></p>
+
+      <div class="experience-columns">
+        <div class="experience-column">
+          <h4>Culinary Operations</h4>
+          <ul class="line-bullets">
+            <li>Led grill and sauté stations, producing 500+ dishes during peak service with consistent quality and speed.</li>
+            <li>Prepared and decorated pastries and desserts, supporting full pastry production.</li>
+            <li>Delivered catering for 200+ guests for premium private and corporate functions.</li>
+            <li>Partnered with Head Chef on seasonal menu development, recipe costing, and workflow planning.</li>
+            <li>Trained junior cooks on hygiene standards, station setup, and equipment safety.</li>
+            <li>Reduced food waste by 10% through precise portioning, FIFO rotation, and inventory oversight.</li>
+            <li>Maintained 100% HACCP compliance through sanitation, temperature logs, and health checks.</li>
+          </ul>
+        </div>
+
+        <div class="experience-column">
+          <h4>Technical & Data Impact</h4>
+          <ul class="line-bullets">
+            <li>Built Excel and Power BI dashboards to track food costs, stock variances, and daily sales performance.</li>
+            <li>Analyzed menu sales data to identify high-margin vs underperforming dishes, supporting menu engineering.</li>
+            <li>Implemented ingredient-level demand forecasting with Python/Excel models, improving prep planning and reducing spoilage.</li>
+            <li>Optimized supplier purchasing cycles using data insights, enhancing delivery consistency and cost accuracy.</li>
+            <li>Developed digital systems for kitchen logs, prep sheets, and waste tracking, improving operational visibility.</li>
+            <li>Identified workflow bottlenecks and restructured station layout for faster service.</li>
+          </ul>
         </div>
       </div>
-
-      <nav class="nav" aria-label="Main Navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.html" class="active">Resume</a>
-        <a href="projects.html">Projects</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html" class="cta">Contact</a>
-      </nav>
-
     </div>
-  </header>
 
-
-  <!-- ================= MAIN CONTENT ================= -->
-  <main class="container resume-page">
-
-    <!-- ===== SUMMARY ===== -->
-    <section class="resume-section">
-      <h2 class="resume-heading">Professional Summary</h2>
-      <p>
-        I am a Culinary Professional and Data Analyst operating at the intersection of food, operations, and technology.
-        With six years of hands-on kitchen experience and formal training in Supply Chain Management and Data Science,
-        I specialize in blending culinary expertise with analytical insights. I use Python, SQL, Excel, and dashboarding tools
-        to streamline operations, optimize inventory, enhance menu performance, reduce waste, and support data-driven decision making.
-        I bridge the gap between kitchen execution and modern food-tech innovation.
-      </p>
-    </section>
-
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="resume-section">
-      <h2 class="resume-heading">Experience</h2>
-
-      <!-- IRIS GARDEN -->
-      <div class="card resume-card">
-        <h3>Chef de Partie & Data Analyst</h3>
-        <p><strong>Iris Garden – Sandton | Full-time</strong></p>
-
-        <h4>Culinary Operations</h4>
-        <ul class="line-bullets">
-          <li>Led grill and sauté stations, producing 500+ dishes during peak service with consistent quality and speed.</li>
-          <li>Prepared and decorated pastries and desserts, supporting full pastry production.</li>
-          <li>Delivered catering for 200+ guests for premium private and corporate functions.</li>
-          <li>Partnered with the Head Chef on seasonal menu development, recipe costing, and kitchen workflow planning.</li>
-          <li>Trained junior cooks on station setup, hygiene standards, and safe equipment operation.</li>
-          <li>Reduced food waste by 10% by implementing accurate portioning, FIFO rotation, and tighter inventory oversight.</li>
-          <li>Ensured 100% HACCP compliance through daily sanitation, temperature logs, and health checks.</li>
-        </ul>
-
-        <h4>Technical & Data-Driven Impact</h4>
-        <ul class="line-bullets">
-          <li>Built Excel- and Power BI–based dashboards to track food costs, stock variances, and daily sales performance.</li>
-          <li>Analyzed menu sales data to identify high-margin dishes vs underperforming items, supporting menu engineering decisions.</li>
-          <li>Implemented ingredient-level demand forecasting using Excel/Python models, improving prep planning and reducing spoilage.</li>
-          <li>Optimized supplier purchasing cycles using data insights, improving delivery consistency and cost accuracy.</li>
-          <li>Developed a digital system for kitchen logs, prep sheets, and wastage tracking, improving operational visibility.</li>
-          <li>Identified workflow bottlenecks through time-motion observations, helping restructure station layout for faster service.</li>
-        </ul>
-      </div>
-
-      <!-- CASA TOSCANA -->
-      <div class="card resume-card">
-        <h3>Commis Chef</h3>
-        <p><strong>Casa Toscana Lodge – Pretoria | Contract</strong></p>
-
-        <h4>Culinary Operations</h4>
-        <ul class="line-bullets">
-          <li>Coordinated preparation and plating for breakfast, lunch, and six-course à la carte dinner services.</li>
-          <li>Supported banquets and themed events, serving 400+ guests per function with consistent quality</li>
-          <li>Streamlined mise en place by managing portioning, chopping, batch prep, and station setup for high-volume service.</li>
-          <li>Operated and maintained professional kitchen equipment, including grills, ovens, mixers, and food processors</li>
-          <li>Ensured strict food safety compliance through continuous cleaning, sanitizing, and temperature monitoring.</li>
-        </ul>
-
-        <h4>Procurement & Inventory Management</h4>
-        <ul class="line-bullets">
-          <li>Assisted with daily ordering of fresh produce, meats, and dry goods, ensuring accurate par levels based on forecasted demand</li>
-          <li>Conducted stock audits, shelf checks, and expiry monitoring, reducing last-minute shortages and minimizing wastage.</li>
-          <li>Managed delivery inspections—verifying quality, weight, temperature, and supplier documentation.</li>
-          <li>Monitored portion control and ingredient usage to support accurate recipe costing and waste reduction</li>
-          <li>Maintained inventory records and collaborated with senior chefs to plan procurement for events and seasonal menus</li>
-          <li>Implemented FIFO rotation across storage areas, improving product freshness and cutting spoilage.</li>
-        </ul>
-      </div>
-
-      <!-- PROTEA HOTELS -->
-      <div class="card resume-card">
-        <h3>Chef Trainee / Internship</h3>
-        <p><strong>Protea Hotel  by Marriott® Fire & Ice – Menlyn | Internship</strong></p>
-        
-        <h4>Culinary Operations</h4>
-        <ul class="line-bullets">
-          <li>Supported food preparation across breakfast, fine dining, buffet service, banqueting, and conference events.</li>
-          <li>Developed strong culinary techniques including sautéing, grilling, braising, sous vide, baking, and plating.</li>
-          <li>Assisted in producing high-volume meals while maintaining consistency, timing, and quality under supervision</li>
-        </ul>
-
-        <h4>Operational & Kitchen Support</h4>
-        <ul class="line-bullets">
-          <li>Followed standardized recipes and portion guidelines to maintain cost control and reduce waste.</li>
-          <li>Assisted with mise en place, ingredient prep, and station setup for various meal periods.</li>
-          <li>Maintained strict hygiene standards through dish sanitation, surface cleaning, and equipment maintenance</li>
-          <li>Supported stock checks and basic inventory tasks to understand hotel-level procurement processes.</li>
-          <li>Documented temperatures, storage conditions, and cleaning schedules in accordance with HACCP requirements.</li>
-        </ul>
-      </div>
-
-    </section>
-
-
-    <!-- ===== EDUCATION ===== -->
-    <section class="resume-section">
-      <h2 class="resume-heading">Education</h2>
-
-      <div class="card resume-card">
-        <h3>Diploma in Professional Cookery & Kitchen Management</h3>
-        <p>International Hotel School</p>
-      </div>
-
-      <div class="card resume-card">
-        <h3>Supply Chain Management</h3>
-        <p>Rutgers University</p>
-      </div>
-
-      <div class="card resume-card">
-        <h3>Data Science</h3>
-        <p>The Johns Hopkins University</p>
-      </div>
-    </section>
-
-
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section class="resume-section">
-      <h2 class="resume-heading">Certifications</h2>
-
-      <div class="card resume-card">
-        <ul class="line-bullets">
-          <li>IBM Data Analyst Certification</li>
-          <li>Microsoft Power BI Certification</li>
-          <li>Microsoft Excel Certification</li>
-          <li>Microsoft IT Support Specialist</li>
-          <li>ServSafe Food Handler Certification</li>
-        </ul>
-      </div>
-    </section>
-
-
-    <!-- ===== SKILLS ===== -->
-    <section class="resume-section">
-      <h2 class="resume-heading">Skills & Tools</h2>
-
-      <!-- Culinary Skills -->
-      <div class="card resume-card">
-        <h4>Culinary & Operational Skills</h4>
-        <div class="skills-grid">
-          <div class="skill-pill">Menu Engineering</div>
-          <div class="skill-pill">Recipe Development</div>
-          <div class="skill-pill">Food Costing & Yield Analysis</div>
-          <div class="skill-pill">Kitchen Workflow Optimization</div>
-          <div class="skill-pill">Advanced Cooking Techniques</div>
-          <div class="skill-pill">Pastry & Dessert Production</div>
-          <div class="skill-pill">Inventory Control</div>
-          <div class="skill-pill">Procurement & Supplier Management</div>
-          <div class="skill-pill">HACCP & Food Safety Compliance</div>
-          <div class="skill-pill">Menu Forecasting</div>
+    <!-- CASA TOSCANA -->
+    <div class="card resume-card experience-card">
+      <h3>Commis Chef</h3>
+      <p><strong>Casa Toscana Lodge – Pretoria | Contract</strong></p>
+      <div class="experience-columns">
+        <div class="experience-column">
+          <h4>Culinary Operations</h4>
+          <ul class="line-bullets">
+            <li>Coordinated preparation and plating for breakfast, lunch, and six-course à la carte dinner services.</li>
+            <li>Supported banquets and themed events, serving 400+ guests per function with consistent quality.</li>
+            <li>Streamlined mise en place by managing portioning, chopping, batch prep, and station setup for high-volume service.</li>
+            <li>Operated and maintained professional kitchen equipment.</li>
+            <li>Ensured strict food safety compliance through continuous cleaning, sanitizing, and temperature monitoring.</li>
+          </ul>
+        </div>
+        <div class="experience-column">
+          <h4>Procurement & Inventory</h4>
+          <ul class="line-bullets">
+            <li>Assisted with daily ordering of fresh produce, meats, and dry goods, ensuring accurate par levels.</li>
+            <li>Conducted stock audits, shelf checks, and expiry monitoring, reducing shortages and minimizing waste.</li>
+            <li>Managed delivery inspections—quality, weight, temperature, and documentation.</li>
+            <li>Monitored portion control and ingredient usage to support accurate recipe costing.</li>
+            <li>Maintained inventory records and implemented FIFO rotation for freshness.</li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <!-- Technical Skills -->
-      <div class="card resume-card">
-        <h4>Technical Skills & Tools</h4>
-        <div class="skills-grid">
-          <div class="skill-pill">Python</div>
-          <div class="skill-pill">SQL</div>
-          <div class="skill-pill">R</div>
-          <div class="skill-pill">Excel & Advanced Formulas</div>
-          <div class="skill-pill">Power BI & Dashboards</div>
-          <div class="skill-pill">Pandas & NumPy</div>
-          <div class="skill-pill">Data Visualization, Cleaning & Modeling</div>
-          <div class="skill-pill">Web Development, HTML, CSS, JavaScript</div>
-          <div class="skill-pill">Git & Version Control</div>
+    <!-- PROTEA HOTELS -->
+    <div class="card resume-card experience-card">
+      <h3>Chef Trainee / Internship</h3>
+      <p><strong>Protea Hotel by Marriott® Fire & Ice – Menlyn | Internship</strong></p>
+      <div class="experience-columns">
+        <div class="experience-column">
+          <h4>Culinary Operations</h4>
+          <ul class="line-bullets">
+            <li>Supported food preparation across breakfast, fine dining, buffet service, banqueting, and conferences.</li>
+            <li>Developed techniques including sautéing, grilling, braising, sous vide, baking, and plating.</li>
+            <li>Produced high-volume meals while maintaining consistency and timing.</li>
+          </ul>
+        </div>
+        <div class="experience-column">
+          <h4>Operational Support</h4>
+          <ul class="line-bullets">
+            <li>Followed standardized recipes and portion guidelines to maintain cost control.</li>
+            <li>Assisted with mise en place, ingredient prep, and station setup for all meal periods.</li>
+            <li>Maintained hygiene standards via sanitation and equipment cleaning.</li>
+            <li>Supported stock checks and inventory tasks, documenting conditions per HACCP.</li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <p class="resume-download">
-        <a href="assets/pdf/Dereck_Mungoriwo_Resume.pdf" download class="cta">
-          Download Resume (PDF)
-        </a>
-      </p>
+  </section>
 
-    </section>
+  <!-- ===== EDUCATION ===== -->
+  <section class="resume-section" aria-labelledby="education">
+    <h2 id="education" class="resume-heading">Education</h2>
 
-  </main>
+    <div class="card resume-card">
+      <h3>Diploma in Professional Cookery & Kitchen Management</h3>
+      <p>International Hotel School</p>
+      <p>Comprehensive program covering classical and modern culinary techniques, kitchen management, menu development, and operational efficiency.</p>
+    </div>
 
+    <div class="card resume-card">
+      <h3>Supply Chain Management</h3>
+      <p>Rutgers University</p>
+      <p>Focused on logistics, procurement, inventory control, and optimizing operational efficiency within hospitality and food industries.</p>
+    </div>
 
-  <!-- ================= FOOTER ================= -->
-<footer class="footer" aria-label="Site Footer">
-  <p>&copy; 2025 Dereck Mungoriwo · Culinary Operations Specialist · Data Analyst</p>
-  <div class="contact-links">
-    <a class="contact-link" href="mailto:contact@dereckmungoriwo.online">
-        <span class="icon" aria-hidden="true">📧</span> contact@dereckmungoriwo.online
-    </a>
-    <a class="contact-link" href="mailto:dereck.mungoriwo@outlook.com">
-        <span class="icon" aria-hidden="true">📧</span> dereck.mungoriwo@outlook.com
-    </a>
-    <a class="contact-link" href="https://www.linkedin.com/in/dereckmungoriwo" target="_blank" rel="noopener noreferrer">
-        <span class="icon" aria-hidden="true">💼</span> Linked.com/in/dereckmungoriwo
-    </a>
-    <a class="contact-link" href="https://twitter.com/55Cancri_exo" target="_blank" rel="noopener noreferrer">
-        <span class="icon" aria-hidden="true">🐦</span> twitter.com/55Cancri_exo
-    </a>
-  </div>
-</footer>
+    <div class="card resume-card">
+      <h3>Data Science</h3>
+      <p>The Johns Hopkins University</p>
+      <p>Training in Python, R, data visualization, predictive modeling, and business intelligence for operational optimization and strategic insights.</p>
+    </div>
+  </section>
 
- <script src="assets/js/script.js"></script>
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="resume-section" aria-labelledby="certifications">
+    <h2 id="certifications" class="resume-heading">Certifications</h2>
+    <div class="card resume-card">
+      <ul class="line-bullets">
+        <li>IBM Data Analyst Certification</li>
+        <li>Microsoft Power BI Certification</li>
+        <li>Microsoft Excel Certification</li>
+        <li>Microsoft IT Support Specialist</li>
+        <li>ServSafe Food Handler Certification</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="resume-section" aria-labelledby="skills">
+    <h2 id="skills" class="resume-heading">Skills & Tools</h2>
+
+    <div class="card resume-card">
+      <h4>Culinary & Operational Skills</h4>
+      <div class="skills-grid">
+        <div class="skill-pill">Menu Engineering</div>
+        <div class="skill-pill">Recipe Development</div>
+        <div class="skill-pill">Food Costing & Yield Analysis</div>
+        <div class="skill-pill">Kitchen Workflow Optimization</div>
+        <div class="skill-pill">Advanced Cooking Techniques</div>
+        <div class="skill-pill">Pastry & Dessert Production</div>
+        <div class="skill-pill">Inventory Control</div>
+        <div class="skill-pill">Procurement & Supplier Management</div>
+        <div class="skill-pill">HACCP & Food Safety Compliance</div>
+        <div class="skill-pill">Menu Forecasting</div>
+      </div>
+    </div>
+
+    <div class="card resume-card">
+      <h4>Technical Skills & Tools</h4>
+      <div class="skills-grid">
+        <div class="skill-pill">Python</div>
+        <div class="skill-pill">SQL</div>
+        <div class="skill-pill">R</div>
+        <div class="skill-pill">Excel & Advanced Formulas</div>
+        <div class="skill-pill">Power BI & Dashboards</div>
+        <div class="skill-pill">Pandas & NumPy</div>
+        <div class="skill-pill">Data Visualization & Modeling</div>
+        <div class="skill-pill">Web Development (HTML, CSS, JS)</div>
+        <div class="skill-pill">Git & Version Control</div>
+      </div>
+    </div>
+
+    <p class="resume-download">
+      <a href="assets/pdf/Dereck_Mungoriwo_Resume.pdf" download class="cta">
+        Download Resume (PDF)
+      </a>
+    </p>
+  </section>
+
+</main>
 </body>
 </html>
