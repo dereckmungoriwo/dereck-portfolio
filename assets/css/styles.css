@@ -1474,3 +1474,48 @@ main {
   margin-right: 0.5rem;
   color: #DAA520; /* gold sparkle */
 }
+
+/* Fix double bullets */
+.line-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+.line-bullets li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+.line-bullets li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Two-column resume layout */
+.resume-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  position: relative;
+}
+.resume-two-col::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #e5e5e5;
+  transform: translateX(-1px);
+}
+
+/* Education descriptions */
+.edu-desc {
+  opacity: 0.85;
+  margin-top: 0.5rem;
+  line-height: 1.55;
+  font-size: 0.96rem;
+}
+
