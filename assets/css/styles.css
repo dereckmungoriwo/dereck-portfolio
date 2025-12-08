@@ -1222,3 +1222,31 @@ main {
     height: 26px;
   }
 }
+
+/* DESKTOP LAYOUT FIX */
+@media (min-width: 1024px) {
+    .hero {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+    }
+    
+    .profile-about-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+    }
+    
+    .skills-grid {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+}
+
+/* SKILLS GRID FIX (works on all screens) */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
