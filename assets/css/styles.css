@@ -1447,3 +1447,30 @@ main {
     visibility: visible !important;
     opacity: 1 !important;
 }
+
+.about-card {
+  padding: 2rem;
+  line-height: 1.7;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+}
+
+.about-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2E8B57; /* luxurious green accent */
+}
+
+.about-questions li {
+  margin-bottom: 0.75rem;
+  list-style: none; /* remove default bullets */
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.about-questions li::before {
+  content: "✨";
+  margin-right: 0.5rem;
+  color: #DAA520; /* gold sparkle */
+}
