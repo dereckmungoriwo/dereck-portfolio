@@ -1448,6 +1448,7 @@ main {
     opacity: 1 !important;
 }
 
+/* ===== ABOUT SECTION ===== */
 .about-card {
   padding: 2rem;
   line-height: 1.7;
@@ -1462,9 +1463,15 @@ main {
   color: #2E8B57; /* luxurious green accent */
 }
 
+/* Sparkle bullet questions */
+.about-questions {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.8rem;
+}
+
 .about-questions li {
   margin-bottom: 0.75rem;
-  list-style: none; /* remove default bullets */
   font-weight: 500;
   font-size: 1.05rem;
 }
@@ -1475,15 +1482,19 @@ main {
   color: #DAA520; /* gold sparkle */
 }
 
-/* Fix double bullets */
+
+/* ===== UNIVERSAL CLEAN BULLETS (no double dots) ===== */
 .line-bullets {
   list-style: none;
   padding-left: 0;
 }
+
 .line-bullets li {
   position: relative;
-  padding-left: 1.4rem;
+  padding-left: 1.2rem;
+  margin-bottom: 0.6rem;
 }
+
 .line-bullets li::before {
   content: "–";
   position: absolute;
@@ -1493,13 +1504,18 @@ main {
   font-weight: 600;
 }
 
-/* Two-column resume layout */
+
+/* ===== RESUME — TWO COLUMN LAYOUT ===== */
 .resume-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   position: relative;
+  margin-top: 2rem;
+  padding: 1rem 0;
 }
+
+/* Vertical divider ONLY inside resume */
 .resume-two-col::before {
   content: "";
   position: absolute;
@@ -1511,11 +1527,32 @@ main {
   transform: translateX(-1px);
 }
 
-/* Education descriptions */
+/* Correct resume lists (normal bullets, no sparkles) */
+.resume-two-col ul {
+  list-style: disc;
+  padding-left: 1.3rem;
+}
+
+.resume-two-col ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.55;
+}
+
+/* ===== EDUCATION DESCRIPTION ===== */
 .edu-desc {
   opacity: 0.85;
   margin-top: 0.5rem;
   line-height: 1.55;
   font-size: 0.96rem;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .resume-two-col {
+    grid-template-columns: 1fr;
+  }
+  .resume-two-col::before {
+    display: none;
+  }
 }
 
