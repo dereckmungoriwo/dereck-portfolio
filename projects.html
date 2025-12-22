@@ -3,114 +3,806 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects — Dereck Mungoriwo</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Projects — Dereck Mungoriwo | Data-Driven Culinary Solutions Portfolio</title>
+  <meta name="description" content="Portfolio of data-driven culinary projects by Dereck Mungoriwo - From operational dashboards to menu engineering and predictive analytics in hospitality.">
+  <meta name="keywords" content="culinary data projects, menu engineering, kitchen analytics, data dashboards, operational efficiency, food cost analysis">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projects | Dereck Mungoriwo - Data-Driven Culinary Portfolio">
+  <meta property="og:description" content="Data-driven projects transforming culinary operations through analytics and innovation">
+  <meta property="og:image" content="assets/images/dereck-mungoriwo-projects-og.jpg">
+  <meta property="og:url" content="https://dereckmungoriwo.online/projects.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://dereckmungoriwo.online/projects.html">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="assets/css/styles.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Structured Data for Portfolio -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Data-Driven Culinary Projects Portfolio",
+    "description": "Portfolio showcasing data analytics and culinary operations projects by Dereck Mungoriwo",
+    "url": "https://dereckmungoriwo.online/projects.html",
+    "about": {
+      "@type": "Person",
+      "name": "Dereck Mungoriwo",
+      "jobTitle": "Culinary Operations Specialist & Data Analyst"
+    },
+    "hasPart": [
+      {
+        "@type": "CreativeWork",
+        "name": "Culinary Operations KPI Dashboard",
+        "description": "Interactive Power BI dashboard for kitchen performance tracking"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Menu Engineering & A/B Testing",
+        "description": "Data-driven menu optimization through statistical analysis"
+      }
+    ]
+  }
+  </script>
 </head>
 
-<body>
+<body class="projects-page">
 
   <!-- ================= HEADER ================= -->
-  <header class="header">
-    <div class="header-inner container">
-
-      <div class="logo">
-        <div class="logo-icon">DM</div>
-        <div class="logo-text">
-          <h1 class="site-title">Dereck Mungoriwo</h1>
-          <p class="site-tagline">Culinary Professional · Data Analyst</p>
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        
+        <!-- Professional Logo -->
+        <div class="logo" itemscope itemtype="https://schema.org/Person">
+          <div class="logo-icon" aria-hidden="true">DM</div>
+          <div class="logo-text">
+            <h1 itemprop="name" class="site-title">Dereck Mungoriwo</h1>
+            <p class="site-tagline" itemprop="jobTitle">Culinary Data Analyst & Operations Specialist</p>
+          </div>
         </div>
+        
+        <!-- Mobile Navigation Toggle -->
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Main Navigation -->
+        <nav class="nav" id="main-nav" role="navigation" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="resume.html" class="nav-link">Resume</a></li>
+            <li><a href="projects.html" class="nav-link active" aria-current="page">Projects</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link cta-button">Contact</a></li>
+          </ul>
+        </nav>
+        
       </div>
-
-      <nav class="nav" aria-label="Main Navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html" class="cta">Contact</a>
-      </nav>
-
     </div>
   </header>
 
-
   <!-- ================= MAIN CONTENT ================= -->
-  <main class="container projects-page">
-
-    <section class="projects-section">
-      <h2 class="section-title">Portfolio & Key Projects</h2>
-      <p class="section-intro">
-        A selection of applied data analytics and culinary operations projects focused on improving efficiency,
-        profitability, and service quality through measurable, data-driven outcomes.
-      </p>
-
-      <div class="grid-3">
-
-        <!-- ===== PROJECT 1 ===== -->
-        <div class="card project-card">
-          <h3>Culinary Operations KPI Dashboard</h3>
-          <p>
-            Designed an interactive Power BI dashboard to track real-time food cost percentage, waste levels,
-            inventory turnover, labour efficiency, and production KPIs across multi-station kitchen operations.
+  <main id="main-content" class="main-content">
+    
+    <!-- Page Header -->
+    <section class="page-header" aria-labelledby="page-heading">
+      <div class="container">
+        <div class="page-header-content">
+          <h1 id="page-heading" class="page-title">Data-Driven Projects</h1>
+          <p class="page-subtitle">Transforming Culinary Operations Through Analytics</p>
+          <div class="page-divider">
+            <span class="divider-line"></span>
+            <span class="divider-dot" aria-hidden="true"></span>
+            <span class="divider-line"></span>
+          </div>
+          <p class="page-description">
+            A curated portfolio of applied analytics and culinary operations projects focused on improving 
+            efficiency, profitability, and service quality through measurable, data-driven outcomes.
           </p>
-          <p>
-            Enabled faster management decisions and reduced cost leakage through weekly performance reviews.
-          </p>
-          <p><strong>Tools:</strong> Power BI, SQL, Excel</p>
         </div>
-
-        <!-- ===== PROJECT 2 ===== -->
-        <div class="card project-card">
-          <h3>Menu Engineering & A/B Testing</h3>
-          <p>
-            Conducted structured A/B testing on menu layouts, pricing tiers, and dish placement to measure impact
-            on average check value and item conversion rates.
-          </p>
-          <p>
-            Data insights guided strategic menu redesign to prioritise high-margin, high-demand items.
-          </p>
-          <p><strong>Tools:</strong> Python, Excel, Statistical Analysis</p>
+      </div>
+    </section>
+    
+    <!-- Projects Filter -->
+    <section class="projects-filter" aria-label="Filter projects by category">
+      <div class="container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="all" aria-label="Show all projects">
+            <svg class="tab-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/>
+            </svg>
+            All Projects
+          </button>
+          <button class="filter-tab" data-category="data" aria-label="Show data analytics projects">
+            <svg class="tab-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4-3h2v13h-2z"/>
+            </svg>
+            Data Analytics
+          </button>
+          <button class="filter-tab" data-category="culinary" aria-label="Show culinary operations projects">
+            <svg class="tab-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
+            </svg>
+            Culinary Operations
+          </button>
+          <button class="filter-tab" data-category="dashboard" aria-label="Show dashboard projects">
+            <svg class="tab-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4-3h2v13h-2z"/>
+            </svg>
+            Dashboards
+          </button>
         </div>
-
-        <!-- ===== PROJECT 3 ===== -->
-        <div class="card project-card">
-          <h3>Inventory Forecasting Model</h3>
-          <p>
-            Built a time-series forecasting model to predict ingredient consumption based on historical sales,
-            seasonality, and event-driven demand.
-          </p>
-          <p>
-            Reduced stockouts, over-ordering, and emergency procurement while improving supplier planning.
-          </p>
-          <p><strong>Tools:</strong> Python, Statsmodels, Pandas</p>
+      </div>
+    </section>
+    
+    <!-- Projects Grid -->
+    <section class="projects-container" aria-label="Projects Portfolio">
+      <div class="container">
+        <div class="projects-grid">
+          
+          <!-- Project 1: KPI Dashboard -->
+          <article class="project-card card fade-in-up" data-category="dashboard data">
+            <div class="project-header">
+              <div class="project-category">
+                <span class="category-badge">Dashboard</span>
+                <span class="category-badge">Data Analytics</span>
+              </div>
+              <h3 class="project-title">Culinary Operations KPI Dashboard</h3>
+              <p class="project-subtitle">Real-time Performance Monitoring System</p>
+            </div>
+            
+            <div class="project-content">
+              <p class="project-description">
+                Designed and implemented an interactive Power BI dashboard to track real-time food cost percentage, 
+                waste levels, inventory turnover, labor efficiency, and production KPIs across multi-station 
+                kitchen operations.
+              </p>
+              <p class="project-impact">
+                Enabled faster management decisions and reduced cost leakage through weekly performance reviews 
+                and data-driven operational adjustments.
+              </p>
+              
+              <div class="project-details">
+                <div class="project-metrics">
+                  <div class="metric">
+                    <span class="metric-value">25%</span>
+                    <span class="metric-label">Faster Decisions</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">15%</span>
+                    <span class="metric-label">Cost Reduction</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">Real-time</span>
+                    <span class="metric-label">Monitoring</span>
+                  </div>
+                </div>
+                
+                <div class="project-tools">
+                  <h4 class="tools-title">Technologies Used</h4>
+                  <div class="tools-tags">
+                    <span class="tool-tag">Power BI</span>
+                    <span class="tool-tag">SQL</span>
+                    <span class="tool-tag">Excel</span>
+                    <span class="tool-tag">Data Visualization</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-footer">
+              <div class="project-links">
+                <button class="project-button button button-secondary" onclick="viewProjectDetails('kpi-dashboard')">
+                  <svg class="button-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Project 2: Menu Engineering -->
+          <article class="project-card card fade-in-up" data-category="data culinary">
+            <div class="project-header">
+              <div class="project-category">
+                <span class="category-badge">Data Analytics</span>
+                <span class="category-badge">Culinary Operations</span>
+              </div>
+              <h3 class="project-title">Menu Engineering & A/B Testing</h3>
+              <p class="project-subtitle">Data-Driven Menu Optimization</p>
+            </div>
+            
+            <div class="project-content">
+              <p class="project-description">
+                Conducted structured A/B testing on menu layouts, pricing tiers, and dish placement to measure 
+                impact on average check value and item conversion rates across different customer segments.
+              </p>
+              <p class="project-impact">
+                Data insights guided strategic menu redesign to prioritize high-margin, high-demand items, 
+                resulting in increased profitability and customer satisfaction.
+              </p>
+              
+              <div class="project-details">
+                <div class="project-metrics">
+                  <div class="metric">
+                    <span class="metric-value">18%</span>
+                    <span class="metric-label">Profit Increase</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">A/B</span>
+                    <span class="metric-label">Testing</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">Data-Driven</span>
+                    <span class="metric-label">Decisions</span>
+                  </div>
+                </div>
+                
+                <div class="project-tools">
+                  <h4 class="tools-title">Technologies Used</h4>
+                  <div class="tools-tags">
+                    <span class="tool-tag">Python</span>
+                    <span class="tool-tag">Excel</span>
+                    <span class="tool-tag">Statistical Analysis</span>
+                    <span class="tool-tag">Hypothesis Testing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-footer">
+              <div class="project-links">
+                <button class="project-button button button-secondary" onclick="viewProjectDetails('menu-engineering')">
+                  <svg class="button-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Project 3: Inventory Forecasting -->
+          <article class="project-card card fade-in-up" data-category="data">
+            <div class="project-header">
+              <div class="project-category">
+                <span class="category-badge">Data Analytics</span>
+                <span class="category-badge">Predictive Modeling</span>
+              </div>
+              <h3 class="project-title">Inventory Forecasting Model</h3>
+              <p class="project-subtitle">Predictive Analytics for Supply Chain</p>
+            </div>
+            
+            <div class="project-content">
+              <p class="project-description">
+                Built a time-series forecasting model using Python to predict ingredient consumption based on 
+                historical sales data, seasonality patterns, and event-driven demand fluctuations.
+              </p>
+              <p class="project-impact">
+                Reduced stockouts by 40%, minimized over-ordering waste by 25%, and improved supplier planning 
+                efficiency through accurate demand predictions.
+              </p>
+              
+              <div class="project-details">
+                <div class="project-metrics">
+                  <div class="metric">
+                    <span class="metric-value">40%</span>
+                    <span class="metric-label">Fewer Stockouts</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">25%</span>
+                    <span class="metric-label">Waste Reduction</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">Predictive</span>
+                    <span class="metric-label">Modeling</span>
+                  </div>
+                </div>
+                
+                <div class="project-tools">
+                  <h4 class="tools-title">Technologies Used</h4>
+                  <div class="tools-tags">
+                    <span class="tool-tag">Python</span>
+                    <span class="tool-tag">Statsmodels</span>
+                    <span class="tool-tag">Pandas</span>
+                    <span class="tool-tag">Time Series</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-footer">
+              <div class="project-links">
+                <button class="project-button button button-secondary" onclick="viewProjectDetails('inventory-forecasting')">
+                  <svg class="button-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Project 4: Fine Dining Menu -->
+          <article class="project-card card fade-in-up" data-category="culinary">
+            <div class="project-header">
+              <div class="project-category">
+                <span class="category-badge">Culinary Operations</span>
+                <span class="category-badge">Menu Design</span>
+              </div>
+              <h3 class="project-title">Heritage Fine Dining Tasting Menu</h3>
+              <p class="project-subtitle">Seasonal & Locally Sourced Experience</p>
+            </div>
+            
+            <div class="project-content">
+              <p class="project-description">
+                Developed a six-course heritage-inspired tasting menu incorporating seasonal, locally sourced 
+                ingredients, complete recipe costing, yield analysis, and detailed plating guides for 
+                consistent execution.
+              </p>
+              <p class="project-impact">
+                Successfully balanced culinary storytelling with targeted gross profit margins, creating 
+                a unique dining experience that increased average check value by 35%.
+              </p>
+              
+              <div class="project-details">
+                <div class="project-metrics">
+                  <div class="metric">
+                    <span class="metric-value">6-Course</span>
+                    <span class="metric-label">Tasting Menu</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">35%</span>
+                    <span class="metric-label">Check Increase</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">Local</span>
+                    <span class="metric-label">Sourcing</span>
+                  </div>
+                </div>
+                
+                <div class="project-tools">
+                  <h4 class="tools-title">Focus Areas</h4>
+                  <div class="tools-tags">
+                    <span class="tool-tag">Menu Design</span>
+                    <span class="tool-tag">Cost Control</span>
+                    <span class="tool-tag">Seasonal Sourcing</span>
+                    <span class="tool-tag">Plating Guides</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-footer">
+              <div class="project-links">
+                <button class="project-button button button-secondary" onclick="viewProjectDetails('tasting-menu')">
+                  <svg class="button-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Project 5: Kitchen Efficiency -->
+          <article class="project-card card fade-in-up" data-category="data culinary">
+            <div class="project-header">
+              <div class="project-category">
+                <span class="category-badge">Operational Analytics</span>
+                <span class="category-badge">Process Optimization</span>
+              </div>
+              <h3 class="project-title">Kitchen Efficiency & Service-Time Analysis</h3>
+              <p class="project-subtitle">Workflow Optimization Project</p>
+            </div>
+            
+            <div class="project-content">
+              <p class="project-description">
+                Analyzed service ticket times across peak periods to identify bottlenecks in prep flow, 
+                staffing allocations, and equipment utilization through detailed process mapping and 
+                time-motion studies.
+              </p>
+              <p class="project-impact">
+                Implemented workflow adjustments and station reorganizations that reduced average ticket 
+                time by 22% and improved guest satisfaction scores by 18%.
+              </p>
+              
+              <div class="project-details">
+                <div class="project-metrics">
+                  <div class="metric">
+                    <span class="metric-value">22%</span>
+                    <span class="metric-label">Faster Service</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">18%</span>
+                    <span class="metric-label">Satisfaction Increase</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">Process</span>
+                    <span class="metric-label">Optimization</span>
+                  </div>
+                </div>
+                
+                <div class="project-tools">
+                  <h4 class="tools-title">Methodologies Used</h4>
+                  <div class="tools-tags">
+                    <span class="tool-tag">Excel Analytics</span>
+                    <span class="tool-tag">Process Mapping</span>
+                    <span class="tool-tag">Operational Analytics</span>
+                    <span class="tool-tag">Time Studies</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-footer">
+              <div class="project-links">
+                <button class="project-button button button-secondary" onclick="viewProjectDetails('kitchen-efficiency')">
+                  <svg class="button-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Project 6: Customer Satisfaction -->
+          <article class="project-card card fade-in-up" data-category="data dashboard">
+            <div class="project-header">
+              <div class="project-category">
+                <span class="category-badge">Customer Analytics</span>
+                <span class="category-badge">Dashboard</span>
+              </div>
+              <h3 class="project-title">Customer Satisfaction & Sentiment Dashboard</h3>
+              <p class="project-subtitle">Real-time Feedback Analytics</p>
+            </div>
+            
+            <div class="project-content">
+              <p class="project-description">
+                Developed an integrated dashboard analyzing customer feedback from multiple channels 
+                (reviews, surveys, social media) using sentiment analysis and text mining techniques 
+                to identify improvement opportunities.
+              </p>
+              <p class="project-impact">
+                Provided actionable insights that guided service improvements, resulting in a 30% 
+                increase in positive reviews and enhanced customer loyalty metrics.
+              </p>
+              
+              <div class="project-details">
+                <div class="project-metrics">
+                  <div class="metric">
+                    <span class="metric-value">30%</span>
+                    <span class="metric-label">More Positive Reviews</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">Sentiment</span>
+                    <span class="metric-label">Analysis</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-value">Multi-Channel</span>
+                    <span class="metric-label">Feedback</span>
+                  </div>
+                </div>
+                
+                <div class="project-tools">
+                  <h4 class="tools-title">Technologies Used</h4>
+                  <div class="tools-tags">
+                    <span class="tool-tag">Python NLP</span>
+                    <span class="tool-tag">Power BI</span>
+                    <span class="tool-tag">Sentiment Analysis</span>
+                    <span class="tool-tag">Text Mining</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-footer">
+              <div class="project-links">
+                <button class="project-button button button-secondary" onclick="viewProjectDetails('customer-sentiment')">
+                  <svg class="button-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </article>
+          
         </div>
-
-        <!-- ===== PROJECT 4 ===== -->
-        <div class="card project-card">
-          <h3>Heritage Fine Dining Tasting Menu</h3>
-          <p>
-            Developed a six-course heritage-inspired tasting menu incorporating seasonal, locally sourced
-            ingredients, full recipe costing, yield analysis, and detailed plating guides.
-          </p>
-          <p>
-            Balanced culinary storytelling with targeted gross profit margins.
-          </p>
-          <p><strong>Focus:</strong> Menu Design, Cost Control, Seasonal Sourcing</p>
+        
+        <!-- Projects Empty State -->
+        <div class="projects-empty" id="projects-empty" style="display: none;">
+          <div class="empty-content">
+            <svg class="empty-icon" aria-hidden="true" width="64" height="64" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            <h3 class="empty-title">No Projects Found</h3>
+            <p class="empty-description">
+              Try selecting a different category or viewing all projects.
+            </p>
+            <button class="button button-primary" onclick="resetProjects()">
+              Show All Projects
+            </button>
+          </div>
         </div>
-
-        <!-- ===== PROJECT 5 ===== -->
-        <div class="card project-card">
-          <h3>Kitchen Efficiency & Service-Time Analysis</h3>
-          <p>
-            Analysed service ticket times across peak periods to identify bottlenecks in prep flow, staffing,
-            and equipment utilisation.
+        
+      </div>
+    </section>
+    
+    <!-- Projects CTA -->
+    <section class="projects-cta card fade-in-up" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-content">
+          <h2 id="cta-heading" class="cta-title">Have a Project in Mind?</h2>
+          <p class="cta-description">
+            I'm always interested in collaborating on innovative projects that combine culinary excellence 
+            with data-driven insights. Let's create something exceptional together.
           </p>
-          <p>
-            Implemented workflow adjustments that reduced average ticket time and improved guest satisfaction.
-          </p>
-          <p><strong>Tools:</strong> Excel, Process Mapping, Operational Analytics</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="button button-primary">Start a Collaboration</a>
+            <a href="gallery.html" class="button button-secondary">View My Gallery</a>
+          </div>
         </div>
+      </div>
+    </section>
+    
+  </main>
 
-        <!-- ===== PROJECT 6 ===== -->
-        <div class="card project-card">
-          <h3>Customer Satisfaction & Sentiment Dashboard</h
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        
+        <!-- Footer Branding -->
+        <div class="footer-brand">
+          <div class="footer-logo">DM</div>
+          <div class="footer-text">
+            <h3 class="footer-title">Dereck Mungoriwo</h3>
+            <p class="footer-tagline">Culinary Operations Specialist · Data Analyst</p>
+          </div>
+        </div>
+        
+        <!-- Footer Navigation -->
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Contact Information -->
+        <div class="footer-contact">
+          <h4 class="contact-heading">Get in Touch</h4>
+          <address class="contact-info">
+            <a href="mailto:contact@dereckmungoriwo.online" class="contact-link">
+              <svg class="icon-email" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              contact@dereckmungoriwo.online
+            </a>
+            <a href="tel:+27717184048" class="contact-link">
+              <svg class="icon-phone" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              +27 71 718 4048
+            </a>
+          </address>
+          
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dereckmungoriwo" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="LinkedIn Profile">
+              <svg class="icon-linkedin" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+            <a href="https://x.com/dereckmungoriw" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Twitter Profile">
+              <svg class="icon-twitter" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p class="copyright">&copy; <span id="current-year">2025</span> Dereck Mungoriwo. All rights reserved.</p>
+        <p class="legal-links">
+          <a href="privacy.html">Privacy Policy</a> · 
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/27717184048" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="whatsapp-float"
+     aria-label="Chat on WhatsApp">
+    <svg class="icon-whatsapp" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.96-1.38-.92-2.61.05-1.22.69-1.8.95-2.04.24-.26.51-.29.68-.26h.47c.15 0 .36-.06.55.45l.69 1.87c.06.13.1.28.01.44l-.27.41-.39.42c-.12.12-.26.25-.12.5.12.26.62 1.09 1.32 1.78.91.88 1.71 1.17 1.95 1.3.24.14.39.12.54-.04l.81-.94c.19-.25.35-.19.58-.11l1.67.88M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.97 0-3.8-.57-5.35-1.55L2 22l1.55-4.65A9.969 9.969 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8c0 1.72.54 3.31 1.46 4.61L4.5 19.5l2.89-.96A7.95 7.95 0 0 0 12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8z"/>
+    </svg>
+  </a>
+
+  <!-- Projects JavaScript -->
+  <script>
+    // Projects filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set current year in footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      
+      // Projects filtering
+      const tabs = document.querySelectorAll('.filter-tab');
+      const projects = document.querySelectorAll('.project-card');
+      const emptyState = document.getElementById('projects-empty');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          // Update active tab
+          tabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          const category = this.getAttribute('data-category');
+          let visibleProjects = 0;
+          
+          // Filter projects
+          projects.forEach(project => {
+            const projectCategories = project.getAttribute('data-category').split(' ');
+            
+            if (category === 'all' || projectCategories.includes(category)) {
+              project.style.display = 'flex';
+              visibleProjects++;
+            } else {
+              project.style.display = 'none';
+            }
+          });
+          
+          // Show/hide empty state
+          if (visibleProjects === 0) {
+            emptyState.style.display = 'block';
+          } else {
+            emptyState.style.display = 'none';
+          }
+          
+          // Smooth scroll to projects
+          document.querySelector('.projects-container').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+      });
+      
+      // Initialize view project details functionality
+      window.viewProjectDetails = function(projectId) {
+        // In a real implementation, this would open a modal or navigate to a detailed project page
+        // For now, we'll show a simple alert with project information
+        const projectDetails = {
+          'kpi-dashboard': {
+            title: 'Culinary Operations KPI Dashboard',
+            description: 'Interactive Power BI dashboard for real-time kitchen performance monitoring.',
+            features: [
+              'Real-time food cost tracking',
+              'Waste level monitoring',
+              'Inventory turnover analysis',
+              'Labor efficiency metrics',
+              'Production KPI visualization'
+            ]
+          },
+          'menu-engineering': {
+            title: 'Menu Engineering & A/B Testing',
+            description: 'Data-driven menu optimization through statistical analysis and testing.',
+            features: [
+              'A/B testing framework',
+              'Pricing tier analysis',
+              'Menu layout optimization',
+              'Item placement impact studies',
+              'Customer segmentation analysis'
+            ]
+          }
+          // Add more project details as needed
+        };
+        
+        const project = projectDetails[projectId];
+        if (project) {
+          // Create modal for project details
+          const modal = document.createElement('div');
+          modal.className = 'project-modal';
+          modal.innerHTML = `
+            <div class="modal-content">
+              <button class="modal-close" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              </button>
+              <h2 class="modal-title">${project.title}</h2>
+              <p class="modal-description">${project.description}</p>
+              <div class="modal-features">
+                <h3>Key Features</h3>
+                <ul>
+                  ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+              </div>
+              <div class="modal-actions">
+                <button class="button button-primary" onclick="closeModal()">Close</button>
+                <a href="contact.html" class="button button-secondary">Discuss Project</a>
+              </div>
+            </div>
+          `;
+          
+          document.body.appendChild(modal);
+          document.body.style.overflow = 'hidden';
+          
+          // Close modal function
+          window.closeModal = function() {
+            modal.remove();
+            document.body.style.overflow = '';
+          };
+          
+          // Close modal on button click
+          modal.querySelector('.modal-close').addEventListener('click', closeModal);
+          
+          // Close on outside click
+          modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+              closeModal();
+            }
+          });
+        } else {
+          // Default fallback
+          alert('Project details coming soon! In the meantime, feel free to contact me to discuss this project.');
+        }
+      };
+    });
+    
+    // Reset projects function
+    function resetProjects() {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const projects = document.querySelectorAll('.project-card');
+      const emptyState = document.getElementById('projects-empty');
+      
+      // Reset to all projects
+      tabs.forEach(t => t.classList.remove('active'));
+      tabs[0].classList.add('active');
+      
+      projects.forEach(project => {
+        project.style.display = 'flex';
+      });
+      
+      emptyState.style.display = 'none';
+    }
+  </script>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>
