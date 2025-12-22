@@ -3566,3 +3566,16 @@ a:hover {
     font-size: 1rem;
   }
 }
+
+/* Force center alignment if needed */
+.cta-section .cta-content {
+  margin: 0 auto;
+  text-align: center !important;
+}
+
+.cta-section .cta-heading,
+.cta-section .cta-description {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
