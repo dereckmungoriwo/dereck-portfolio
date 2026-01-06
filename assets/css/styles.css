@@ -532,7 +532,12 @@ a:hover {
   background-color: #128C7E; /* EXACT teal */
   color: #ffffff;
   text-align: center;
-  padding: var(--spacing-3xl) var(--spacing-2xl);
+  padding: var(--spacing-3xl) 0; /* remove side padding */
+}
+
+.cta-section .container {
+  background: transparent; /* KEY FIX */
+  padding: 0 var(--spacing-2xl); /* move padding here */
 }
 
 .cta-content {
