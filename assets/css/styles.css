@@ -530,7 +530,7 @@ a:hover {
 /* ================= CTA SECTION ================= */
 .cta-section {
   background-color: #128C7E; /* EXACT teal */
-  color: #ffffff;
+  color: #128C7E;
   text-align: center;
   padding: var(--spacing-3xl) 0; /* remove side padding */
 }
@@ -554,7 +554,7 @@ a:hover {
 .cta-description {
   font-size: var(--font-size-lg);
   /* Use a lighter color or white for readability on a dark teal background */
-  color: var(--color-text-light, rgba(255, 255, 255, 0.9)); 
+  color: var(--color-primary);
   margin-bottom: var(--spacing-2xl);
 }
 
