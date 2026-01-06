@@ -529,17 +529,10 @@ a:hover {
 
 /* ================= CTA SECTION ================= */
 .cta-section {
-  background-color: #128C7E; /* Official Teal Green */
-  padding: var(--spacing-4xl) 0;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
   text-align: center;
-  border-top: none; /* Removed the gray border as it might look odd on Teal */
-  color: #ffffff; /* Ensures your text is readable on the dark background */
-}
-
-/* If you have a heading inside this section, make sure it's white too */
-.cta-section h2, 
-.cta-section p {
-  color: #ffffff !important;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
 }
 
 .cta-content {
