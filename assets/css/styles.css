@@ -529,8 +529,12 @@ a:hover {
 
 /* ================= CTA SECTION ================= */
 .cta-section {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: var(--color-primary) !important;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  color: var(--color-white);
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-2xl);
 }
