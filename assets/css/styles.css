@@ -529,12 +529,8 @@ a:hover {
 
 /* ================= CTA SECTION ================= */
 .cta-section {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-dark) 100%
-  );
-  color: var(--color-white);
+  background-color: #128C7E; /* EXACT teal */
+  color: #ffffff;
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-2xl);
 }
@@ -547,12 +543,12 @@ a:hover {
 .cta-heading {
   font-size: var(--font-size-4xl);
   margin-bottom: var(--spacing-lg);
-  color: var(--color-black);
+  color: #ffffff; /* FIX */
 }
 
 .cta-description {
   font-size: var(--font-size-lg);
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.85); /* FIX */
   margin-bottom: var(--spacing-2xl);
 }
 
