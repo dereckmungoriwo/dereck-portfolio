@@ -3464,16 +3464,14 @@ a:hover {
   }
 }
 
-/* CTA Section Styles including home page (GLOBAL BASE) */
+/* CTA Section Styles (GLOBAL BASE) */
 .cta-section {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 4rem 0rem;
   text-align: center;
 }
 
 .cta-section .container {
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .cta-content {
