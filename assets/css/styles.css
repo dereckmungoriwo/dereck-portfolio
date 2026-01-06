@@ -3579,3 +3579,25 @@ a:hover {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+/* Target the WhatsApp button on home page specifically */
+.button.button-primary[aria-label*="WhatsApp"] {
+  background-color: #25D366 !important; /* Official WhatsApp Green */
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between SVG icon and text */
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover state using the darker WhatsApp Teal */
+.button.button-primary[aria-label*="WhatsApp"]:hover {
+  background-color: #128C7E !important; 
+}
+
+/* Ensure the SVG icon inherits the white text color */
+.icon-whatsapp {
+  fill: currentColor; 
+}
