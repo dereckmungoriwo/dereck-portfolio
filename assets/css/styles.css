@@ -537,7 +537,7 @@ a:hover {
 
 .cta-section .container {
   background: transparent; /* KEY FIX */
-  padding: 0 var(--spacing-2xl); /* move padding here */
+  padding: var(--spacing-3xl) var(--spacing-2xl);
 }
 
 .cta-content {
