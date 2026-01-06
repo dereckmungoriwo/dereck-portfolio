@@ -3606,3 +3606,14 @@ a:hover {
 .icon-whatsapp {
   fill: currentColor; 
 }
+
+/* ===== CTA FORCE OVERRIDE (HOME PAGE ONLY) ===== */
+.home-page section.cta-section {
+  background-color: #128C7E !important;
+}
+
+.home-page section.cta-section > .container {
+  background-color: transparent !important;
+}
+
+
