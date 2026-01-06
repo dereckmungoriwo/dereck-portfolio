@@ -529,10 +529,10 @@ a:hover {
 
 /* ================= CTA SECTION ================= */
 .cta-section {
-  background-color: #128C7E; /* EXACT teal */
-  color: #128C7E;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #008080;
   text-align: center;
-  padding: var(--spacing-3xl) 0; /* remove side padding */
+  padding: var(--spacing-3xl) var(--spacing-2xl)
 }
 
 .cta-section .container {
