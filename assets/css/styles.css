@@ -533,6 +533,7 @@ a:hover {
   color: #008080;
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-2xl)
+  margin-bottom: var(--spacing-4xl);
 }
 
 .cta-section .container {
@@ -3466,8 +3467,9 @@ a:hover {
 
 /* CTA Section Styles (GLOBAL BASE) */
 .cta-section {
-  padding: 4rem 0rem;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
   text-align: center;
+  margin-bottom: var(--spacing-4xl);
 }
 
 .cta-section .container {
