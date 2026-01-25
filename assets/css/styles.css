@@ -3942,3 +3942,306 @@ a:hover {
     padding: var(--spacing-xl) var(--spacing-md);
   }
 }
+
+/* ================= HEADER ENHANCEMENTS ================= */
+
+/* Logo with profile image */
+.logo-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 128, 128, 0.2);
+  transition: all var(--transition);
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+}
+
+.logo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-text h1 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logo-subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Fix sticky header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--color-gray-200);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ================= HOME PAGE FIXES ================= */
+
+/* Stack profile grid containers vertically */
+.home-page .profile-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Add sea green borders to all home page containers */
+.home-page .card {
+  border: 2px solid #20b2aa;
+  border-radius: var(--border-radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Make all home page cards consistent */
+.home-page .profile-card,
+.home-page .about-card,
+.home-page .culinary-card {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+}
+
+/* Culinary icons inside profile card */
+.home-page .profile-card::before,
+.home-page .profile-card::after {
+  content: "";
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+/* Chef hat icon */
+.home-page .profile-card::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320b2aa'%3E%3Cpath d='M12.5 1.5c.28 0 .5.22.5.5v2c0 .28-.22.5-.5.5S12 4.28 12 4V2c0-.28.22-.5.5-.5zM8.04 4.46a.5.5 0 0 1 .7-.08c.2.15.23.43.08.63l-1.5 2a.5.5 0 0 1-.7.08.5.5 0 0 1-.08-.63l1.5-2a.5.5 0 0 1 .7-.08zm7.92 0a.5.5 0 0 1 .7.08l1.5 2a.5.5 0 0 1-.08.63.5.5 0 0 1-.7-.08l-1.5-2a.5.5 0 0 1 .08-.63zM3 8v2c0 1.1.9 2 2 2h.5v8.5c0 .28.22.5.5.5h12c.28 0 .5-.22.5-.5V12H19c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2.5 2c-.28 0-.5-.22-.5-.5V8c0-.28.22-.5.5-.5h13c.28 0 .5.22.5.5v1.5c0 .28-.22.5-.5.5h-13z'/%3E%3C/svg%3E");
+  width: 40px;
+  height: 40px;
+  top: 15px;
+  right: 15px;
+  transform: rotate(15deg);
+}
+
+/* Cooking thermometer icon */
+.home-page .profile-card::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320b2aa'%3E%3Cpath d='M15 13V5c0-1.66-1.34-3-3-3S9 3.34 9 5v8c-1.21.91-2 2.37-2 4 0 2.76 2.24 5 5 5s5-2.24 5-5c0-1.63-.79-3.09-2-4zm-4-8c0-.55.45-1 1-1s1 .45 1 1v1h-2V5z'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 30px;
+  bottom: 15px;
+  left: 15px;
+}
+
+/* Add more culinary icons using background patterns */
+.home-page .profile-card .profile-content::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320b2aa'%3E%3Cpath d='M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+/* Profile tagline styling */
+.home-page .profile-tagline {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 2;
+}
+
+/* Add decorative line under tagline */
+.home-page .profile-tagline::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #20b2aa, transparent);
+  margin: var(--spacing-sm) auto;
+  border-radius: 1px;
+}
+
+/* Profile content alignment */
+.home-page .profile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.home-page .profile-actions {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: var(--spacing-md);
+}
+
+/* Profile image styling */
+.home-page .profile-image {
+  width: 180px;
+  height: 180px;
+  border: 4px solid #20b2aa;
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.home-page .profile-image::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid rgba(32, 178, 170, 0.1);
+  border-radius: 50%;
+}
+
+/* About card styling */
+.home-page .about-card {
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+  position: relative;
+}
+
+.home-page .about-card::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320b2aa'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  top: 20px;
+  right: 20px;
+}
+
+/* Spacing between containers */
+.home-page .profile-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Culinary showcase */
+.home-page .culinary-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* CTA section rounded corners */
+.home-page .cta-section {
+  border-radius: var(--border-radius-lg);
+  margin: var(--spacing-3xl) auto;
+  max-width: calc(var(--container-max) - 4rem);
+  overflow: hidden;
+  border: 2px solid #20b2aa;
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.home-page .cta-section .container {
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+/* Add culinary pattern to CTA */
+.home-page .cta-section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff' opacity='0.05'%3E%3Cpath d='M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z'/%3E%3C/svg%3E");
+  background-size: 80px;
+  opacity: 0.1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo-text h1 {
+    font-size: var(--font-size-base);
+  }
+  
+  .logo-subtitle {
+    font-size: 0.65rem;
+  }
+  
+  .home-page .profile-tagline {
+    font-size: var(--font-size-lg);
+  }
+  
+  .home-page .profile-card::before,
+  .home-page .profile-card::after {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xs);
+  }
+  
+  .logo-image {
+    margin: 0 auto;
+  }
+  
+  .home-page .profile-tagline {
+    font-size: var(--font-size-base);
+  }
+  
+  .home-page .profile-card::before,
+  .home-page .profile-card::after {
+    display: none;
+  }
+}
