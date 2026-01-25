@@ -358,3 +358,54 @@ window.addEventListener('resize', function() {
     }
   }, 250);
 });
+
+// Enhanced Sticky Header with Scroll Detection
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.header');
+  
+  if (header) {
+    // Add scrolled class when page is scrolled
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Check initial scroll position
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    }
+    
+    // Fallback for browsers that don't support sticky
+    if (CSS.supports('position', 'sticky') === false) {
+      header.classList.add('sticky-fallback');
+      
+      // Adjust main content padding for fixed header
+      const mainContent = document.querySelector('.main-content');
+      if (mainContent) {
+        const headerHeight = header.offsetHeight;
+        mainContent.style.paddingTop = headerHeight + 'px';
+      }
+    }
+  }
+  
+  // Mobile navigation toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function() {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('active');
+      
+      // Toggle hamburger animation
+      const hamburgerLines = document.querySelectorAll('.hamburger-line');
+      hamburgerLines.forEach(line => {
+        line.classList.toggle('active');
+      });
+    });
+  }
+});
