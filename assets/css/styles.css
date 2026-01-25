@@ -3931,9 +3931,9 @@ a:hover {
 
 /* ================= HOME PAGE ENHANCEMENTS ================= */
 
-/* Make profile tagline match homepage motto size */
+/* Adjust profile tagline size to fit better */
 .home-page .profile-tagline {
-  font-size: var(--font-size-5xl); /* Same as motto-heading */
+  font-size: var(--font-size-2xl); 
   font-family: var(--font-family-serif); /* Same elegant font */
   font-weight: 600;
   color: var(--color-primary-dark);
