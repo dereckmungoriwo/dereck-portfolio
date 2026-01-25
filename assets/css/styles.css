@@ -3968,3 +3968,81 @@ a:hover {
     height: 140px;
   }
 }
+
+/* ================= FIX STICKY HEADER - GLOBAL ================= */
+
+/* Force sticky header on all pages */
+.header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 1px solid var(--color-gray-200) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Ensure header content stays visible */
+.header-content {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Make sure main content starts below header */
+.main-content {
+  padding-top: var(--spacing-2xl);
+}
+
+/* Override any page-specific header styles */
+.about-page .header,
+.resume-page .header,
+.projects-page .header,
+.gallery-page .header,
+.contact-page .header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 1px solid var(--color-gray-200) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Ensure body has proper scroll behavior */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Make sure nothing interferes with sticky positioning */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Fix for Safari */
+@supports (-webkit-touch-callout: none) {
+  .header {
+    position: -webkit-sticky !important;
+  }
+}
+
+/* Fix for older browsers */
+.sticky-fallback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Add a small shadow when scrolled */
+.header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
