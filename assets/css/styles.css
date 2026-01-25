@@ -3933,7 +3933,7 @@ a:hover {
 
 /* Adjust profile tagline size to fit better */
 .home-page .profile-tagline {
-  font-size: var(--font-size-3xl); 
+  font-size: var(--font-size-5xl); 
   font-family: var(--font-family-serif); /* Same elegant font */
   font-weight: 600;
   color: var(--color-primary-dark);
