@@ -4046,3 +4046,17 @@ body {
 .header.scrolled {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Reset any conflicting overflow properties */
+html, body {
+  overflow-x: hidden;
+}
+
+body > *:not(.header) {
+  position: static;
+}
+
+/* Ensure header is direct child of body */
+body {
+  position: relative;
+}
