@@ -3608,5 +3608,95 @@ a:hover {
   fill: currentColor; 
 }
 
+/* ================= HOME PAGE SPECIFIC FIXES ================= */
 
+/* Stack profile grid containers vertically */
+.home-page .profile-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
 
+/* Add sea green borders to all home page containers */
+.home-page .card {
+  border: 2px solid #20b2aa; /* Sea green color */
+  position: relative;
+}
+
+/* Specifically target home page cards for consistent styling */
+.home-page .profile-card,
+.home-page .about-card,
+.home-page .culinary-card {
+  border: 2px solid #20b2aa;
+}
+
+/* Remove any existing border overrides */
+.home-page .card:hover {
+  border-color: var(--color-primary); /* Keep hover effect */
+}
+
+/* Align WhatsApp button with profile image */
+.home-page .profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-page .profile-actions {
+  margin-top: var(--spacing-lg);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Ensure the profile image and WhatsApp button are properly aligned */
+.home-page .profile-image-container {
+  margin-bottom: var(--spacing-lg);
+}
+
+.home-page .profile-tagline {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* Adjust the layout of the right column culinary showcase */
+.home-page .culinary-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Make all cards in the culinary showcase stack */
+.home-page .culinary-showcase > .culinary-card {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments for the stacked layout */
+@media (max-width: 768px) {
+  .home-page .profile-grid {
+    gap: var(--spacing-lg);
+  }
+  
+  .home-page .culinary-showcase {
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page .profile-grid {
+    gap: var(--spacing-md);
+  }
+  
+  .home-page .culinary-showcase {
+    gap: var(--spacing-md);
+  }
+  
+  .home-page .card {
+    padding: var(--spacing-lg);
+  }
+}
