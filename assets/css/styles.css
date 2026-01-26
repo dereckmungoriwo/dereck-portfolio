@@ -1,175 +1,230 @@
 /* ================= CSS VARIABLES ================= */
 :root {
+  /* Color System */
   --color-black: #000000;
   --color-white: #ffffff;
-  --color-primary: #008080;
-  --color-primary-light: #20b2aa;
-  --color-primary-dark: #006666;
   --color-gray-50: #fafafa;
   --color-gray-100: #f5f5f5;
   --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
   --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
   
-  --font-family-sans: 'Inter', sans-serif;
-  --font-family-serif: 'Playfair Display', serif;
+  /* Primary Accent - TEAL / SEA GREEN */
+  --color-primary: #008080;
+  --color-primary-light: #20b2aa;
+  --color-primary-dark: #006666;
+  --color-primary-10: rgba(0, 128, 128, 0.1);
+  --color-primary-20: rgba(0, 128, 128, 0.2);
   
+  /* Typography */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-serif: 'Playfair Display', Georgia, serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  
+  /* Spacing & Layout */
+  --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
-  --border-radius-lg: 12px;
+  --spacing-2xl: 3rem;
+  --container-max: 1200px;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  
+  /* Effects */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --transition: 250ms ease;
+  --transition-slow: 350ms ease;
+  --header-height: 80px;
 }
 
 /* ================= RESET & BASE ================= */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body { 
-  font-family: var(--font-family-sans); 
-  background-color: var(--color-white); 
-  line-height: 1.6; 
-  position: relative; 
+
+html { 
+  scroll-behavior: smooth; 
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ================= GLOBAL STICKY HEADER ================= */
-.header {
-  position: sticky !important;
-  top: 0 !important;
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  color: var(--color-gray-900);
+  background-color: var(--color-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+body.modal-open { overflow: hidden; }
+
+/* ================= LAYOUT & COMMON COMPONENTS ================= */
+.container {
   width: 100%;
-  z-index: 1000 !important;
-  background-color: rgba(255, 255, 255, 0.90) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.main-content { padding-top: var(--spacing-xl); flex: 1; }
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+}
+
+/* ================= HEADER & NAV ================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid var(--color-gray-200);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-/* ================= PREMIUM PROFILE CARD ================= */
-.home-page .profile-card.card {
-  background: linear-gradient(145deg, #ffffff, #f0f7f7);
-  border: 1px solid rgba(32, 178, 170, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 128, 128, 0.08);
-  position: relative;
-  overflow: hidden;
-  padding: 2.5rem;
-  text-align: center;
-}
-
-/* Luxury accent light effect */
-.home-page .profile-card.card::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(32, 178, 170, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.home-page .profile-image {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid var(--color-primary-light);
-  padding: 5px;
-  background: white;
-  box-shadow: var(--shadow-lg);
-  margin-bottom: 1.5rem;
-}
-
-.home-page .profile-tagline {
-  font-family: var(--font-family-serif);
-  font-size: 1.4rem;
-  color: var(--color-primary-dark);
-  letter-spacing: 0.5px;
-}
-
-/* ================= MODAL & DETAILS BOXES (FIXED) ================= */
-/* This handles both Project and Gallery details stacking at the bottom */
-.project-modal, .gallery-modal, .project-details-overlay {
-  position: fixed !important;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  display: none; /* Controlled by JS active class */
-  justify-content: center;
-  align-items: center;
-  z-index: 9999 !important;
-  padding: var(--spacing-lg);
 }
 
-.project-modal.active, .gallery-modal.active {
-  display: flex;
+.logo { display: flex; align-items: center; gap: var(--spacing-sm); text-decoration: none; }
+.logo-image {
+  width: 48px; height: 48px; border-radius: 50%; 
+  border: 2px solid var(--color-primary); overflow: hidden;
+}
+.logo-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.nav-list { display: flex; list-style: none; gap: var(--spacing-xl); }
+.nav-link { 
+  color: var(--color-gray-700); text-decoration: none; font-weight: 500; 
+  position: relative; padding: 5px 0;
+}
+.nav-link:hover, .nav-link.active { color: var(--color-primary); }
+.nav-link.active::after {
+  content: ''; position: absolute; bottom: 0; left: 0; 
+  width: 100%; height: 2px; background: var(--color-primary);
 }
 
-.modal-content {
-  background: var(--color-white);
-  border-radius: var(--border-radius-lg);
-  max-width: 800px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+/* ================= BUTTONS ================= */
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.75rem 1.5rem; border-radius: var(--border-radius);
+  font-weight: 600; text-decoration: none; transition: all var(--transition);
+  cursor: pointer; border: 2px solid transparent; gap: 8px;
 }
 
-/* ================= WHATSAPP FLOATING BUTTON ================= */
+.button-primary { background: var(--color-primary); color: white; }
+.button-primary:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
+
+.button-secondary { border-color: var(--color-primary); color: var(--color-primary); }
+.button-secondary:hover { background: var(--color-primary-10); transform: translateY(-2px); }
+
+/* WhatsApp Specific */
+.button-whatsapp, .whatsapp-float { background-color: #25D366 !important; color: white !important; }
 .whatsapp-float {
-  position: fixed !important;
-  bottom: 30px !important;
-  right: 30px !important;
-  width: 60px;
-  height: 60px;
-  background-color: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-  z-index: 9998 !important; /* Above content, below modals */
-  transition: transform 0.3s ease;
+  position: fixed; bottom: var(--spacing-xl); right: var(--spacing-xl);
+  width: 60px; height: 60px; border-radius: 50%; z-index: 998;
+  box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1) translateY(-5px);
+/* ================= GLOBAL CTA SECTION ================= */
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white; text-align: center; padding: var(--spacing-2xl) 0;
+  margin: var(--spacing-2xl) 0; border-radius: var(--border-radius-lg);
 }
 
-/* ================= UTILITY CLEANUP ================= */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+.cta-content { max-width: 700px; margin: 0 auto; padding: 0 var(--spacing-md); }
+.cta-heading { font-size: var(--font-size-3xl); margin-bottom: var(--spacing-md); color: white; }
+.cta-description { color: rgba(255, 255, 255, 0.9); margin-bottom: var(--spacing-xl); }
+.cta-buttons { display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; }
+
+/* ================= PAGE SPECIFIC OVERRIDES ================= */
+
+/* Home Page Profile Grid */
+.home-page .profile-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-2xl);
 }
 
-.card {
-  background: var(--color-white);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--color-gray-200);
-  transition: transform var(--transition), box-shadow var(--transition);
+/* Gallery Grid */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+.gallery-item-img-wrap {
+  aspect-ratio: 4/3; overflow: hidden; border-radius: var(--border-radius);
+}
+.gallery-item-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+.gallery-item-img-wrap:hover img { transform: scale(1.05); }
+
+/* Modals */
+.gallery-modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+  z-index: 2000; display: none; align-items: center; justify-content: center; padding: var(--spacing-md);
+}
+.gallery-modal.active { display: flex; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .home-page .profile-grid { grid-template-columns: 1fr; }
 }
 
-/* Responsiveness Fix */
 @media (max-width: 768px) {
-  .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-  .header-content { height: 70px; }
-  .profile-grid { grid-template-columns: 1fr; }
+  :root { --header-height: 70px; }
+  
+  .nav-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; }
+  .hamburger-line { width: 24px; height: 2px; background: var(--color-black); transition: var(--transition); }
+  
+  .nav {
+    position: fixed; top: var(--header-height); left: 0; right: 0;
+    background: white; padding: var(--spacing-lg); border-top: 1px solid var(--color-gray-200);
+    transform: translateY(-100%); opacity: 0; visibility: hidden; transition: var(--transition);
+  }
+  .nav.active { transform: translateY(0); opacity: 1; visibility: visible; }
+  .nav-list { flex-direction: column; gap: var(--spacing-md); }
+
+  .cta-heading { font-size: var(--font-size-2xl); }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .button { width: 100%; max-width: 300px; }
 }
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
