@@ -4322,7 +4322,7 @@ body.modal-open {
   bottom: 0 !important;
   background: rgba(0, 0, 0, 0.92);
   z-index: 9999 !important;
-  display: none !important;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   padding: var(--spacing-lg);
