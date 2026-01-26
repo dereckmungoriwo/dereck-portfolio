@@ -474,3 +474,118 @@ document.addEventListener('DOMContentLoaded', function() {
     currentYearElement.textContent = new Date().getFullYear();
   }
 });
+
+// Gallery Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryItems = document.querySelectorAll('.gallery-item .view-button');
+  const modal = document.createElement('div');
+  modal.className = 'gallery-modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <img class="modal-image" src="" alt="">
+      <div class="modal-caption">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  
+  const modalImage = modal.querySelector('.modal-image');
+  const modalTitle = modal.querySelector('.modal-caption h3');
+  const modalDescription = modal.querySelector('.modal-caption p');
+  const modalClose = modal.querySelector('.modal-close');
+  
+  // Open modal when view button is clicked
+  galleryItems.forEach((button, index) => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const galleryItem = this.closest('.gallery-item');
+      const image = galleryItem.querySelector('.gallery-image');
+      const title = galleryItem.querySelector('.gallery-title');
+      const description = galleryItem.querySelector('.gallery-description');
+      
+      if (image && title && description) {
+        modalImage.src = image.src;
+        modalImage.alt = image.alt || title.textContent;
+        modalTitle.textContent = title.textContent;
+        modalDescription.textContent = description.textContent;
+        
+        // Close any open modals first
+        document.querySelectorAll('.gallery-modal').forEach(m => m.classList.remove('active'));
+        
+        // Open new modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+  
+  // Close modal when close button is clicked
+  modalClose.addEventListener('click', function() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  
+  // Close modal when clicking outside
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Prevent multiple modals from stacking
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.view-button')) {
+      // Close all other modals
+      document.querySelectorAll('.gallery-modal').forEach(m => {
+        if (m !== modal) {
+          m.classList.remove('active');
+          m.style.display = 'none';
+        }
+      });
+    }
+  });
+});
+
+// Clean up duplicate modals on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove any duplicate modals
+  const modals = document.querySelectorAll('.gallery-modal');
+  if (modals.length > 1) {
+    for (let i = 1; i < modals.length; i++) {
+      modals[i].remove();
+    }
+  }
+  
+  // Ensure only one modal exists
+  const existingModal = document.querySelector('.gallery-modal');
+  if (!existingModal) {
+    // Create modal if it doesn't exist
+    const modal = document.createElement('div');
+    modal.className = 'gallery-modal';
+    modal.innerHTML = `
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <img class="modal-image" src="" alt="">
+        <div class="modal-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+});
