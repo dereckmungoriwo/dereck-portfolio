@@ -4254,216 +4254,333 @@ body.modal-open {
   height: 100%;
 }
 
-/* ================= LUXURY TECH-CHEF PROFILE CARD - REFINED ================= */
+/* ================= MODERN CULINARY-TECH PROFILE CARD ================= */
 .profile-card {
   position: relative;
   overflow: hidden;
   border-radius: var(--border-radius-xl);
-  
-  /* Enhanced Luxury Glass Background */
-  background: linear-gradient(
-    135deg, 
-    #ffffff 0%, 
-    #f7fdfc 50%,
-    #f0fcfb 100%
-  );
-  
-  /* Refined Border */
+  background: linear-gradient(135deg, #ffffff 0%, #f7fdfc 100%);
   border: 1px solid rgba(32, 178, 170, 0.2);
-  
-  /* Premium Shadow Stack - Slightly deeper */
   box-shadow:
-    0 1px 2px rgba(0,0,0,0.03),
-    0 10px 30px rgba(0,0,0,0.05),
-    0 25px 60px rgba(0,0,0,0.07),
-    0 0 0 1px rgba(255,255,255,0.8) inset,
-    0 0 0 1px rgba(32,178,170,0.1);
-  
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    0 10px 30px rgba(0,0,0,0.06),
+    0 25px 60px rgba(0,0,0,0.08);
+  padding: var(--spacing-2xl);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Refined Elevation on Hover */
 .profile-card:hover {
-  transform: translateY(-8px) scale(1.01);
+  transform: translateY(-6px);
   box-shadow:
-    0 2px 4px rgba(0,0,0,0.04),
     0 20px 40px rgba(0,0,0,0.08),
-    0 35px 80px rgba(0,128,128,0.15),
-    0 0 0 1px rgba(255,255,255,0.9) inset,
-    0 0 0 1px rgba(32,178,170,0.15);
+    0 35px 80px rgba(0,128,128,0.12);
 }
 
-/* ---------------- REFINED GLASS LIGHT SWEEP ---------------- */
+/* Subtle Light Sweep */
 .profile-card::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     110deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.7) 20%,
-    rgba(255,255,255,0.4) 35%,
-    rgba(255,255,255,0.1) 50%,
-    transparent 65%
+    transparent 0%,
+    rgba(255,255,255,0.6) 40%,
+    transparent 80%
   );
-  transform: translateX(-120%) skewX(-15deg);
-  animation: glassSweep 10s ease-in-out infinite;
+  transform: translateX(-100%) skewX(-15deg);
+  animation: glassSweep 8s ease-in-out infinite;
   pointer-events: none;
-  z-index: 2;
-  mix-blend-mode: overlay;
+  z-index: 1;
 }
 
 @keyframes glassSweep {
-  0%, 100% { 
-    transform: translateX(-120%) skewX(-15deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  50% { 
-    transform: translateX(20%) skewX(-15deg);
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
+  0%, 100% { transform: translateX(-100%) skewX(-15deg); }
+  50% { transform: translateX(150%) skewX(-15deg); }
 }
 
-/* ---------------- ENHANCED AMBIENT GLOW (BEHIND IMAGE) ---------------- */
-.profile-card::after {
-  content: "";
-  position: absolute;
-  inset: -60px;
-  background: radial-gradient(
-    circle at 50% 40%, 
-    rgba(32,178,170,0.18) 0%,
-    rgba(32,178,170,0.08) 30%,
-    transparent 70%
-  );
-  z-index: 0;  /* BEHIND everything */
-  filter: blur(50px);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-/* ---------------- REFINED TECH PARTICLES ---------------- */
-.profile-card {
-  background-image:
-    /* Primary particles */
-    radial-gradient(circle at 15% 25%, rgba(32,178,170,0.1) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 85% 75%, rgba(32,178,170,0.08) 1.5px, transparent 1.5px),
-    /* Secondary particles */
-    radial-gradient(circle at 70% 30%, rgba(32,178,170,0.06) 1px, transparent 1px),
-    radial-gradient(circle at 30% 80%, rgba(32,178,170,0.05) 1px, transparent 1px),
-    /* Micro particles */
-    radial-gradient(circle at 50% 50%, rgba(32,178,170,0.04) 0.5px, transparent 0.5px);
-  
-  background-size: 
-    200px 200px,
-    240px 240px,
-    160px 160px,
-    180px 180px,
-    120px 120px;
-  
-  background-position:
-    0 0,
-    40px 40px,
-    20px 20px,
-    60px 60px,
-    10px 10px;
-}
-
-/* ================= ENHANCED PROFILE IMAGE (CRISP & SHARP) ================= */
+/* ================= PROFILE IMAGE CONTAINER WITH FLOATING ICONS ================= */
 .profile-image-container {
   position: relative;
   display: inline-block;
   margin-bottom: var(--spacing-xl);
-  z-index: 10; /* HIGH z-index to stay above blur effects */
-  isolation: isolate; /* Creates new stacking context */
+  z-index: 10;
+  width: 240px;
+  height: 240px;
 }
 
-/* Studio Reflection - More Realistic */
-.profile-image-container::before {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at 35% 35%, 
-    rgba(255,255,255,0.8) 0%,
-    rgba(255,255,255,0.4) 30%,
-    transparent 65%
-  );
-  pointer-events: none;
-  z-index: 12;
-  opacity: 0.9;
-}
-
-/* Enhanced Luxury Ring */
-.profile-image-container::after {
-  content: "";
-  position: absolute;
-  inset: -16px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(32,178,170,0.2);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.6),
-    0 0 0 4px rgba(32,178,170,0.06),
-    0 0 0 8px rgba(32,178,170,0.04),
-    0 0 30px rgba(32,178,170,0.15),
-    0 8px 20px rgba(0,0,0,0.08);
-  animation: ringPulse 4s ease-in-out infinite;
-  z-index: 8; /* Below image */
-}
-
-@keyframes ringPulse {
-  0%, 100% { 
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% { 
-    transform: scale(1.02);
-    opacity: 0.9;
-  }
-}
-
+/* Clean Sharp Profile Image - NO BLUR */
 .profile-image {
   border-radius: 50%;
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border: 5px solid #ffffff;
+  border: 4px solid #ffffff;
   box-shadow: 
-    0 0 0 1px rgba(32,178,170,0.1),
-    0 10px 25px rgba(0, 128, 128, 0.2),
-    0 20px 40px rgba(0, 128, 128, 0.12);
-  position: relative;
-  z-index: 11; /* ABOVE everything */
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    0 8px 20px rgba(0, 128, 128, 0.15),
+    0 16px 40px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transition: transform 0.3s ease;
   
-  /* CRITICAL: Prevent blur inheritance */
-  filter: none;
+  /* CRITICAL: Keep image crisp */
+  filter: none !important;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  
-  /* Ensure crisp rendering */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
 }
 
 .profile-image:hover {
-  transform: scale(1.05) translateZ(0);
-  box-shadow: 
-    0 0 0 1px rgba(32,178,170,0.15),
-    0 15px 35px rgba(0, 128, 128, 0.25),
-    0 25px 50px rgba(0, 128, 128, 0.15);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* ================= REFINED CONTENT ================= */
+/* Studio Light Reflection on Image */
+.profile-image-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%, 
+    rgba(255,255,255,0.4) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* ================= FLOATING CULINARY-TECH ICONS ================= */
+
+/* Container for all icons */
+.profile-image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Chef Hat - Top */
+.profile-image-container {
+  --icon-size: 48px;
+}
+
+.profile-card .culinary-icon-1 {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float1 3s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+/* Knife & Spoon - Top Right */
+.profile-card .culinary-icon-2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float2 3.5s ease-in-out infinite;
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(5deg); }
+}
+
+/* Data Chart - Right */
+.profile-card .culinary-icon-3 {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float3 4s ease-in-out infinite;
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(5px); }
+}
+
+/* Thermometer - Bottom Right */
+.profile-card .culinary-icon-4 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float4 3.2s ease-in-out infinite;
+}
+
+@keyframes float4 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(6px) rotate(-5deg); }
+}
+
+/* Database/Tech - Bottom */
+.profile-card .culinary-icon-5 {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float5 3.8s ease-in-out infinite;
+}
+
+@keyframes float5 {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* Laptop/Code - Bottom Left */
+.profile-card .culinary-icon-6 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float6 3.3s ease-in-out infinite;
+}
+
+@keyframes float6 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(6px) rotate(5deg); }
+}
+
+/* Mixing Bowl - Left */
+.profile-card .culinary-icon-7 {
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float7 4.2s ease-in-out infinite;
+}
+
+@keyframes float7 {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-5px); }
+}
+
+/* Timer/Clock - Top Left */
+.profile-card .culinary-icon-8 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: float8 3.6s ease-in-out infinite;
+}
+
+@keyframes float8 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(-5deg); }
+}
+
+/* Icon SVG Styles */
+.culinary-icon-1 svg,
+.culinary-icon-2 svg,
+.culinary-icon-3 svg,
+.culinary-icon-4 svg,
+.culinary-icon-5 svg,
+.culinary-icon-6 svg,
+.culinary-icon-7 svg,
+.culinary-icon-8 svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-primary);
+  transition: transform 0.3s ease;
+}
+
+.culinary-icon-1:hover svg,
+.culinary-icon-2:hover svg,
+.culinary-icon-3:hover svg,
+.culinary-icon-4:hover svg,
+.culinary-icon-5:hover svg,
+.culinary-icon-6:hover svg,
+.culinary-icon-7:hover svg,
+.culinary-icon-8:hover svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ================= CONTENT ================= */
 .profile-content {
   position: relative;
   z-index: 2;
@@ -4476,14 +4593,11 @@ body.modal-open {
   font-weight: 500;
   letter-spacing: 0.5px;
   line-height: 1.6;
-  position: relative;
-  z-index: 2;
+  text-align: center;
   margin-bottom: var(--spacing-md);
   padding: 0 var(--spacing-lg);
-  text-align: center;
 }
 
-/* Refined Decorative Line */
 .profile-tagline::after {
   content: "";
   display: block;
@@ -4491,53 +4605,19 @@ body.modal-open {
   height: 2.5px;
   background: linear-gradient(
     90deg, 
-    transparent 0%, 
-    rgba(32,178,170,0.3) 20%,
-    var(--color-primary-light) 50%, 
-    rgba(32,178,170,0.3) 80%,
-    transparent 100%
+    transparent, 
+    var(--color-primary-light), 
+    transparent
   );
   margin: var(--spacing-md) auto 0;
   border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(32,178,170,0.2);
-  animation: lineGlow 3s ease-in-out infinite;
 }
 
-@keyframes lineGlow {
-  0%, 100% { 
-    opacity: 0.8;
-    transform: scaleX(1);
-  }
-  50% { 
-    opacity: 1;
-    transform: scaleX(1.1);
-  }
-}
-
-/* Profile Actions Button Enhancement */
-.profile-actions {
-  position: relative;
-  z-index: 2;
-  margin-top: var(--spacing-lg);
-}
-
-.profile-actions .button {
-  box-shadow: 
-    0 4px 12px rgba(37, 211, 102, 0.25),
-    0 2px 6px rgba(37, 211, 102, 0.15);
-}
-
-.profile-actions .button:hover {
-  box-shadow: 
-    0 6px 20px rgba(37, 211, 102, 0.35),
-    0 3px 10px rgba(37, 211, 102, 0.2);
-}
-
-/* ================= RESPONSIVE REFINEMENTS ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .profile-card::after {
-    inset: -40px;
-    filter: blur(40px);
+  .profile-image-container {
+    width: 200px;
+    height: 200px;
   }
   
   .profile-image {
@@ -4545,43 +4625,65 @@ body.modal-open {
     height: 160px;
   }
   
-  .profile-tagline {
-    font-size: 1rem;
+  .profile-image-container::before {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .profile-card {
+    --icon-size: 40px;
+  }
+  
+  .profile-card .culinary-icon-1 svg,
+  .profile-card .culinary-icon-2 svg,
+  .profile-card .culinary-icon-3 svg,
+  .profile-card .culinary-icon-4 svg,
+  .profile-card .culinary-icon-5 svg,
+  .profile-card .culinary-icon-6 svg,
+  .profile-card .culinary-icon-7 svg,
+  .profile-card .culinary-icon-8 svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .profile-card {
-    border-radius: var(--border-radius-lg);
+  .profile-image-container {
+    width: 180px;
+    height: 180px;
   }
   
   .profile-image {
     width: 140px;
     height: 140px;
-    border-width: 4px;
   }
   
-  .profile-image-container::after {
-    inset: -12px;
+  .profile-image-container::before {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .profile-card {
+    --icon-size: 36px;
   }
   
   .profile-tagline {
-    font-size: 0.95rem;
-    padding: 0 var(--spacing-md);
+    font-size: 1rem;
   }
 }
 
-/* ================= ACCESSIBILITY - REDUCED MOTION ================= */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .profile-card::before,
-  .profile-image-container::after,
-  .profile-tagline::after {
+  .culinary-icon-1,
+  .culinary-icon-2,
+  .culinary-icon-3,
+  .culinary-icon-4,
+  .culinary-icon-5,
+  .culinary-icon-6,
+  .culinary-icon-7,
+  .culinary-icon-8 {
     animation: none;
-  }
-  
-  .profile-card,
-  .profile-image {
-    transition: none;
   }
 }
 
