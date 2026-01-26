@@ -559,33 +559,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
-// Clean up duplicate modals on page load
-document.addEventListener('DOMContentLoaded', function() {
-  // Remove any duplicate modals
-  const modals = document.querySelectorAll('.gallery-modal');
-  if (modals.length > 1) {
-    for (let i = 1; i < modals.length; i++) {
-      modals[i].remove();
-    }
-  }
-  
-  // Ensure only one modal exists
-  const existingModal = document.querySelector('.gallery-modal');
-  if (!existingModal) {
-    // Create modal if it doesn't exist
-    const modal = document.createElement('div');
-    modal.className = 'gallery-modal';
-    modal.innerHTML = `
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">&times;</button>
-        <img class="modal-image" src="" alt="">
-        <div class="modal-caption">
-          <h3></h3>
-          <p></p>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-  }
-});
