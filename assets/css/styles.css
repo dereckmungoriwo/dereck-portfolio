@@ -4255,6 +4255,16 @@ body.modal-open {
 }
 
 /* ================= MODERN CULINARY-TECH PROFILE CARD ================= */
+:root {
+  --color-primary: #20b2aa;
+  --color-primary-light: rgba(32, 178, 170, 0.2);
+  --color-primary-dark: #008080;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --border-radius-xl: 24px;
+  --font-family-serif: 'Playfair Display', serif;
+}
+
 .profile-card {
   position: relative;
   overflow: hidden;
@@ -4266,6 +4276,12 @@ body.modal-open {
     0 25px 60px rgba(0,0,0,0.08);
   padding: var(--spacing-2xl);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
+  /* Centers all content vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .profile-card:hover {
@@ -4275,7 +4291,7 @@ body.modal-open {
     0 35px 80px rgba(0,128,128,0.12);
 }
 
-/* Subtle Light Sweep */
+/* Subtle Light Sweep effect */
 .profile-card::before {
   content: "";
   position: absolute;
@@ -4289,7 +4305,7 @@ body.modal-open {
   transform: translateX(-100%) skewX(-15deg);
   animation: glassSweep 8s ease-in-out infinite;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 @keyframes glassSweep {
@@ -4297,293 +4313,83 @@ body.modal-open {
   50% { transform: translateX(150%) skewX(-15deg); }
 }
 
-/* ================= PROFILE IMAGE CONTAINER WITH FLOATING ICONS ================= */
+/* ================= CENTERED PROFILE IMAGE ================= */
 .profile-image-container {
   position: relative;
-  display: inline-block;
-  margin-bottom: var(--spacing-xl);
-  z-index: 10;
-  width: 240px;
-  height: 240px;
-}
-
-/* Clean Sharp Profile Image - NO BLUR */
-.profile-image {
-  border-radius: 50%;
+  display: block;
+  margin: 0 auto var(--spacing-xl) auto;
+  z-index: 10; /* Keeps image above floating icons */
   width: 200px;
   height: 200px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border: 4px solid #ffffff;
   box-shadow: 
     0 8px 20px rgba(0, 128, 128, 0.15),
     0 16px 40px rgba(0, 0, 0, 0.08);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
   transition: transform 0.3s ease;
-  
-  /* CRITICAL: Keep image crisp */
   filter: none !important;
   backface-visibility: hidden;
 }
 
 .profile-image:hover {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: scale(1.05);
 }
 
-/* Studio Light Reflection on Image */
-.profile-image-container::before {
-  content: "";
+/* ================= 3D DRIFTING BACKGROUND ICONS ================= */
+.profile-card [class^="culinary-icon-"] {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 30%, 
-    rgba(255,255,255,0.4) 0%,
-    transparent 50%
-  );
+  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Sits behind everything */
   pointer-events: none;
-  z-index: 6;
 }
 
-/* ================= FLOATING CULINARY-TECH ICONS ================= */
-
-/* Container for all icons */
-.profile-image-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* Chef Hat - Top */
-.profile-image-container {
-  --icon-size: 48px;
-}
-
-.profile-card .culinary-icon-1 {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float1 3s ease-in-out infinite;
-}
-
-@keyframes float1 {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-8px); }
-}
-
-/* Knife & Spoon - Top Right */
-.profile-card .culinary-icon-2 {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float2 3.5s ease-in-out infinite;
-}
-
-@keyframes float2 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(5deg); }
-}
-
-/* Data Chart - Right */
-.profile-card .culinary-icon-3 {
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float3 4s ease-in-out infinite;
-}
-
-@keyframes float3 {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50% { transform: translateY(-50%) translateX(5px); }
-}
-
-/* Thermometer - Bottom Right */
-.profile-card .culinary-icon-4 {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float4 3.2s ease-in-out infinite;
-}
-
-@keyframes float4 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(6px) rotate(-5deg); }
-}
-
-/* Database/Tech - Bottom */
-.profile-card .culinary-icon-5 {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float5 3.8s ease-in-out infinite;
-}
-
-@keyframes float5 {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
-
-/* Laptop/Code - Bottom Left */
-.profile-card .culinary-icon-6 {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float6 3.3s ease-in-out infinite;
-}
-
-@keyframes float6 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(6px) rotate(5deg); }
-}
-
-/* Mixing Bowl - Left */
-.profile-card .culinary-icon-7 {
-  position: absolute;
-  left: -5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float7 4.2s ease-in-out infinite;
-}
-
-@keyframes float7 {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50% { transform: translateY(-50%) translateX(-5px); }
-}
-
-/* Timer/Clock - Top Left */
-.profile-card .culinary-icon-8 {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float8 3.6s ease-in-out infinite;
-}
-
-@keyframes float8 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(-5deg); }
-}
-
-/* Icon SVG Styles */
-.culinary-icon-1 svg,
-.culinary-icon-2 svg,
-.culinary-icon-3 svg,
-.culinary-icon-4 svg,
-.culinary-icon-5 svg,
-.culinary-icon-6 svg,
-.culinary-icon-7 svg,
-.culinary-icon-8 svg {
-  width: 24px;
-  height: 24px;
+.profile-card [class^="culinary-icon-"] svg {
   fill: var(--color-primary);
-  transition: transform 0.3s ease;
+  width: 50%;
+  height: 50%;
 }
 
-.culinary-icon-1:hover svg,
-.culinary-icon-2:hover svg,
-.culinary-icon-3:hover svg,
-.culinary-icon-4:hover svg,
-.culinary-icon-5:hover svg,
-.culinary-icon-6:hover svg,
-.culinary-icon-7:hover svg,
-.culinary-icon-8:hover svg {
-  transform: scale(1.1) rotate(5deg);
-}
+/* Depth Tier 1: Large & Close (Sharp) */
+.culinary-icon-1 { width: 52px; height: 52px; top: 10%; left: 8%; opacity: 0.8; animation: drift-tl 7s ease-in-out infinite; }
+.culinary-icon-3 { width: 48px; height: 48px; top: 45%; right: 5%; opacity: 0.7; animation: drift-r 10s ease-in-out infinite; }
 
-/* ================= CONTENT ================= */
+/* Depth Tier 2: Medium (Slightly Faded) */
+.culinary-icon-2 { width: 42px; height: 42px; top: 12%; right: 10%; opacity: 0.5; animation: drift-tr 9s ease-in-out infinite; }
+.culinary-icon-7 { width: 40px; height: 40px; top: 40%; left: 6%; opacity: 0.5; animation: drift-l 11s ease-in-out infinite; }
+.culinary-icon-4 { width: 44px; height: 44px; bottom: 12%; right: 8%; opacity: 0.6; animation: drift-br 8s ease-in-out infinite; }
+
+/* Depth Tier 3: Small & Far (Blurred/Soft) */
+.culinary-icon-8 { width: 32px; height: 32px; top: 5%; left: 45%; opacity: 0.3; filter: blur(1px); animation: drift-tc 12s ease-in-out infinite; }
+.culinary-icon-5 { width: 34px; height: 34px; bottom: 5%; left: 50%; opacity: 0.3; filter: blur(1px); animation: drift-bc 13s ease-in-out infinite; }
+.culinary-icon-6 { width: 30px; height: 30px; bottom: 10%; left: 12%; opacity: 0.3; filter: blur(1.5px); animation: drift-bl 15s ease-in-out infinite; }
+
+/* ================= DRIFT ANIMATIONS (PUSHING AWAY FROM CENTER) ================= */
+@keyframes drift-tl { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-15px, -15px) rotate(-10deg); } }
+@keyframes drift-tr { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(15px, -15px) rotate(10deg); } }
+@keyframes drift-tc { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+@keyframes drift-l  { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-20px); } }
+@keyframes drift-r  { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(20px); } }
+@keyframes drift-bl { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-12px, 12px); } }
+@keyframes drift-bc { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(20px); } }
+@keyframes drift-br { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(15px, 15px); } }
+
+/* ================= CONTENT & BUTTON ================= */
 .profile-content {
   position: relative;
-  z-index: 2;
+  z-index: 10;
+  width: 100%;
 }
 
 .profile-tagline {
@@ -4591,99 +4397,13 @@ body.modal-open {
   font-size: 1.15rem;
   color: var(--color-primary-dark);
   font-weight: 500;
-  letter-spacing: 0.5px;
-  line-height: 1.6;
-  text-align: center;
   margin-bottom: var(--spacing-md);
-  padding: 0 var(--spacing-lg);
 }
 
-.profile-tagline::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 2.5px;
-  background: linear-gradient(
-    90deg, 
-    transparent, 
-    var(--color-primary-light), 
-    transparent
-  );
-  margin: var(--spacing-md) auto 0;
-  border-radius: 2px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .profile-image-container {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .profile-image {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .profile-image-container::before {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .profile-card {
-    --icon-size: 40px;
-  }
-  
-  .profile-card .culinary-icon-1 svg,
-  .profile-card .culinary-icon-2 svg,
-  .profile-card .culinary-icon-3 svg,
-  .profile-card .culinary-icon-4 svg,
-  .profile-card .culinary-icon-5 svg,
-  .profile-card .culinary-icon-6 svg,
-  .profile-card .culinary-icon-7 svg,
-  .profile-card .culinary-icon-8 svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-image-container {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .profile-image {
-    width: 140px;
-    height: 140px;
-  }
-  
-  .profile-image-container::before {
-    width: 140px;
-    height: 140px;
-  }
-  
-  .profile-card {
-    --icon-size: 36px;
-  }
-  
-  .profile-tagline {
-    font-size: 1rem;
-  }
-}
-
-/* Accessibility */
+/* Accessibility: Stop animations if user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .profile-card::before,
-  .culinary-icon-1,
-  .culinary-icon-2,
-  .culinary-icon-3,
-  .culinary-icon-4,
-  .culinary-icon-5,
-  .culinary-icon-6,
-  .culinary-icon-7,
-  .culinary-icon-8 {
-    animation: none;
+  .profile-card::before, [class^="culinary-icon-"] {
+    animation: none !important;
   }
 }
 
