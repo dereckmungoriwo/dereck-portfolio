@@ -4254,50 +4254,7 @@ body.modal-open {
   height: 100%;
 }
 
-/* ================= MODERN CULINARY-TECH PROFILE CARD ================= */
-.profile-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--border-radius-xl);
-  background: linear-gradient(135deg, #ffffff 0%, #f7fdfc 100%);
-  border: 1px solid rgba(32, 178, 170, 0.2);
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.06),
-    0 25px 60px rgba(0,0,0,0.08);
-  padding: var(--spacing-2xl);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.profile-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.08),
-    0 35px 80px rgba(0,128,128,0.12);
-}
-
-/* Subtle Light Sweep */
-.profile-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    110deg,
-    transparent 0%,
-    rgba(255,255,255,0.6) 40%,
-    transparent 80%
-  );
-  transform: translateX(-100%) skewX(-15deg);
-  animation: glassSweep 8s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes glassSweep {
-  0%, 100% { transform: translateX(-100%) skewX(-15deg); }
-  50% { transform: translateX(150%) skewX(-15deg); }
-}
-
-/* ================= LUXURY CULINARY-TECH PROFILE CARD ================= */
+/* ================= PROFILE CARD ================= */
 
 .profile-card {
   position: relative;
@@ -4306,39 +4263,12 @@ body.modal-open {
   background:
     radial-gradient(circle at 20% 10%, rgba(255,255,255,0.8), transparent 40%),
     linear-gradient(145deg, #ffffff 0%, #f6fbfa 60%, #eef7f6 100%);
-  border: 1px solid rgba(180, 160, 90, 0.25); /* luxury gold tone */
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.08),
-    0 8px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(180,160,90,0.25);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
   padding: 3rem 2rem 2.5rem;
-  transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.profile-card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.10),
-    0 12px 32px rgba(0,0,0,0.08);
-}
-
-/* Elegant top light sweep */
-.profile-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
-  transform: translateX(-100%) skewX(-15deg);
-  animation: glassSweep 9s ease-in-out infinite;
-  z-index: 1;
-  pointer-events: none;
-}
-
-@keyframes glassSweep {
-  0%,100% { transform: translateX(-120%) skewX(-15deg); }
-  50% { transform: translateX(130%) skewX(-15deg); }
-}
-
-/* ================= IMAGE CONTAINER ================= */
+/* ================= IMAGE ================= */
 
 .profile-image-container {
   position: relative;
@@ -4348,12 +4278,22 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
-
-  --orbit-radius: 95px;
+  --orbit-radius: 120px;
 }
 
-/* Gold halo ring behind portrait */
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+  box-shadow:
+    0 14px 34px rgba(0,0,0,0.14),
+    0 6px 16px rgba(180,160,90,0.30);
+  z-index: 5;
+}
+
+/* Gold halo */
 .profile-image-container::after {
   content: "";
   position: absolute;
@@ -4364,25 +4304,18 @@ body.modal-open {
   z-index: 0;
 }
 
-/* Profile Image */
-.profile-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #ffffff;
-  box-shadow:
-    0 12px 28px rgba(0,0,0,0.12),
-    0 4px 12px rgba(180,160,90,0.25);
-  z-index: 5;
-  transition: transform .3s ease;
+/* ================= ORBIT SYSTEM ================= */
+
+.icon-orbit {
+  position: absolute;
+  inset: 0;
+  animation: orbitRotate 90s linear infinite;
 }
 
-.profile-image:hover {
-  transform: scale(1.05);
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
-
-/* ================= LUXURY FLOATING ICON HALO ================= */
 
 .profile-card [class^="culinary-icon-"] {
   position: absolute;
@@ -4391,97 +4324,69 @@ body.modal-open {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: linear-gradient(145deg, #ffffff, #f4fbfa);
+  background: rgba(255,255,255,.6);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(180,160,90,.35);
-  box-shadow:
-    0 6px 16px rgba(0,0,0,.08),
-    0 2px 6px rgba(180,160,90,.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(6px);
-  opacity: .92;
-  z-index: 3;
-  animation: floatSoft 5s ease-in-out infinite;
+  transform-origin: center;
 }
 
-/* Radial distribution */
-.culinary-icon-1 { transform: translate(-50%, -50%) rotate(0deg)   translateY(calc(-1 * var(--orbit-radius))) rotate(0deg); }
-.culinary-icon-2 { transform: translate(-50%, -50%) rotate(45deg)  translateY(calc(-1 * var(--orbit-radius))) rotate(-45deg); }
-.culinary-icon-3 { transform: translate(-50%, -50%) rotate(90deg)  translateY(calc(-1 * var(--orbit-radius))) rotate(-90deg); }
-.culinary-icon-4 { transform: translate(-50%, -50%) rotate(135deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-135deg); }
-.culinary-icon-5 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-180deg); }
-.culinary-icon-6 { transform: translate(-50%, -50%) rotate(225deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-225deg); }
-.culinary-icon-7 { transform: translate(-50%, -50%) rotate(270deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-270deg); }
-.culinary-icon-8 { transform: translate(-50%, -50%) rotate(315deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-315deg); }
+/* Radial layout */
+.culinary-icon-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(-120px) rotate(0deg); }
+.culinary-icon-2 { transform: translate(-50%, -50%) rotate(45deg) translateY(-120px) rotate(-45deg); }
+.culinary-icon-3 { transform: translate(-50%, -50%) rotate(90deg) translateY(-120px) rotate(-90deg); }
+.culinary-icon-4 { transform: translate(-50%, -50%) rotate(135deg) translateY(-120px) rotate(-135deg); }
+.culinary-icon-5 { transform: translate(-50%, -50%) rotate(180deg) translateY(-120px) rotate(-180deg); }
+.culinary-icon-6 { transform: translate(-50%, -50%) rotate(225deg) translateY(-120px) rotate(-225deg); }
+.culinary-icon-7 { transform: translate(-50%, -50%) rotate(270deg) translateY(-120px) rotate(-270deg); }
+.culinary-icon-8 { transform: translate(-50%, -50%) rotate(315deg) translateY(-120px) rotate(-315deg); }
 
-/* Soft luxury motion */
-@keyframes floatSoft {
-  0%,100% { margin-top: 0; }
-  50% { margin-top: -6px; }
-}
-
-/* Icon SVG */
-.profile-card [class^="culinary-icon-"] svg {
-  width: 22px;
-  height: 22px;
-  fill: #0f766e;
-}
-
-/* ================= CONTENT ================= */
-
-.profile-content {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
+/* ================= TYPOGRAPHY ================= */
 
 .profile-tagline {
   font-family: "Playfair Display", serif;
-  font-size: 1.15rem;
-  letter-spacing: .6px;
-  color: #0f3f3d;
-  margin-bottom: 1.2rem;
-  position: relative;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #0b3d3b;
 }
 
 .profile-tagline::after {
   content: "";
   display: block;
-  width: 90px;
+  width: 120px;
   height: 2px;
-  margin: 1rem auto 0;
-  background: linear-gradient(to right, transparent, rgba(180,160,90,.6), transparent);
+  margin: 1.1rem auto 0;
+  background: linear-gradient(to right, transparent, rgba(180,160,90,.75), transparent);
 }
 
-/* Button refinement */
-.button-primary {
-  background: linear-gradient(145deg, #0f766e, #115e59);
-  border: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+/* ================= GLASS WHATSAPP BUTTON ================= */
+
+.button-whatsapp-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(37, 211, 102, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow:
+    0 8px 22px rgba(37,211,102,.35),
+    inset 0 0 12px rgba(255,255,255,.2);
+  transition: all .3s ease;
 }
 
-.button-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.2);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-  .profile-image-container { --orbit-radius: 75px; width: 200px; height: 200px; }
-  .profile-image { width: 160px; height: 160px; }
-}
-
-@media (max-width: 480px) {
-  .profile-image-container { --orbit-radius: 65px; width: 180px; height: 180px; }
-  .profile-image { width: 140px; height: 140px; }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .profile-card::before,
-  [class^="culinary-icon-"] { animation: none; }
+.button-whatsapp-glass:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 28px rgba(37,211,102,.45),
+    inset 0 0 14px rgba(255,255,255,.25);
 }
 
 /* ===== PROJECT MODAL FIXES ===== */
