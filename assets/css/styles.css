@@ -2232,15 +2232,14 @@ a:hover {
 
 /* Projects Filter */
 .projects-filter {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.95); /* keep the glass look */
   border-bottom: 1px solid var(--color-gray-200);
   padding: var(--spacing-md) 0;
   margin-bottom: var(--spacing-2xl);
   position: sticky;
   top: 80px;
   z-index: 900;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: none; /* critical */
 }
 
 .filter-tabs {
