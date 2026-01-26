@@ -4388,3 +4388,18 @@ body.modal-open {
   flex-direction: column;
 }
 
+/* ===== FORCE FULL-BLEED GALLERY IMAGES ===== */
+
+.gallery-item.card {
+  padding: 0 !important;   /* neutralize .card padding */
+  overflow: hidden;
+}
+
+.gallery-image-container {
+  margin: 0;               /* remove inherited spacing */
+  width: 100%;
+}
+
+.gallery-content {
+  padding: var(--spacing-lg);  /* keep spacing only for text */
+}
