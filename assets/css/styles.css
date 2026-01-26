@@ -4347,19 +4347,26 @@ body.modal-open {
 
 /* WHATSAPP GREEN BUTTON */
 .button-primary {
-  display: inline-block;
+  display: inline-flex;            /* changed from inline-block to support align-items */
+  align-items: center;
+  gap: 8px;
+
   background: #25D366;
   color: #ffffff;
+
   padding: 14px 28px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   margin-top: 1.5rem;
-  transition: background 0.3s ease;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .button-primary:hover {
   background: #1DA851;
+  transform: translateY(-2px);
 }
 
 /* ===== PROJECT MODAL FIXES ===== */
