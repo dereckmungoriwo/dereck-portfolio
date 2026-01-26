@@ -4259,6 +4259,7 @@ body.modal-open {
   --color-primary: #20b2aa;
   --color-primary-light: rgba(32, 178, 170, 0.2);
   --color-primary-dark: #008080;
+  --spacing-md: 1rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
   --border-radius-xl: 24px;
@@ -4269,7 +4270,8 @@ body.modal-open {
   position: relative;
   overflow: hidden;
   border-radius: var(--border-radius-xl);
-  background: linear-gradient(135deg, #ffffff 0%, #f7fdfc 100%);
+  /* Background set to a soft sea-green tint to match your image */
+  background: linear-gradient(135deg, #ffffff 0%, #e0f2f1 100%);
   border: 1px solid rgba(32, 178, 170, 0.2);
   box-shadow:
     0 10px 30px rgba(0,0,0,0.06),
@@ -4277,11 +4279,11 @@ body.modal-open {
   padding: var(--spacing-2xl);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   
-  /* Centers all content vertically */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  z-index: 1; /* Establishes a stacking context */
 }
 
 .profile-card:hover {
@@ -4291,7 +4293,23 @@ body.modal-open {
     0 35px 80px rgba(0,128,128,0.12);
 }
 
-/* Subtle Light Sweep effect */
+/* ================= THE REPEATING PATTERN (SEA GREEN) ================= */
+/* This mirrors the background pattern in your uploaded screenshot */
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: -50%; /* Larger than card to cover rotation gaps */
+  z-index: 0;
+  opacity: 0.12; /* Adjust for subtlety */
+  pointer-events: none;
+  
+  /* Repeating Knife and Spoon Pattern in Sea Green (#20b2aa) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 100'%3E%3Cg fill='%2320b2aa'%3E%3Cpath d='M25 10c-4 0-7 3-7 7 0 5 7 18 7 18s7-13 7-18c0-4-3-7-7-7zm0 25v30h2V35h-2z'/%3E%3Crect x='60' y='15' width='2' height='55' transform='rotate(-45 61 42.5)'/%3E%3Crect x='60' y='15' width='2' height='55' transform='rotate(45 61 42.5)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 140px 140px;
+  transform: rotate(-15deg);
+}
+
+/* Light Sweep effect on top of pattern */
 .profile-card::before {
   content: "";
   position: absolute;
@@ -4299,7 +4317,7 @@ body.modal-open {
   background: linear-gradient(
     110deg,
     transparent 0%,
-    rgba(255,255,255,0.6) 40%,
+    rgba(255,255,255,0.4) 40%,
     transparent 80%
   );
   transform: translateX(-100%) skewX(-15deg);
@@ -4313,12 +4331,17 @@ body.modal-open {
   50% { transform: translateX(150%) skewX(-15deg); }
 }
 
-/* ================= CENTERED PROFILE IMAGE ================= */
-.profile-image-container {
+/* ================= CONTENT LAYERING ================= */
+/* High z-index ensures these sit ON TOP of the background pattern */
+.profile-image-container, 
+.profile-content,
+[class^="culinary-icon-"] {
   position: relative;
-  display: block;
+  z-index: 10;
+}
+
+.profile-image-container {
   margin: 0 auto var(--spacing-xl) auto;
-  z-index: 10; /* Keeps image above floating icons */
   width: 200px;
   height: 200px;
 }
@@ -4329,29 +4352,22 @@ body.modal-open {
   height: 100%;
   object-fit: cover;
   border: 4px solid #ffffff;
-  box-shadow: 
-    0 8px 20px rgba(0, 128, 128, 0.15),
-    0 16px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.15);
   transition: transform 0.3s ease;
-  filter: none !important;
-  backface-visibility: hidden;
 }
 
-.profile-image:hover {
-  transform: scale(1.05);
-}
+.profile-image:hover { transform: scale(1.05); }
 
-/* ================= 3D DRIFTING BACKGROUND ICONS ================= */
+/* ================= 3D DRIFTING ICONS ================= */
 .profile-card [class^="culinary-icon-"] {
   position: absolute;
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+  background: #ffffff;
   border-radius: 12px;
   border: 2px solid var(--color-primary-light);
   box-shadow: 0 4px 12px rgba(32, 178, 170, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1; /* Sits behind everything */
   pointer-events: none;
 }
 
@@ -4361,21 +4377,17 @@ body.modal-open {
   height: 50%;
 }
 
-/* Depth Tier 1: Large & Close (Sharp) */
+/* Icon Placements & Animations */
 .culinary-icon-1 { width: 52px; height: 52px; top: 10%; left: 8%; opacity: 0.8; animation: drift-tl 7s ease-in-out infinite; }
 .culinary-icon-3 { width: 48px; height: 48px; top: 45%; right: 5%; opacity: 0.7; animation: drift-r 10s ease-in-out infinite; }
-
-/* Depth Tier 2: Medium (Slightly Faded) */
 .culinary-icon-2 { width: 42px; height: 42px; top: 12%; right: 10%; opacity: 0.5; animation: drift-tr 9s ease-in-out infinite; }
 .culinary-icon-7 { width: 40px; height: 40px; top: 40%; left: 6%; opacity: 0.5; animation: drift-l 11s ease-in-out infinite; }
 .culinary-icon-4 { width: 44px; height: 44px; bottom: 12%; right: 8%; opacity: 0.6; animation: drift-br 8s ease-in-out infinite; }
-
-/* Depth Tier 3: Small & Far (Blurred/Soft) */
 .culinary-icon-8 { width: 32px; height: 32px; top: 5%; left: 45%; opacity: 0.3; filter: blur(1px); animation: drift-tc 12s ease-in-out infinite; }
 .culinary-icon-5 { width: 34px; height: 34px; bottom: 5%; left: 50%; opacity: 0.3; filter: blur(1px); animation: drift-bc 13s ease-in-out infinite; }
 .culinary-icon-6 { width: 30px; height: 30px; bottom: 10%; left: 12%; opacity: 0.3; filter: blur(1.5px); animation: drift-bl 15s ease-in-out infinite; }
 
-/* ================= DRIFT ANIMATIONS (PUSHING AWAY FROM CENTER) ================= */
+/* Animation Keyframes */
 @keyframes drift-tl { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-15px, -15px) rotate(-10deg); } }
 @keyframes drift-tr { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(15px, -15px) rotate(10deg); } }
 @keyframes drift-tc { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
@@ -4385,13 +4397,7 @@ body.modal-open {
 @keyframes drift-bc { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(20px); } }
 @keyframes drift-br { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(15px, 15px); } }
 
-/* ================= CONTENT & BUTTON ================= */
-.profile-content {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-}
-
+/* ================= TEXT STYLES ================= */
 .profile-tagline {
   font-family: var(--font-family-serif);
   font-size: 1.15rem;
@@ -4400,44 +4406,8 @@ body.modal-open {
   margin-bottom: var(--spacing-md);
 }
 
-/* Accessibility: Stop animations if user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .profile-card::before, [class^="culinary-icon-"] {
-    animation: none !important;
-  }
-}
-
-:root {
-  --color-sea-green: #20b2aa;
-  --color-sea-green-soft: rgba(32, 178, 170, 0.15);
-}
-
-.profile-card {
-  /* ... keep your existing properties ... */
-  position: relative;
-  background-color: #ffffff; /* Base card color */
-  overflow: hidden;
-}
-
-.profile-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.15; /* Lowered opacity to match the subtle feel of your screenshot */
-  
-  /* Refined Silhouette SVG */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2320b2aa' d='M25 15c-5 0-9 4-9 9 0 5 9 21 9 21s9-16 9-21c0-5-4-9-9-9zm0 30c-1 0-2 4-2 10v30h4V55c0-6-1-10-2-10zm45-30l-2 2 30 30-2 2-30-30-2 2 30 30-2 2-30-30-2 2 30 30-2 2-30-30-2 2z'/%3E%3C/svg%3E");
-  background-size: 150px 150px;
-  transform: rotate(-15deg); /* Adds that professional angled look from your image */
-  pointer-events: none;
-}
-
-/* Ensure your content stays above the background */
-.profile-image-container, 
-.profile-content {
-  z-index: 10;
-  position: relative;
+  .profile-card::before, [class^="culinary-icon-"] { animation: none !important; }
 }
 
 /* ===== PROJECT MODAL FIXES ===== */
