@@ -409,3 +409,68 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  const hamburgerLines = document.querySelectorAll('.hamburger-line');
+  
+  if (navToggle && nav) {
+    // Toggle navigation when hamburger is clicked
+    navToggle.addEventListener('click', function() {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle aria-expanded attribute
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      
+      // Toggle navigation visibility
+      nav.classList.toggle('active');
+      
+      // Toggle hamburger animation
+      hamburgerLines.forEach(line => {
+        line.classList.toggle('active');
+      });
+      
+      // Prevent body scrolling when menu is open
+      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        nav.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        hamburgerLines.forEach(line => line.classList.remove('active'));
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!nav.contains(event.target) && !navToggle.contains(event.target) && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        hamburgerLines.forEach(line => line.classList.remove('active'));
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close menu on Escape key press
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        hamburgerLines.forEach(line => line.classList.remove('active'));
+        document.body.style.overflow = '';
+      }
+    });
+  }
+  
+  // Update current year in footer
+  const currentYearElement = document.getElementById('current-year');
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+  }
+});
