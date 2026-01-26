@@ -4297,396 +4297,191 @@ body.modal-open {
   50% { transform: translateX(150%) skewX(-15deg); }
 }
 
-/* ================= PROFILE IMAGE CONTAINER WITH FLOATING ICONS ================= */
+/* ================= LUXURY CULINARY-TECH PROFILE CARD ================= */
+
+.profile-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.8), transparent 40%),
+    linear-gradient(145deg, #ffffff 0%, #f6fbfa 60%, #eef7f6 100%);
+  border: 1px solid rgba(180, 160, 90, 0.25); /* luxury gold tone */
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08),
+    0 8px 24px rgba(0,0,0,0.06);
+  padding: 3rem 2rem 2.5rem;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.10),
+    0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Elegant top light sweep */
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
+  transform: translateX(-100%) skewX(-15deg);
+  animation: glassSweep 9s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes glassSweep {
+  0%,100% { transform: translateX(-120%) skewX(-15deg); }
+  50% { transform: translateX(130%) skewX(-15deg); }
+}
+
+/* ================= IMAGE CONTAINER ================= */
+
 .profile-image-container {
   position: relative;
   width: 240px;
   height: 240px;
-  margin: 0 auto var(--spacing-xl); /* centers horizontally */
+  margin: 0 auto 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
+
+  --orbit-radius: 95px;
 }
 
-/* Clean Sharp Profile Image - NO BLUR */
-.profile-image {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border: 4px solid #ffffff;
-  box-shadow: 
-    0 8px 20px rgba(0, 128, 128, 0.15),
-    0 16px 40px rgba(0, 0, 0, 0.08);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  transition: transform 0.3s ease;
-  
-  /* CRITICAL: Keep image crisp */
-  filter: none !important;
-  backface-visibility: hidden;
-}
-
-.profile-image:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-/* Studio Light Reflection on Image */
-.profile-image-container::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 30%, 
-    rgba(255,255,255,0.4) 0%,
-    transparent 50%
-  );
-  pointer-events: none;
-  z-index: 6;
-}
-
-/* ================= FLOATING CULINARY-TECH ICONS ================= */
-
-/* Container for all icons */
+/* Gold halo ring behind portrait */
 .profile-image-container::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,160,90,.25), transparent 70%);
+  z-index: 0;
 }
 
-/* Chef Hat - Top */
-.profile-image-container {
-  --icon-size: 48px;
+/* Profile Image */
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.12),
+    0 4px 12px rgba(180,160,90,0.25);
+  z-index: 5;
+  transition: transform .3s ease;
 }
 
-.profile-card .culinary-icon-1 {
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* ================= LUXURY FLOATING ICON HALO ================= */
+
+.profile-card [class^="culinary-icon-"] {
   position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float1 3s ease-in-out infinite;
-}
-
-@keyframes float1 {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-8px); }
-}
-
-/* Knife & Spoon - Top Right */
-.profile-card .culinary-icon-2 {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float2 3.5s ease-in-out infinite;
-}
-
-@keyframes float2 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(5deg); }
-}
-
-/* Data Chart - Right */
-.profile-card .culinary-icon-3 {
-  position: absolute;
-  right: -5px;
   top: 50%;
-  transform: translateY(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float3 4s ease-in-out infinite;
-}
-
-@keyframes float3 {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50% { transform: translateY(-50%) translateX(5px); }
-}
-
-/* Thermometer - Bottom Right */
-.profile-card .culinary-icon-4 {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float4 3.2s ease-in-out infinite;
-}
-
-@keyframes float4 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(6px) rotate(-5deg); }
-}
-
-/* Database/Tech - Bottom */
-.profile-card .culinary-icon-5 {
-  position: absolute;
-  bottom: -10px;
   left: 50%;
-  transform: translateX(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ffffff, #f4fbfa);
+  border: 1px solid rgba(180,160,90,.35);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.08),
+    0 2px 6px rgba(180,160,90,.25);
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(6px);
+  opacity: .92;
   z-index: 3;
-  animation: float5 3.8s ease-in-out infinite;
+  animation: floatSoft 5s ease-in-out infinite;
 }
 
-@keyframes float5 {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+/* Radial distribution */
+.culinary-icon-1 { transform: translate(-50%, -50%) rotate(0deg)   translateY(calc(-1 * var(--orbit-radius))) rotate(0deg); }
+.culinary-icon-2 { transform: translate(-50%, -50%) rotate(45deg)  translateY(calc(-1 * var(--orbit-radius))) rotate(-45deg); }
+.culinary-icon-3 { transform: translate(-50%, -50%) rotate(90deg)  translateY(calc(-1 * var(--orbit-radius))) rotate(-90deg); }
+.culinary-icon-4 { transform: translate(-50%, -50%) rotate(135deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-135deg); }
+.culinary-icon-5 { transform: translate(-50%, -50%) rotate(180deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-180deg); }
+.culinary-icon-6 { transform: translate(-50%, -50%) rotate(225deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-225deg); }
+.culinary-icon-7 { transform: translate(-50%, -50%) rotate(270deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-270deg); }
+.culinary-icon-8 { transform: translate(-50%, -50%) rotate(315deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-315deg); }
+
+/* Soft luxury motion */
+@keyframes floatSoft {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: -6px; }
 }
 
-/* Laptop/Code - Bottom Left */
-.profile-card .culinary-icon-6 {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float6 3.3s ease-in-out infinite;
-}
-
-@keyframes float6 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(6px) rotate(5deg); }
-}
-
-/* Mixing Bowl - Left */
-.profile-card .culinary-icon-7 {
-  position: absolute;
-  left: -5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float7 4.2s ease-in-out infinite;
-}
-
-@keyframes float7 {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50% { transform: translateY(-50%) translateX(-5px); }
-}
-
-/* Timer/Clock - Top Left */
-.profile-card .culinary-icon-8 {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
-  border-radius: 12px;
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation: float8 3.6s ease-in-out infinite;
-}
-
-@keyframes float8 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(-5deg); }
-}
-
-/* Icon SVG Styles */
-.culinary-icon-1 svg,
-.culinary-icon-2 svg,
-.culinary-icon-3 svg,
-.culinary-icon-4 svg,
-.culinary-icon-5 svg,
-.culinary-icon-6 svg,
-.culinary-icon-7 svg,
-.culinary-icon-8 svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--color-primary);
-  transition: transform 0.3s ease;
-}
-
-.culinary-icon-1:hover svg,
-.culinary-icon-2:hover svg,
-.culinary-icon-3:hover svg,
-.culinary-icon-4:hover svg,
-.culinary-icon-5:hover svg,
-.culinary-icon-6:hover svg,
-.culinary-icon-7:hover svg,
-.culinary-icon-8:hover svg {
-  transform: scale(1.1) rotate(5deg);
+/* Icon SVG */
+.profile-card [class^="culinary-icon-"] svg {
+  width: 22px;
+  height: 22px;
+  fill: #0f766e;
 }
 
 /* ================= CONTENT ================= */
+
 .profile-content {
+  text-align: center;
   position: relative;
   z-index: 2;
 }
 
 .profile-tagline {
-  font-family: var(--font-family-serif);
+  font-family: "Playfair Display", serif;
   font-size: 1.15rem;
-  color: var(--color-primary-dark);
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  line-height: 1.6;
-  text-align: center;
-  margin-bottom: var(--spacing-md);
-  padding: 0 var(--spacing-lg);
+  letter-spacing: .6px;
+  color: #0f3f3d;
+  margin-bottom: 1.2rem;
+  position: relative;
 }
 
 .profile-tagline::after {
   content: "";
   display: block;
-  width: 80px;
-  height: 2.5px;
-  background: linear-gradient(
-    90deg, 
-    transparent, 
-    var(--color-primary-light), 
-    transparent
-  );
-  margin: var(--spacing-md) auto 0;
-  border-radius: 2px;
+  width: 90px;
+  height: 2px;
+  margin: 1rem auto 0;
+  background: linear-gradient(to right, transparent, rgba(180,160,90,.6), transparent);
+}
+
+/* Button refinement */
+.button-primary {
+  background: linear-gradient(145deg, #0f766e, #115e59);
+  border: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.2);
 }
 
 /* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
-  .profile-image-container {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .profile-image {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .profile-image-container::before {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .profile-card {
-    --icon-size: 40px;
-  }
-  
-  .profile-card .culinary-icon-1 svg,
-  .profile-card .culinary-icon-2 svg,
-  .profile-card .culinary-icon-3 svg,
-  .profile-card .culinary-icon-4 svg,
-  .profile-card .culinary-icon-5 svg,
-  .profile-card .culinary-icon-6 svg,
-  .profile-card .culinary-icon-7 svg,
-  .profile-card .culinary-icon-8 svg {
-    width: 20px;
-    height: 20px;
-  }
+  .profile-image-container { --orbit-radius: 75px; width: 200px; height: 200px; }
+  .profile-image { width: 160px; height: 160px; }
 }
 
 @media (max-width: 480px) {
-  .profile-image-container {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .profile-image {
-    width: 140px;
-    height: 140px;
-  }
-  
-  .profile-image-container::before {
-    width: 140px;
-    height: 140px;
-  }
-  
-  .profile-card {
-    --icon-size: 36px;
-  }
-  
-  .profile-tagline {
-    font-size: 1rem;
-  }
+  .profile-image-container { --orbit-radius: 65px; width: 180px; height: 180px; }
+  .profile-image { width: 140px; height: 140px; }
 }
 
-/* Accessibility */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .profile-card::before,
-  .culinary-icon-1,
-  .culinary-icon-2,
-  .culinary-icon-3,
-  .culinary-icon-4,
-  .culinary-icon-5,
-  .culinary-icon-6,
-  .culinary-icon-7,
-  .culinary-icon-8 {
-    animation: none;
-  }
+  [class^="culinary-icon-"] { animation: none; }
 }
 
 /* ===== PROJECT MODAL FIXES ===== */
