@@ -4313,19 +4313,23 @@ body.modal-open {
   border-radius: 2px;
 }
 
-/* ===== PROJECT CARD FIXES ===== */
-.project-card {
+/* ===== PROJECT MODAL FIXES ===== */
+.project-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9999 !important;
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.project-modal.active {
   display: flex !important;
-  flex-direction: column !important;
-  height: 100%;
-}
-
-.project-content {
-  flex: 1;
-}
-
-.project-footer {
-  margin-top: auto;
 }
 
 /* ===== GALLERY FIXES ===== */
