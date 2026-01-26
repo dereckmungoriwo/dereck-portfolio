@@ -4060,3 +4060,110 @@ body > *:not(.header) {
 body {
   position: relative;
 }
+
+/* ================= MOBILE NAVIGATION FIXES ================= */
+
+/* Mobile Navigation Toggle Button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-black);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Mobile navigation styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-200);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    z-index: 999;
+  }
+  
+  .nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: var(--spacing-sm) 0;
+    display: block;
+  }
+  
+  .nav-link.active::after {
+    display: none;
+  }
+  
+  /* Hamburger animation */
+  .hamburger-line.active:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger-line.active:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-line.active:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+
+/* Ensure header stays on top on mobile */
+@media (max-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Reduce header height on mobile */
+  .header-content {
+    height: 70px;
+  }
+  
+  /* Adjust logo size for mobile */
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logo-text h1 {
+    font-size: 0.9rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.6rem;
+  }
+}
