@@ -4300,11 +4300,13 @@ body.modal-open {
 /* ================= PROFILE IMAGE CONTAINER WITH FLOATING ICONS ================= */
 .profile-image-container {
   position: relative;
-  display: inline-block;
-  margin-bottom: var(--spacing-xl);
-  z-index: 10;
   width: 240px;
   height: 240px;
+  margin: 0 auto var(--spacing-xl); /* centers horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 /* Clean Sharp Profile Image - NO BLUR */
