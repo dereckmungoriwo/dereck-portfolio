@@ -4274,15 +4274,27 @@ body.modal-open {
   z-index: 1; /* Establishes a container layer */
 }
 
-/* THE BACKGROUND WATERMARK (Sea Green Knife/Spoon) */
+/* THE BACKGROUND IMAGE (Sea Green Knife/Spoon) */
+.profile-card {
+  position: relative;
+  /* ... keep your existing flex and padding styles ... */
+  background: white; /* Base color */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* This adds the pattern as a background layer */
 .profile-card::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 0; 
-  opacity: 0.15;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%2320b2aa'%3E%3Cpath d='M25 10c-4 0-7 3-7 7 0 5 7 18 7 18s7-13 7-18c0-4-3-7-7-7zm0 25v30h2V35h-2z'/%3E%3Crect x='60' y='15' width='2' height='55' transform='rotate(-45 61 42.5)'/%3E%3Crect x='60' y='15' width='2' height='55' transform='rotate(45 61 42.5)'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 110px 110px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('assets/images/culinary-tech.png'); /* Ensure path is correct */
+  background-size: 300px; /* Adjust size of the pattern icons */
+  opacity: 0.05; /* VERY IMPORTANT: Keep this low (5%) so it stays subtle */
+  z-index: -1; /* Puts it behind everything */
   pointer-events: none;
 }
 
