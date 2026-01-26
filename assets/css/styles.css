@@ -4379,3 +4379,12 @@ body.modal-open {
 .gallery-item.card {
   overflow: hidden;
 }
+
+/* ===== GALLERY CARD LAYOUT FIX ===== */
+.gallery-item.card {
+  padding: 0;              /* removes inherited card padding */
+  overflow: hidden;        /* keeps image inside rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
