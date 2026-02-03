@@ -368,17 +368,60 @@ window.addEventListener('resize', function() {
   }, 250);
 });
 
-// ================= CHEFOS SYSTEM =================
-'chefos-system': {
-  title: 'ChefOS — Restaurant Operations Intelligence System',
-  description: 'A systems-based platform modeling integrated restaurant operations from order entry to performance analytics.',
-  features: [
-    'POS transaction and sales data layer',
-    'Kitchen Display System workflow tracking',
-    'Recipe-level inventory deduction',
-    'Role-based operational control',
-    'Revenue and menu performance dashboards',
-    'Operational visibility for cost control'
-  ]
-},
+// ... existing code ...
+}); // This is the end of your DOMContentLoaded block
+
+// ================= CHEFOS PROJECT DETAILS =================
+const projectData = {
+  'chefos-system': {
+    title: 'ChefOS — Restaurant Operations Intelligence System',
+    description: 'A systems-based platform modeling integrated restaurant operations from order entry to performance analytics.',
+    url: 'https://dereckmungoriwo.github.io',
+    features: [
+      'POS transaction and sales data layer',
+      'Kitchen Display System workflow tracking',
+      'Recipe-level inventory deduction',
+      'Role-based operational control',
+      'Revenue and menu performance dashboards',
+      'Operational visibility for cost control'
+    ]
+  }
+};
+
+function viewProjectDetails(projectId) {
+  const data = projectData[projectId];
+  if (!data) return;
+
+  const modal = document.createElement('div');
+  modal.className = 'project-details-modal active';
+  
+  const featuresHTML = data.features.map(f => `<li>${f}</li>`).join('');
+
+  modal.innerHTML = `
+    <div class="modal-content">
+      <button class="modal-close" onclick="this.parentElement.parentElement.remove(); document.body.style.overflow=''">&times;</button>
+      <h2 class="modal-title">${data.title}</h2>
+      <p class="modal-description">${data.description}</p>
+      
+      <div class="modal-features">
+        <h4 style="margin-bottom: 10px; color: #d4af37;">Key System Capabilities:</h4>
+        <ul style="list-style: none; padding: 0;">${featuresHTML}</ul>
+      </div>
+
+      <div class="modal-actions">
+        <a href="${data.url}" target="_blank" class="button button-primary">Visit Project Site</a>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.remove();
+      document.body.style.overflow = '';
+    }
+  });
+}
 
