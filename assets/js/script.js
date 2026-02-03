@@ -367,3 +367,18 @@ window.addEventListener('resize', function() {
     }
   }, 250);
 });
+
+// ================= CHEFOS SYSTEM =================
+'chefos-system': {
+  title: 'ChefOS — Restaurant Operations Intelligence System',
+  description: 'A systems-based platform modeling integrated restaurant operations from order entry to performance analytics.',
+  features: [
+    'POS transaction and sales data layer',
+    'Kitchen Display System workflow tracking',
+    'Recipe-level inventory deduction',
+    'Role-based operational control',
+    'Revenue and menu performance dashboards',
+    'Operational visibility for cost control'
+  ]
+},
+
