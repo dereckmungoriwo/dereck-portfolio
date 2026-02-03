@@ -392,20 +392,22 @@ function viewProjectDetails(projectId) {
   const data = projectData[projectId];
   if (!data) return;
 
+  // Create the modal using your CSS class .project-modal
   const modal = document.createElement('div');
-  modal.className = 'project-details-modal active';
+  modal.className = 'project-modal'; // Matches your CSS
   
+  // Build the features list with your li structure
   const featuresHTML = data.features.map(f => `<li>${f}</li>`).join('');
 
   modal.innerHTML = `
     <div class="modal-content">
-      <button class="modal-close" onclick="this.parentElement.parentElement.remove(); document.body.style.overflow=''">&times;</button>
+      <button class="modal-close" aria-label="Close modal">&times;</button>
       <h2 class="modal-title">${data.title}</h2>
       <p class="modal-description">${data.description}</p>
       
       <div class="modal-features">
-        <h4 style="margin-bottom: 10px; color: #d4af37;">Key System Capabilities:</h4>
-        <ul style="list-style: none; padding: 0;">${featuresHTML}</ul>
+        <h3>Key System Capabilities</h3>
+        <ul>${featuresHTML}</ul>
       </div>
 
       <div class="modal-actions">
@@ -417,11 +419,14 @@ function viewProjectDetails(projectId) {
   document.body.appendChild(modal);
   document.body.style.overflow = 'hidden';
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.remove();
-      document.body.style.overflow = '';
-    }
-  });
-}
+  // Close functionality
+  const closeBtn = modal.querySelector('.modal-close');
+  const closeModal = () => {
+    modal.remove();
+    document.body.style.overflow = '';
+  };
 
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); }, { once: true });
+}
