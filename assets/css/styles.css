@@ -431,53 +431,6 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* Gallery Card */
-.gallery-card .card-title {
-  margin-bottom: var(--spacing-lg);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-md, 1.5rem);
-}
-
-.gallery-item {
-  position: relative;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  aspect-ratio: 4/3;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
-
-.gallery-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  color: var(--color-white);
-  padding: var(--spacing-sm);
-  font-size: var(--font-size-xs);
-  text-align: center;
-  transform: translateY(100%);
-  transition: transform var(--transition);
-}
-
-.gallery-item:hover .gallery-caption {
-  transform: translateY(0);
-}
-
 /* ================= BUTTONS ================= */
 .button {
   display: inline-flex;
