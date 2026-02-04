@@ -468,17 +468,14 @@ a:hover {
 
 /* ================= GLOBAL CTA SECTION ================= */
 .cta-section {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: var(--color-primary);
-  text-align: center;
-  padding: var(--spacing-3xl) var(--spacing-2xl);
+  border-radius: var(--border-radius-lg);
   margin: var(--spacing-3xl) auto;
   max-width: calc(var(--container-max) - 4rem);
   border: 2px solid var(--color-primary-light);
   position: relative;
 }
 
-.home-page .cta-section::before {
+.cta-section::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -488,16 +485,6 @@ a:hover {
   background-position: center;
   opacity: 0.05;
   z-index: 1;
-}
-
-  border-radius: var(--border-radius-lg);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section .container {
-  position: relative;
-  z-index: 2;
 }
 
 .cta-content {
