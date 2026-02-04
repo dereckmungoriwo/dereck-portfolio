@@ -345,13 +345,13 @@ document.addEventListener('DOMContentLoaded', function() {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // ================= CHEFOS MODULE =================
+ // ================= CHEFOS MODULE =================
 const chefosSection = document.querySelector('.chefos-scope');
 
 if (chefosSection) {
   console.log('🍽 ChefOS module initialized');
 
-  // -------- ChefOS Tab Switching --------
+  // -------- Tab Switching --------
   const chefosTabs = chefosSection.querySelectorAll('[data-chefos-tab]');
   const chefosPanels = chefosSection.querySelectorAll('[data-chefos-panel]');
 
@@ -368,43 +368,45 @@ if (chefosSection) {
     });
   });
 
-  // -------- ChefOS Metric Counter Animation --------
+  // -------- Metric Counter Animation --------
   const metrics = chefosSection.querySelectorAll('[data-metric]');
-  
-  const metricObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.metric, 10);
-        let count = 0;
-        const step = Math.ceil(target / 50);
 
-        const counter = setInterval(() => {
-          count += step;
-          if (count >= target) {
-            el.textContent = target;
-            clearInterval(counter);
-          } else {
-            el.textContent = count;
-          }
-        }, 20);
+  if ('IntersectionObserver' in window && metrics.length > 0) {
+    const metricObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.metric, 10);
+          let count = 0;
+          const step = Math.max(1, Math.ceil(target / 60));
 
-        metricObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
+          const counter = setInterval(() => {
+            count += step;
+            if (count >= target) {
+              el.textContent = target;
+              clearInterval(counter);
+            } else {
+              el.textContent = count;
+            }
+          }, 16); // smoother animation
 
-  metrics.forEach(m => metricObserver.observe(m));
+          metricObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
 
-  // -------- ChefOS Demo Button --------
+    metrics.forEach(m => metricObserver.observe(m));
+  }
+
+  // -------- Demo Button (OPTIONAL) --------
   const demoBtn = chefosSection.querySelector('.chefos-demo-btn');
   if (demoBtn) {
-    demoBtn.addEventListener('click', () => {
+    demoBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       alert('ChefOS live demo launching soon.');
     });
   }
 }
-
   console.log('✅ Portfolio JavaScript loaded successfully!');
 });
 
