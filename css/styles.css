@@ -466,65 +466,32 @@ a:hover {
   color: var(--color-white) !important;
 }
 
-/* ================= GLOBAL CTA SECTION ================= */
+/* ================= UNIFIED CTA SECTION ================= */
+/* This works on ALL pages now */
 .cta-section {
-  /* Added fallback colors in case variables fail */
-  background: #3498db; 
-  background: linear-gradient(135deg, var(--color-primary, #3498db) 0%, var(--color-primary-dark, #2c3e50) 100%);
-  
-  color: #fff;
-  text-align: center;
-  
-  /* Ensure padding exists even if variables are broken */
-  padding: var(--spacing-3xl, 60px) var(--spacing-2xl, 20px);
-  margin-bottom: var(--spacing-4xl, 100px);
-  
-  border-radius: var(--border-radius-lg, 12px);
   position: relative;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  margin: var(--spacing-4xl) auto; /* Centers it and adds space */
+  max-width: calc(var(--container-max) - 4rem);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--color-primary-light);
   overflow: hidden;
 }
 
-/* Add this to force spacing between CTA and sections below it */
-.cta-section + section, 
-.cta-section + div {
-  margin-top: var(--spacing-4xl, 100px);
-}
-.cta-section .container {
-  position: relative;
-  z-index: 2;
-}
-
-.cta-content {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.cta-heading,
-.cta-title {
-  font-size: var(--font-size-4xl);
-  font-weight: 700;
-  color: var(--color-white) !important;
-  margin-bottom: var(--spacing-lg);
-  line-height: 1.3;
-}
-
-.cta-description {
-  font-size: var(--font-size-lg);
-  color: var(--color-white) !important;
-  margin-bottom: var(--spacing-2xl);
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: var(--spacing-md);
-  justify-content: center;
-  flex-wrap: wrap;
+/* Adding your SVG pattern to the global version */
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z'/%3E%3C/svg%3E");
+  background-size: 100px;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 1;
 }
 
 /* ================= GLOBAL FOOTER ================= */
