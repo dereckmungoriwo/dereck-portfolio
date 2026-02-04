@@ -275,57 +275,77 @@
 </section>
           
  <!-- ChefOS Section -->
-<section class="chefos-section" aria-labelledby="chefos-heading">
+<section class="chefos-section chefos-scope" aria-labelledby="chefos-heading">
   <div class="container">
     <div class="chefos-content">
 
       <!-- Text Content -->
       <div class="chefos-text">
         <h2 id="chefos-heading">ChefOS — Restaurant Operations & Kitchen Intelligence System</h2>
-        <p class="chefos-subtitle">A systems-based approach to kitchen workflow, food cost control, and restaurant performance optimization.</p>
-
-        <p>
-          ChefOS is a restaurant operations system I designed to model how modern kitchens can run with structured workflows, integrated data, and real-time operational visibility. The platform connects point-of-sale activity, kitchen production flow, ingredient-level inventory tracking, and performance analytics into one unified system.
+        <p class="chefos-subtitle">
+          A systems-based approach to kitchen workflow, food cost control, and restaurant performance optimization.
         </p>
 
         <p>
-          The system demonstrates how restaurant operations can move from reactive service management to measurable, data-informed control — improving order coordination, reducing waste, strengthening food cost awareness, and supporting smarter menu decisions.
+          ChefOS is a restaurant operations system I designed to model how modern kitchens can run with structured workflows, integrated data, and real-time operational visibility.
         </p>
 
-        <!-- Core Modules -->
-        <h3>Operational System Modules</h3>
-        <ul class="chefos-list">
-          <li><strong>POS Transaction Layer:</strong> Order entry, cart logic, and sales data capture</li>
-          <li><strong>Kitchen Display Workflow:</strong> Real-time production tracking and order state management</li>
-          <li><strong>Recipe-Based Inventory System:</strong> Automatic ingredient deduction tied to menu items</li>
-          <li><strong>Role-Based Operations Control:</strong> Structured access for service, kitchen, and management roles</li>
-          <li><strong>Performance Analytics Dashboard:</strong> Revenue tracking, sales trends, and menu performance insights</li>
-        </ul>
+        <!-- 🔷 TABS (NEW) -->
+        <div class="chefos-tabs">
+          <button data-chefos-tab="overview" class="chefos-tab active">System Overview</button>
+          <button data-chefos-tab="flow" class="chefos-tab">Operational Flow</button>
+          <button data-chefos-tab="impact" class="chefos-tab">Business Impact</button>
+        </div>
 
-        <!-- Systems Concepts -->
-        <h3>Systems & Operational Concepts Applied</h3>
-        <ul class="chefos-list">
-          <li>End-to-end kitchen workflow modeling</li>
-          <li>Inventory-to-sales data integration</li>
-          <li>Operational state tracking and process logic</li>
-          <li>Structured data for performance measurement</li>
-          <li>UI design for high-speed service environments</li>
-          <li>Operational visibility for cost and efficiency control</li>
-        </ul>
+        <!-- 🔷 PANELS (NEW) -->
+        <div class="chefos-panels">
 
-        <!-- Business Impact -->
-        <h3>Operational Problems Addressed</h3>
-        <p>
-          Many restaurants operate with disconnected systems for orders, kitchen communication, and inventory control. ChefOS demonstrates how integrating these operational layers improves:
-        </p>
-        <ul class="chefos-list">
-          <li>Order flow transparency</li>
-          <li>Kitchen production coordination</li>
-          <li>Ingredient-level inventory accuracy</li>
-          <li>Menu performance evaluation</li>
-          <li>Operational decision-making using real data</li>
-        </ul>
+          <!-- Overview Panel -->
+          <div data-chefos-panel="overview" class="chefos-panel active">
+            <h3>Operational System Modules</h3>
+            <ul class="chefos-list">
+              <li><strong>POS Transaction Layer:</strong> Order entry, cart logic, and sales data capture</li>
+              <li><strong>Kitchen Display Workflow:</strong> Real-time production tracking</li>
+              <li><strong>Recipe-Based Inventory System:</strong> Automatic ingredient deduction</li>
+              <li><strong>Role-Based Operations Control:</strong> Structured staff access</li>
+              <li><strong>Performance Analytics Dashboard:</strong> Sales trends and menu insights</li>
+            </ul>
+          </div>
 
+          <!-- Flow Panel -->
+          <div data-chefos-panel="flow" class="chefos-panel">
+            <h3>Systems & Operational Concepts Applied</h3>
+            <ul class="chefos-list">
+              <li>POS Sale → Ingredient Deduction → Inventory Update</li>
+              <li>Order Entry → Kitchen Queue → Production Status</li>
+              <li>Inventory Levels → Low-Stock Alerts</li>
+              <li>Sales Data → Menu Performance Metrics</li>
+              <li>Workflow Visibility → Faster Service Decisions</li>
+            </ul>
+          </div>
+
+          <!-- Impact Panel -->
+          <div data-chefos-panel="impact" class="chefos-panel">
+            <h3>Operational Problems Addressed</h3>
+            <p>ChefOS demonstrates measurable operational improvements:</p>
+
+            <!-- 🔷 METRICS (NEW Animated Counters) -->
+            <div class="chefos-metrics">
+              <div class="metric-box">
+                <span data-metric="10">0</span>% Waste Reduction
+              </div>
+              <div class="metric-box">
+                <span data-metric="18">0</span>% Food Cost Control
+              </div>
+              <div class="metric-box">
+                <span data-metric="25">0</span>% Faster Order Flow
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Buttons -->
         <div class="chefos-buttons">
           <a href="projects.html" class="button button-primary">View ChefOS Case Study</a>
           <a href="#" class="button button-secondary">Live System Demo (Coming Soon)</a>
