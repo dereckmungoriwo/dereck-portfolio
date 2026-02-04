@@ -468,8 +468,8 @@ a:hover {
 
 /* ================= GLOBAL CTA SECTION ================= */
 .cta-section {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+  color: var(--color-white) !important;
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-2xl);
   margin-bottom: var(--spacing-4xl);
@@ -481,6 +481,7 @@ a:hover {
 .cta-section .container {
   position: relative;
   z-index: 2;
+  background: transparent !important;
 }
 
 .cta-content {
@@ -507,6 +508,17 @@ a:hover {
   margin-bottom: var(--spacing-2xl);
   line-height: 1.6;
   opacity: 0.95;
+}
+
+/* Force white text for all CTA text elements */
+.cta-section h1,
+.cta-section h2,
+.cta-section h3,
+.cta-section p,
+.cta-section .cta-heading,
+.cta-section .cta-title,
+.cta-section .cta-description {
+  color: var(--color-white) !important;
 }
 
 .cta-buttons {
