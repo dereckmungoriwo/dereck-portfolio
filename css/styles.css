@@ -481,7 +481,8 @@ a:hover {
 .cta-section .container {
   position: relative;
   z-index: 2;
-  background: transparent !important;
+  background-color: var(--color-primary)!important;
+
 }
 
 .cta-content {
