@@ -426,55 +426,6 @@ h1, h2, h3 {
   font-size: 0.9rem;
 }
 
-/* ==========================================================================
-   4. PAGE SPECIFIC REFINEMENTS (Home Page)
-   ========================================================================== */
-
-/* Profile Card with Subtle Pattern */
-.profile-card {
-  position: relative;
-  background: white;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-gray-200);
-  padding: 3rem;
-  overflow: hidden;
-  text-align: center;
-}
-
-.profile-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L15 0h30L30 30z' fill='%2320b2aa' fill-opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
-.profile-image {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid var(--color-primary);
-  margin-bottom: 1.5rem;
-  object-fit: cover;
-}
-
-/* WhatsApp Specific Styling */
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #25D366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 1001;
-}
-
 /* ================= HERO MOTTO SECTION ================= */
 .hero-motto {
   background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-black) 100%);
@@ -567,22 +518,31 @@ h1, h2, h3 {
   gap: var(--spacing-sm);
 }
 
-/* Profile Card */
 .profile-card {
-  grid-row: span 1;
-}
-
-.profile-image-container {
-  margin-bottom: var(--spacing-lg);
+  position: relative;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-gray-200);
+  padding: 3rem;
+  overflow: hidden;
   text-align: center;
 }
 
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L15 0h30L30 30z' fill='%2320b2aa' fill-opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  object-fit: cover;
   border: 4px solid var(--color-primary);
+  margin-bottom: 1.5rem;
+  object-fit: cover;
 }
 
 .profile-tagline {
