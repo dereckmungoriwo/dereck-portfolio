@@ -345,6 +345,66 @@ document.addEventListener('DOMContentLoaded', function() {
     yearSpan.textContent = new Date().getFullYear();
   }
 
+  // ================= CHEFOS MODULE =================
+const chefosSection = document.querySelector('.chefos-scope');
+
+if (chefosSection) {
+  console.log('🍽 ChefOS module initialized');
+
+  // -------- ChefOS Tab Switching --------
+  const chefosTabs = chefosSection.querySelectorAll('[data-chefos-tab]');
+  const chefosPanels = chefosSection.querySelectorAll('[data-chefos-panel]');
+
+  chefosTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.chefosTab;
+
+      chefosTabs.forEach(t => t.classList.remove('active'));
+      chefosPanels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const panel = chefosSection.querySelector(`[data-chefos-panel="${target}"]`);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  // -------- ChefOS Metric Counter Animation --------
+  const metrics = chefosSection.querySelectorAll('[data-metric]');
+  
+  const metricObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.metric, 10);
+        let count = 0;
+        const step = Math.ceil(target / 50);
+
+        const counter = setInterval(() => {
+          count += step;
+          if (count >= target) {
+            el.textContent = target;
+            clearInterval(counter);
+          } else {
+            el.textContent = count;
+          }
+        }, 20);
+
+        metricObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  metrics.forEach(m => metricObserver.observe(m));
+
+  // -------- ChefOS Demo Button --------
+  const demoBtn = chefosSection.querySelector('.chefos-demo-btn');
+  if (demoBtn) {
+    demoBtn.addEventListener('click', () => {
+      alert('ChefOS live demo launching soon.');
+    });
+  }
+}
+
   console.log('✅ Portfolio JavaScript loaded successfully!');
 });
 
