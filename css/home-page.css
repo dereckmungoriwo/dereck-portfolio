@@ -565,3 +565,30 @@
     display: none;
   }
 }
+
+/* ================= FULL-WIDTH CARDS WITH ROUNDED CORNERS ================= */
+
+/* Apply to all cards inside home-page sections */
+.home-page .card,
+.home-page .profile-about-card,
+.home-page .culinary-card,
+.home-page .chefos-master-card,
+.home-page .cta-section {
+  width: 100%; /* Make the card take full available width */
+  max-width: 100%; /* Ensure no container max-width restriction */
+  border-radius: var(--border-radius-lg); /* Rounded corners */
+  overflow: hidden; /* Prevent content from spilling over rounded edges */
+}
+
+/* Ensure CTA buttons section also respects the card's rounded corners */
+.home-page .cta-section .cta-buttons {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+/* Optional: add box-shadow to elevate cards (non-intrusive) */
+.home-page .card,
+.home-page .cta-section {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
