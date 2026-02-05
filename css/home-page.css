@@ -624,3 +624,19 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
+/* ================= CULINARY CARDS FULL-WIDTH FIX ================= */
+
+.home-page .culinary-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: var(--spacing-xl);
+  width: 100%; /* Ensure grid uses full container width */
+}
+
+.home-page .culinary-cards-grid .culinary-card {
+  width: 100%; /* Each card fills its column */
+  max-width: 100%;
+  border-radius: var(--border-radius-lg); /* Rounded corners */
+  overflow: hidden; /* Keep content within rounded corners */
+}
+
