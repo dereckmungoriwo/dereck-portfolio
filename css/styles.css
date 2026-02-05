@@ -494,7 +494,7 @@ a:hover {
   padding: 0 var(--spacing-xl);
   position: relative;
   z-index: 2;
-  background-color: transparent !important; /* Changed from var(--color-primary) to show the gradient */
+  background-color: var(--color-primary)!important;
 }
 
 .cta-content {
