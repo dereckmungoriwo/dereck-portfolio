@@ -466,67 +466,42 @@ a:hover {
   color: var(--color-white) !important;
 }
 
-/* ================= GLOBAL CTA SECTION ================= */
+/* ================= CTA SECTION ================= */
 .cta-section {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
-  color: var(--color-white) !important;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
   text-align: center;
-  padding: var(--spacing-3xl) var(--spacing-2xl);
+  padding: var(--spacing-3xl) 0; /* Remove horizontal padding, keep vertical */
   margin-bottom: var(--spacing-4xl);
-  border-radius: var(--border-radius-lg);
-  position: relative;
-  overflow: hidden;
+  width: 100%;
 }
 
 .cta-section .container {
-  position: relative;
-  z-index: 2;
-  background-color: var(--color-primary)!important;
-
+  /* Remove the double padding that was causing issues */
+  padding: 0 var(--spacing-2xl); /* Only horizontal padding for content */
 }
 
 .cta-content {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-.cta-heading,
-.cta-title {
+.cta-heading {
   font-size: var(--font-size-4xl);
-  font-weight: 700;
-  color: var(--color-white) !important;
   margin-bottom: var(--spacing-lg);
-  line-height: 1.3;
+  color: #ffffff;
 }
 
 .cta-description {
   font-size: var(--font-size-lg);
-  color: var(--color-white) !important;
+  color: var(--color-white);
   margin-bottom: var(--spacing-2xl);
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-/* Force white text for all CTA text elements */
-.cta-section h1,
-.cta-section h2,
-.cta-section h3,
-.cta-section p,
-.cta-section .cta-heading,
-.cta-section .cta-title,
-.cta-section .cta-description {
-  color: var(--color-white) !important;
 }
 
 .cta-buttons {
   display: flex;
   gap: var(--spacing-md);
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 /* ================= GLOBAL FOOTER ================= */
