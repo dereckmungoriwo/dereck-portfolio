@@ -1250,3 +1250,21 @@
 .gallery-item:nth-child(10) { animation-delay: 1.0s; }
 .gallery-item:nth-child(11) { animation-delay: 1.1s; }
 .gallery-item:nth-child(12) { animation-delay: 1.2s; }
+
+/* ==========================================================================
+   CTA SECTION FOR ALL PAGES
+   ========================================================================== */
+
+.projects-cta,
+.about-cta {
+  width: 100%;
+  padding: var(--spacing-3xl) 0;
+  margin-bottom: var(--spacing-4xl);
+}
+
+.projects-cta .cta-content,
+.about-cta .cta-content {
+  padding: 0 var(--spacing-2xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
