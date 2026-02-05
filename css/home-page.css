@@ -357,13 +357,15 @@
 /* Full-width ChefOS Section */
 .chefos-section {
   width: 100%;
-  padding: var(--spacing-4xl) var(--spacing-md); /* horizontal padding */
+  padding: var(--spacing-4xl) 0; /* Remove horizontal padding */
   background: var(--color-gray-50);
 }
 
 .chefos-master-card {
   max-width: var(--container-max);
-  margin: 0 auto; /* centers the card */
+  margin: 0 auto;
+  margin-left: var(--spacing-md); /* Add back container padding */
+  margin-right: var(--spacing-md);
   background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
   border: 2px solid var(--color-primary-light);
   border-radius: var(--border-radius-lg);
