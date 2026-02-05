@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
-  <title>About Dereck Mungoriwo | Culinary Data Analyst & Operations Specialist</title>
+  <title>About Dereck Mungoriwo | Culinary Operations & Data Analytics Specialist</title>
   <meta name="description" content="Discover how Dereck Mungoriwo combines culinary mastery with data-driven innovation to transform kitchen operations, menu engineering, and hospitality analytics.">
   <meta name="keywords" content="culinary data analyst, menu engineering, kitchen operations, food tech, hospitality analytics, data-driven chef">
+  <meta name="author" content="Dereck Mungoriwo">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About Dereck Mungoriwo | Culinary Data Analyst">
+  <meta property="og:title" content="About Dereck Mungoriwo | Culinary Operations & Data Analytics">
   <meta property="og:description" content="Blending culinary mastery with data-driven innovation">
-  <meta property="og:image" content="assets/images/dereck-mungoriwo-about-og.jpg">
+  <meta property="og:image" content="https://dereckmungoriwo.online/assets/images/dereck-mungoriwo-about-og.jpg">
   <meta property="og:url" content="https://dereckmungoriwo.online/about.html">
   <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@MungoriwoDereck">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://dereckmungoriwo.online/about.html">
 
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="assets/css/styles.css" as="style">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+  <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- CSS - Cleaned: Removed duplicate old CSS reference -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/page-specific.css">
 
@@ -41,6 +48,12 @@
     "jobTitle": "Culinary Operations Specialist & Data Analyst",
     "description": "Professional combining culinary expertise with data analysis to optimize kitchen operations and profitability.",
     "url": "https://dereckmungoriwo.online",
+    "email": "dereck@dereckmungoriwo.online",
+    "telephone": "+27-71-718-4048",
+    "sameAs": [
+      "https://www.linkedin.com/in/dereck-mungoriwo",
+      "https://x.com/MungoriwoDereck"
+    ],
     "knowsAbout": [
       "Menu Engineering",
       "Food Cost Analysis",
@@ -48,12 +61,16 @@
       "Kitchen Operations",
       "Predictive Analytics",
       "Recipe Development"
-    ]
+    ],
+    "image": "https://dereckmungoriwo.online/assets/images/profile.jpg"
   }
   </script>
 </head>
 
 <body class="about-page">
+
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
   <!-- ================= HEADER ================= -->
   <header class="header" role="banner">
@@ -61,22 +78,21 @@
       <div class="header-content">
 
         <!-- Professional Logo -->
-        <div class="logo" itemscope itemtype="https://schema.org/Person">
+        <a href="index.html" class="logo" itemscope itemtype="https://schema.org/Person">
           <div class="logo-image">
             <img 
               src="assets/images/profile-header.jpg"
-              alt="Dereck Mungoriwo - Culinary Professional"
+              alt="Dereck Mungoriwo"
               width="48"
               height="48"
-              loading="eager"
               itemprop="image"
             >
           </div>
           <div class="logo-text">
             <h1 itemprop="name">Dereck Mungoriwo</h1>
-            <p class="logo-subtitle" itemprop="jobTitle">Culinary Professional | Menu Engineering | Data Analyst</p>
+            <p class="logo-subtitle" itemprop="jobTitle">Culinary Operations & Restaurant Systems Specialist</p>
           </div>
-        </div>
+        </a>
 
         <!-- Mobile Navigation Toggle -->
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
@@ -89,8 +105,8 @@
         <nav class="nav" id="main-nav" role="navigation" aria-label="Main Navigation">
           <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="resume.html" class="nav-link active" aria-current="page">Resume</a></li>
+            <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+            <li><a href="resume.html" class="nav-link">Resume</a></li>
             <li><a href="projects.html" class="nav-link">Projects</a></li>
             <li><a href="gallery.html" class="nav-link">Gallery</a></li>
             <li><a href="contact.html" class="nav-link cta-button">Contact</a></li>
@@ -108,11 +124,11 @@
     <section class="page-header" aria-labelledby="page-heading">
       <div class="container">
         <div class="page-header-content">
-          <h1 id="page-heading" class="page-title">About Me</h1>
+          <h2 id="page-heading" class="page-title">About Me</h2>
           <p class="page-subtitle">Blending Culinary Mastery with Data-Driven Innovation</p>
-          <div class="page-divider">
+          <div class="page-divider" aria-hidden="true">
             <span class="divider-line"></span>
-            <span class="divider-dot" aria-hidden="true"></span>
+            <span class="divider-dot"></span>
             <span class="divider-line"></span>
           </div>
         </div>
@@ -126,7 +142,7 @@
         <!-- Summary Section -->
         <section class="about-section card fade-in-up" aria-labelledby="summary-heading">
           <div class="section-header">
-            <h2 id="summary-heading" class="section-title">The Journey</h2>
+            <h3 id="summary-heading" class="section-title">The Journey</h3>
             <p class="section-subtitle">From Kitchen Creativity to Data Precision</p>
           </div>
 
@@ -174,7 +190,7 @@
                     </svg>
                   </div>
                   <div>
-                    <h3 class="education-title">International Hotel School</h3>
+                    <h4 class="education-title">International Hotel School</h4>
                     <p class="education-desc">Professional Cookery & Kitchen Management</p>
                   </div>
                 </div>
@@ -186,7 +202,7 @@
                     </svg>
                   </div>
                   <div>
-                    <h3 class="education-title">Johns Hopkins University</h3>
+                    <h4 class="education-title">Johns Hopkins University</h4>
                     <p class="education-desc">Data Science</p>
                   </div>
                 </div>
@@ -198,7 +214,7 @@
                     </svg>
                   </div>
                   <div>
-                    <h3 class="education-title">Rutgers State University</h3>
+                    <h4 class="education-title">Rutgers State University</h4>
                     <p class="education-desc">Supply Chain Management</p>
                   </div>
                 </div>
@@ -235,7 +251,7 @@
         <!-- Approach Section -->
         <section class="approach-section card fade-in-up" aria-labelledby="approach-heading">
           <div class="section-header">
-            <h2 id="approach-heading" class="section-title">My Approach</h2>
+            <h3 id="approach-heading" class="section-title">My Approach</h3>
             <p class="section-subtitle">Strategic Solutions for Modern Culinary Operations</p>
           </div>
           
@@ -248,7 +264,7 @@
                     <path fill="currentColor" d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
                   </svg>
                 </div>
-                <h3 class="approach-title">Menu Design & Engineering</h3>
+                <h4 class="approach-title">Menu Design & Engineering</h4>
               </div>
               <div class="approach-content">
                 <p>
@@ -271,7 +287,7 @@
                     <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4-3h2v13h-2z"/>
                   </svg>
                 </div>
-                <h3 class="approach-title">Data Analytics & Business Intelligence</h3>
+                <h4 class="approach-title">Data Analytics & Business Intelligence</h4>
               </div>
               <div class="approach-content">
                 <p>
@@ -294,7 +310,7 @@
                     <path fill="currentColor" d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
                   </svg>
                 </div>
-                <h3 class="approach-title">Kitchen Operations & Compliance</h3>
+                <h4 class="approach-title">Kitchen Operations & Compliance</h4>
               </div>
               <div class="approach-content">
                 <p>
@@ -314,16 +330,18 @@
         </section>
         
         <!-- CTA Section -->
-        <section class="about-cta card fade-in-up" aria-labelledby="cta-heading">
-          <div class="cta-content">
-            <h2 id="cta-heading" class="cta-title">Ready to Transform Your Operations?</h2>
-            <p class="cta-description">
-              Let's combine culinary excellence with data intelligence to create innovative, profitable solutions 
-              for your business.
-            </p>
-            <div class="cta-buttons">
-              <a href="contact.html" class="button button-primary">Start a Conversation</a>
-              <a href="projects.html" class="button button-secondary">View My Projects</a>
+        <section class="cta-section" aria-labelledby="cta-heading">
+          <div class="container">
+            <div class="cta-content">
+              <h3 id="cta-heading" class="cta-heading">Ready to Transform Your Operations?</h3>
+              <p class="cta-description">
+                Let's combine culinary excellence with data intelligence to create innovative, profitable solutions 
+                for your business.
+              </p>
+              <div class="cta-buttons">
+                <a href="contact.html" class="button button-primary">Start a Conversation</a>
+                <a href="projects.html" class="button button-secondary">View My Projects</a>
+              </div>
             </div>
           </div>
         </section>
@@ -340,10 +358,10 @@
         
         <!-- Footer Branding -->
         <div class="footer-brand">
-          <div class="footer-logo">DM</div>
+          <div class="footer-logo" aria-hidden="true">DM</div>
           <div class="footer-text">
             <h3 class="footer-title">Dereck Mungoriwo</h3>
-            <p class="footer-tagline">Culinary Operations Specialist · Data Analyst</p>
+            <p class="footer-tagline">Culinary Professional | Supply Chain Management | Data-Driven Performance</p>
           </div>
         </div>
         
@@ -386,10 +404,10 @@
                 <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
               </svg>
             </a>
-            <a href="https://x.com/dereckmungoriw" 
+            <a href="https://x.com/MungoriwoDereck" 
                target="_blank" 
                rel="noopener noreferrer"
-               aria-label="Twitter Profile">
+               aria-label="X (Twitter) Profile">
               <svg class="icon-twitter" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
               </svg>
@@ -421,6 +439,7 @@
     </svg>
   </a>
 
+  <!-- JavaScript -->
   <script src="assets/js/script.js" defer></script>
 </body>
 </html>
