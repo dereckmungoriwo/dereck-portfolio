@@ -527,6 +527,19 @@
   }
 }
 
+/* ChefOS Container Override */
+.chefos-section.section-full {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chefos-master-card {
+  width: calc(100% - 2rem); /* Account for container margins */
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ================= HOME CTA SECTION ================= */
 .home-page .cta-section {
   width: 100%;
