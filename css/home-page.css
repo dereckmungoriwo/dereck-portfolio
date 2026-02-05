@@ -354,27 +354,25 @@
 }
 
 /* ================= CHEFOS SECTION ================= */
+/* Full-width ChefOS Section */
 .chefos-section {
   width: 100%;
-  padding: var(--spacing-4xl) 0;
+  padding: var(--spacing-4xl) var(--spacing-md); /* horizontal padding */
   background: var(--color-gray-50);
 }
 
-.chefos-section .container {
+.chefos-master-card {
   max-width: var(--container-max);
-  margin: 0 auto;
-}
-
-.chefos-section .chefos-master-card {
+  margin: 0 auto; /* centers the card */
   background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
   border: 2px solid var(--color-primary-light);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-4xl);
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3xl);
-  position: relative;
-  overflow: hidden;
 }
 
 /* Decorative background pattern */
