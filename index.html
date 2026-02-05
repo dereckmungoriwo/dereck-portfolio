@@ -7,7 +7,7 @@
   <!-- Enhanced SEO Meta Tags -->
   <title>Dereck Mungoriwo | Culinary Operations & Restaurant Systems Specialist</title>
   <meta name="description" content="Culinary operations specialist focused on kitchen workflow optimization, food cost control, menu engineering, and restaurant systems design. Bridging real kitchen operations with structured systems and data-driven performance.">
-  <meta name="keywords" content="culinary operations specialist, restaurant systems, kitchen workflow optimization, menu engineering, food cost control, restaurant technology, hospitality operations, kitchen performance"> 
+  <meta name="keywords" content="culinary operations, restaurant systems, kitchen workflow optimization, menu engineering, food cost control, restaurant technology, hospitality operations, kitchen performance"> 
   <meta name="author" content="Dereck Mungoriwo">
 
   <!-- Open Graph for Social Sharing -->
@@ -38,7 +38,11 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- CSS -REFERENCES -->
+  <!-- CSS - Preload critical styles -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="css/home-page.css" as="style">
+  
+  <!-- CSS References -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/home-page.css">
   
@@ -93,10 +97,11 @@
           <div class="logo-image">
             <img 
               src="assets/images/profile-header.jpg" 
-              alt="Dereck Mungoriwo"
+              alt="Dereck Mungoriwo - Culinary Operations Specialist"
               width="48"
               height="48"
               itemprop="image"
+              loading="eager"
             >
           </div>
           <div class="logo-text">
@@ -107,9 +112,10 @@
         
         <!-- Mobile Navigation Toggle -->
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="visually-hidden">Menu</span>
         </button>
         
         <!-- Main Navigation -->
@@ -162,11 +168,12 @@
               <div class="profile-image-container">
                 <img 
                   src="assets/images/profile.jpg" 
-                  alt="Dereck Mungoriwo - Culinary Operations Specialist" 
+                  alt="Portrait of Dereck Mungoriwo - Culinary Operations Specialist" 
                   class="profile-image"
                   width="180"
                   height="180"
                   loading="eager"
+                  itemprop="image"
                 >
               </div>
               
@@ -177,7 +184,7 @@
                      target="_blank" 
                      rel="noopener noreferrer"
                      class="button button-primary whatsapp-button"
-                     aria-label="Chat on WhatsApp">
+                     aria-label="Chat on WhatsApp (+27 71 718 4048)">
                     <svg class="icon-whatsapp" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
                       <path fill="currentColor" d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.96-1.38-.92-2.61.05-1.22.69-1.8.95-2.04.24-.26.51-.29.68-.26h.47c.15 0 .36-.06.55.45l.69 1.87c.06.13.1.28.01.44l-.27.41-.39.42c-.12.12-.26.25-.12.5.12.26.62 1.09 1.32 1.78.91.88 1.71 1.17 1.95 1.3.24.14.39.12.54-.04l.81-.94c.19-.25.35-.19.58-.11l1.67.88M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.97 0-3.8-.57-5.35-1.55L2 22l1.55-4.65A9.969 9.969 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8c0 1.72.54 3.31 1.46 4.61L4.5 19.5l2.89-.96A7.95 7.95 0 0 0 12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8z"/>
                     </svg>
@@ -224,9 +231,9 @@
               </div>
 
               <div class="culinary-card-footer">
-                <span class="culinary-tag">Fine Dining</span>
-                <span class="culinary-tag">Seasonal Focus</span>
-                <span class="culinary-tag">Operational Efficiency</span>
+                <span class="culinary-tag" aria-label="Specialization: Fine Dining">Fine Dining</span>
+                <span class="culinary-tag" aria-label="Specialization: Seasonal Focus">Seasonal Focus</span>
+                <span class="culinary-tag" aria-label="Specialization: Operational Efficiency">Operational Efficiency</span>
               </div>
             </article>
             
@@ -269,15 +276,15 @@
               <div class="culinary-card-content">
                 <div class="impact-metrics">
                   <div class="impact-metric">
-                    <span class="metric-value">300+</span>
+                    <span class="metric-value" aria-label="300 plus service outputs managed per shift">300+</span>
                     <span class="metric-label">Service outputs managed per shift</span>
                   </div>
                   <div class="impact-metric">
-                    <span class="metric-value">10%+</span>
+                    <span class="metric-value" aria-label="10 percent plus ingredient waste reduction">10%+</span>
                     <span class="metric-label">Ingredient waste reduction through process control</span>
                   </div>
                   <div class="impact-metric">
-                    <span class="metric-value">100%</span>
+                    <span class="metric-value" aria-label="100 percent compliance">100%</span>
                     <span class="metric-label">HACCP & ISO 22000:2018 food safety compliance</span>
                   </div>
                 </div>
@@ -317,6 +324,7 @@
                 aria-selected="true"
                 aria-controls="panel-overview"
                 id="tab-overview"
+                tabindex="0"
               >
                 System Overview
               </button>
@@ -327,6 +335,7 @@
                 aria-selected="false"
                 aria-controls="panel-flow"
                 id="tab-flow"
+                tabindex="-1"
               >
                 Operational Flow
               </button>
@@ -337,6 +346,7 @@
                 aria-selected="false"
                 aria-controls="panel-impact"
                 id="tab-impact"
+                tabindex="-1"
               >
                 Business Impact
               </button>
@@ -397,13 +407,13 @@
                 <!-- Metrics -->
                 <div class="chefos-metrics">
                   <div class="metric-box">
-                    <span data-metric="10">0</span>% Waste Reduction
+                    <span data-metric="10" aria-label="10 percent">0</span>% Waste Reduction
                   </div>
                   <div class="metric-box">
-                    <span data-metric="18">0</span>% Food Cost Control
+                    <span data-metric="18" aria-label="18 percent">0</span>% Food Cost Control
                   </div>
                   <div class="metric-box">
-                    <span data-metric="25">0</span>% Faster Order Flow
+                    <span data-metric="25" aria-label="25 percent">0</span>% Faster Order Flow
                   </div>
                 </div>
               </div>
@@ -503,7 +513,7 @@
             <a href="https://www.linkedin.com/in/dereckmungoriwo" 
                target="_blank" 
                rel="noopener noreferrer"
-               aria-label="LinkedIn Profile">
+               aria-label="Connect on LinkedIn">
               <svg class="icon-linkedin" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
               </svg>
@@ -511,7 +521,7 @@
             <a href="https://x.com/MungoriwoDereck" 
                target="_blank" 
                rel="noopener noreferrer"
-               aria-label="X (Twitter) Profile">
+               aria-label="Follow on X (Twitter)">
               <svg class="icon-twitter" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
               </svg>
@@ -537,7 +547,7 @@
      target="_blank" 
      rel="noopener noreferrer" 
      class="whatsapp-float"
-     aria-label="Chat on WhatsApp">
+     aria-label="Chat on WhatsApp (+27 71 718 4048)">
     <svg class="icon-whatsapp" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24">
       <path fill="currentColor" d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.96-1.38-.92-2.61.05-1.22.69-1.8.95-2.04.24-.26.51-.29.68-.26h.47c.15 0 .36-.06.55.45l.69 1.87c.06.13.1.28.01.44l-.27.41-.39.42c-.12.12-.26.25-.12.5.12.26.62 1.09 1.32 1.78.91.88 1.71 1.17 1.95 1.3.24.14.39.12.54-.04l.81-.94c.19-.25.35-.19.58-.11l1.67.88M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.97 0-3.8-.57-5.35-1.55L2 22l1.55-4.65A9.969 9.969 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8c0 1.72.54 3.31 1.46 4.61L4.5 19.5l2.89-.96A7.95 7.95 0 0 0 12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8z"/>
     </svg>
