@@ -639,26 +639,6 @@
   border-radius: var(--border-radius-lg); /* Rounded corners */
   overflow: hidden; /* Keep content within rounded corners */
 }
-
-/* All full-width sections */
-.section-full {
-  padding-top: var(--section-gap);
-  padding-bottom: var(--section-gap);
+.profile-about-card + .culinary-showcase {
+  padding-top: 6rem; /* slightly more space below profile */
 }
-
-/* Optional: tweak for smaller screens */
-@media (max-width: 768px) {
-  .section-full {
-    padding-top: var(--section-gap-sm);
-    padding-bottom: var(--section-gap-sm);
-  }
-}
-
-@media (min-width: 1200px) {
-  .section-full {
-    padding-top: var(--section-gap-lg);
-    padding-bottom: var(--section-gap-lg);
-  }
-}
-
-
