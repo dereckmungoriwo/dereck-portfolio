@@ -5,19 +5,26 @@
 .home-page {}
 
 /* ==========================================================================
-   LAYOUT & SECTION SPACING
+   LAYOUT & SECTION SPACING - 3rem between cards
    ========================================================================== */
 
-.home-page .section-full {
-  padding: var(--spacing-4xl) 0;
+.home-page .section-card-spacing {
+  padding: 1.5rem 0; /* 3rem total spacing between cards (1.5rem top + 1.5rem bottom) */
 }
 
-.profile-about-card + .culinary-showcase {
-  padding-top: var(--spacing-4xl);
+.home-page .section-card-spacing:first-of-type {
+  padding-top: 3rem; /* More space after hero */
+}
+
+.home-page .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
-   SHARED CARD SYSTEM
+   SHARED CARD SYSTEM - FULL WIDTH
    ========================================================================== */
 
 .home-page .card,
@@ -32,6 +39,7 @@
   border: 2px solid var(--color-primary-light);
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   overflow: hidden;
+  padding: var(--spacing-2xl);
 }
 
 /* ==========================================================================
@@ -42,6 +50,7 @@
   background: linear-gradient(135deg, var(--color-gray-900), var(--color-black));
   color: var(--color-white);
   text-align: center;
+  padding: var(--spacing-4xl) var(--spacing-2xl);
 }
 
 .motto-content {
@@ -59,7 +68,7 @@
 
 .motto-subheading {
   max-width: 600px;
-  margin: 0 auto;
+  margin: var(--spacing-lg) auto 0;
   font-size: var(--font-size-xl);
   color: var(--color-gray-300);
 }
@@ -94,12 +103,14 @@
 .profile-name {
   font-size: var(--font-size-2xl);
   font-weight: 700;
+  margin: 0 0 var(--spacing-xs) 0;
 }
 
 .profile-role {
   font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-primary-dark);
+  margin: 0 0 var(--spacing-md) 0;
 }
 
 .profile-divider {
@@ -109,15 +120,15 @@
   background: linear-gradient(90deg, var(--color-primary-light), transparent);
 }
 
-/* ==========================================================================
-   CULINARY SHOWCASE
-   ========================================================================== */
-
-.culinary-showcase {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
+.profile-about-content p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray-700);
+  line-height: 1.6;
 }
+
+/* ==========================================================================
+   CULINARY CARDS
+   ========================================================================== */
 
 .culinary-card {
   min-height: 220px;
@@ -148,6 +159,12 @@
 .culinary-card-content {
   flex: 1;
   margin-bottom: var(--spacing-lg);
+}
+
+.culinary-card-content p {
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
 }
 
 .techniques-list {
@@ -197,15 +214,19 @@
   color: var(--color-white);
 }
 
-/* Impact Metrics */
+/* ==========================================================================
+   IMPACT METRICS
+   ========================================================================== */
+
 .impact-metrics {
   display: flex;
   justify-content: space-around;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   background: var(--color-gray-50);
   border-radius: var(--border-radius);
+  border: 1px solid var(--color-gray-200);
 }
 
 .impact-metric {
@@ -215,7 +236,7 @@
 
 .metric-value {
   display: block;
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: var(--spacing-xs);
@@ -231,142 +252,270 @@
   letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   IMPACT METRICS
-   ========================================================================== */
-
-.impact-metrics {
-  display: flex;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
-  background: var(--color-gray-50);
-  border-radius: var(--border-radius);
-}
-
-.impact-metric {
-  text-align: center;
-  flex: 1;
-}
-
-.metric-value {
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
-  color: var(--color-primary);
+.impact-description {
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
 }
 
 /* ==========================================================================
-   CHEFOS SECTION
+   SIGNATURE DISH SECTION
    ========================================================================== */
 
-.chefos-section {
-  background: var(--color-white-50);
-}
-
-.chefos-master-card {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: var(--spacing-4xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-3xl);
-}
-
-/* Signature Dish Section */
 .signature-dish-section {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e5e7eb;
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-2xl);
+  border-top: 2px solid var(--color-gray-200);
 }
 
 .signature-dish-title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #111827;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-black);
 }
 
 .signature-dish-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   align-items: start;
 }
 
 .signature-dish-image img {
   width: 100%;
   height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--color-gray-200);
 }
 
 .signature-dish-description p {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray-700);
+  line-height: 1.6;
+}
+
+.signature-dish-description p strong {
+  color: var(--color-black);
+  font-weight: 600;
 }
 
 .dish-note {
-  font-size: 0.95rem;
-  color: #6b7280;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
   font-style: italic;
-  padding: 1rem;
-  background: #f9fafb;
-  border-left: 3px solid #4f46e5;
-  border-radius: 0.25rem;
-}
-
-/* ChefOS Header Icons */
-.chefos-header-with-icon {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.chefos-main-icon {
-  color: #4f46e5;
-  flex-shrink: 0;
-}
-
-.chefos-section-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.chefos-section-icon {
-  color: #6366f1;
-  flex-shrink: 0;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .signature-dish-layout {
-    grid-template-columns: 1fr;
-  }
+  padding: var(--spacing-md);
+  background: var(--color-gray-50);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-md);
 }
 
 /* ==========================================================================
-   CTA
+   CHEFOS SECTION
    ========================================================================== */
 
-.home-page .cta-section {
-  border-radius: var(--border-radius-lg);
-  margin: var(--spacing-3xl) auto;
-  max-width: calc(var(--container-max) - 4rem);
-  border: 2px solid var(--color-primary-light);
-  position: relative;
+.chefos-master-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
 }
 
-.home-page .cta-section::before {
+/* ChefOS Header with Icon */
+.chefos-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.chefos-header-with-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.chefos-main-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.chefos-header h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.chefos-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  margin-top: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+/* ChefOS Blocks */
+.chefos-block {
+  margin-bottom: var(--spacing-xl);
+}
+
+.chefos-block p {
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ChefOS Section Headers with Icons */
+.chefos-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.chefos-section-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.chefos-section-header h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-black);
+  margin: 0;
+}
+
+/* ChefOS Image Block - Side by Side Layout */
+.chefos-image-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+  margin: var(--spacing-xl) 0;
+}
+
+.chefos-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--color-gray-200);
+}
+
+.chefos-image-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  background: var(--color-gray-50);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-gray-200);
+  min-height: 100%;
+}
+
+.chefos-image-description h4 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-black);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.chefos-image-description p {
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.chefos-image-description .image-caption {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  font-style: italic;
+  margin-top: var(--spacing-sm);
+}
+
+/* ChefOS Metrics Section - Above Buttons */
+.chefos-metrics-section {
+  margin: var(--spacing-2xl) 0;
+  padding: var(--spacing-xl);
+  background: var(--color-gray-50);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-primary-light);
+}
+
+.chefos-metrics-section .impact-metrics {
+  border: none;
+  background: var(--color-white);
+}
+
+/* ChefOS Buttons */
+.chefos-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-top: 0;
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+/* ==========================================================================
+   CTA SECTION - FULL WIDTH
+   ========================================================================== */
+
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 8px 24px rgba(32, 178, 170, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
   content: "";
   position: absolute;
-  width: 100% !important;
+  width: 100%;
   height: 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z'/%3E%3C/svg%3E");
   background-size: 100px;
   background-position: center;
   opacity: 0.05;
+  top: 0;
+  left: 0;
   z-index: 1;
+}
+
+.cta-heading {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-description {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -374,9 +523,26 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
+  .home-page .card,
+  .home-page .profile-about-card,
+  .home-page .culinary-card,
+  .home-page .chefos-master-card {
+    padding: var(--spacing-lg);
+  }
+
   .profile-about-layout {
     flex-direction: column;
     text-align: center;
+  }
+
+  .profile-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .signature-dish-layout,
+  .chefos-image-block {
+    grid-template-columns: 1fr;
   }
 
   .impact-metrics {
@@ -385,6 +551,14 @@
 
   .motto-heading {
     font-size: var(--font-size-4xl);
+  }
+
+  .chefos-buttons {
+    flex-direction: column;
+  }
+
+  .chefos-buttons .button {
+    width: 100%;
   }
 }
 
@@ -396,5 +570,9 @@
 
   .motto-heading {
     font-size: var(--font-size-3xl);
+  }
+
+  .cta-heading {
+    font-size: var(--font-size-2xl);
   }
 }
