@@ -436,43 +436,16 @@
 
 /* ChefOS Metrics Section - Above Buttons */
 .chefos-metrics-section {
-  display: flex;
-  justify-content: space-around;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-lg);
+  margin: var(--spacing-2xl) 0;
+  padding: var(--spacing-xl);
   background: var(--color-gray-50);
   border-radius: var(--border-radius);
   border: 1px solid var(--color-gray-200);
 }
 
-.impact-metric {
-  text-align: center;
-  flex: 1;
-}
-
-.metric-value {
-  display: block;
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-xs);
-  line-height: 1;
-}
-
-.metric-label {
-  display: block;
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.impact-description {
-  color: var(--color-gray-700);
-  line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
+.chefos-metrics-section .impact-metrics {
+  border: none;
+  background: var(--color-white);
 }
 
 /* ChefOS Buttons */
@@ -484,7 +457,6 @@
   padding-top: var(--spacing-xl);
   border-top: 1px solid var(--color-gray-200);
 }
-
 
 /* ==========================================================================
    CTA SECTION - FULL WIDTH
