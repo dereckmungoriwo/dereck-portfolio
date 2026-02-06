@@ -100,7 +100,7 @@
 
         <nav class="nav" id="main-nav" role="navigation" aria-label="Main Navigation">
           <ul class="nav-list">
-            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
             <li><a href="about.html" class="nav-link">About</a></li>
             <li><a href="resume.html" class="nav-link">Resume</a></li>
             <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -115,7 +115,7 @@
   <!-- MAIN -->
   <main id="main-content" class="main-content">
 
-    <!-- HERO -->
+    <!-- HERO MOTTO -->
     <section class="hero-motto section-full" aria-labelledby="motto-heading">
       <div class="container">
         <div class="motto-content">
@@ -127,205 +127,264 @@
       </div>
     </section>
 
-    <!-- PROFILE + ABOUT CARD -->
-    <article class="profile-about-card card section-full">
-      <div class="profile-about-layout">
-        <div class="profile-about-image">
-          <img src="assets/images/profile.jpg" alt="Dereck Mungoriwo" class="profile-image" width="200" height="200" loading="eager">
-        </div>
-        <div class="profile-about-content">
-          <h3 class="profile-name">Dereck Mungoriwo</h3>
-          <p class="profile-role">Culinary Operations & Restaurant Systems Specialist</p>
-          <div class="profile-divider"></div>
-          <p>
-            I am a culinary operations specialist focused on improving kitchen performance through structured systems, process optimization, and data-informed decision-making.
-          </p>
-          <p>
-            With a foundation in professional culinary practice and analytical training, I translate real kitchen workflows into measurable operational models that enhance efficiency, control food costs, improve consistency, and support smarter management decisions.
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <!-- CULINARY SHOWCASE - 3 CARDS IN GRID -->
-    <section class="culinary-showcase section-full">
-        <div class="culinary-cards-grid">
-          
-          <!-- Card 1: Operational Methodology -->
-          <article class="culinary-card philosophy-card card">
-            <div class="culinary-card-header">
-              <svg class="culinary-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
-              </svg>
-              <h3 class="culinary-card-title">Operational Methodology</h3>
+    <!-- PROFILE + ABOUT CARD (Full Width) -->
+    <section class="section-full">
+      <div class="container">
+        <article class="card profile-about-card">
+          <div class="profile-about-layout">
+            <div class="profile-about-image">
+              <img src="assets/images/profile.jpg" alt="Dereck Mungoriwo" class="profile-image" width="200" height="200" loading="eager">
             </div>
-
-            <div class="culinary-card-content">
+            <div class="profile-about-content">
+              <h3 class="profile-name">Dereck Mungoriwo</h3>
+              <p class="profile-role">Culinary Operations & Restaurant Systems Specialist</p>
+              <div class="profile-divider"></div>
               <p>
-                My approach to kitchen operations is structured around three principles: 
-                <strong>process precision</strong>, 
-                <strong>workflow efficiency</strong>, and 
-                <strong>data-informed decision-making</strong>. 
-                Culinary environments perform best when systems, timing, and measurable feedback loops work together to support consistency and control.
+                I am a culinary operations specialist focused on improving kitchen performance through structured systems, process optimization, and data-informed decision-making.
               </p>
-            </div>
-
-            <div class="culinary-card-footer">
-              <span class="culinary-tag" aria-label="Specialization: Fine Dining">Fine Dining</span>
-              <span class="culinary-tag" aria-label="Specialization: Seasonal Focus">Seasonal Focus</span>
-              <span class="culinary-tag" aria-label="Specialization: Operational Efficiency">Operational Efficiency</span>
-            </div>
-          </article>
-          
-          <!-- Card 2: Operational Capabilities -->
-          <article class="culinary-card techniques-card card">
-            <div class="culinary-card-header">
-              <svg class="culinary-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M20.59 6.05L19.05 4.5 15.5 8.05 16.95 9.5l3.64-3.45M13 2h-2v5h2V2m-4 4.4L1 11v2l15 4 4-1v-1.61L19 14.26V22h-6v-5.5l-5-1.5v5.5c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-9.77L13 6.4z"/>
-              </svg>
-              <h3 class="culinary-card-title">Operational Capabilities</h3>
-            </div>
-
-            <div class="culinary-card-content">
-              <ul class="techniques-list">
-                <li>
-                  <strong>Process Standardization:</strong> Structured preparation methods ensuring consistency across service
-                </li>
-                <li>
-                  <strong>Production Flow Optimization:</strong> Station coordination and timing control for consistent results
-                </li>
-                <li>
-                  <strong>Cost Control & Yield Awareness:</strong> Root-to-stem, nose-to-tail ingredient utilization strategies to minimize waste and protect margins
-                </li>
-                <li>
-                  <strong>Quality Control Systems:</strong> Maintaining output standards through repeatable procedures
-                </li>
-              </ul>
-            </div>
-          </article>
-          
-          <!-- Card 3: Operational Impact -->
-          <article class="culinary-card impact-card card">
-            <div class="culinary-card-header">
-              <svg class="culinary-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <h3 class="culinary-card-title">Operational Impact</h3>
-            </div>
-
-            <div class="culinary-card-content">
-              <div class="impact-metrics">
-                <div class="impact-metric">
-                  <span class="metric-value" aria-label="300 plus service outputs managed per shift">300+</span>
-                  <span class="metric-label">Service outputs managed per shift</span>
-                </div>
-                <div class="impact-metric">
-                  <span class="metric-value" aria-label="10 percent plus ingredient waste reduction">10%+</span>
-                  <span class="metric-label">Ingredient waste reduction through process control</span>
-                </div>
-                <div class="impact-metric">
-                  <span class="metric-value" aria-label="100 percent compliance">100%</span>
-                  <span class="metric-label">HACCP & ISO 22000:2018 food safety compliance</span>
-                </div>
-              </div>
-
-              <p class="impact-description">
-                Applying structured workflow systems and performance tracking to maintain consistency at scale, improve cost control, and support data-driven operational decisions.
+              <p>
+                With a foundation in professional culinary practice and analytical training, I translate real kitchen workflows into measurable operational models that enhance efficiency, control food costs, improve consistency, and support smarter management decisions.
               </p>
-            </div>
-          </article>
-          
-        </div><!-- End culinary-cards-grid -->
-      </div><!-- End container -->
-    </section><!-- End culinary-showcase -->
-
-    <!-- ================= CHEFOS SECTION ================= -->
-    <section class="chefos-section section-full" aria-labelledby="chefos-heading">
-      <article class="card chefos-master-card">
-        <!-- HEADER -->
-        <div class="chefos-header">
-          <h2 id="chefos-heading">ChefOS — Restaurant Operations & Kitchen Intelligence System</h2>
-          <p class="chefos-subtitle">
-            A systems-based approach to kitchen workflow, food cost control, and restaurant performance optimization.
-          </p>
-        </div>
-
-        <!-- INTRO -->
-        <div class="chefos-block">
-          <p>
-            ChefOS is a restaurant operations system designed to model how modern kitchens operate using structured workflows, integrated data systems, and real-time operational visibility. It connects production, inventory, and performance intelligence into one unified operational ecosystem.
-          </p>
-        </div>
-
-        <!-- IMAGE 1 -->
-        <div class="chefos-image-block">
-          <img src="assets/images/business-insights-dashboard.jpg" alt="Business Insights Dashboard">
-          <p class="image-caption">Business Insights Dashboard — Sales trends, food cost tracking, and menu performance analytics</p>
-        </div>
-
-        <!-- MODULES -->
-        <div class="chefos-block">
-          <h3>Operational System Modules</h3>
-          <ul class="techniques-list">
-            <li><strong>POS Transaction Layer:</strong> Structured order entry and sales data capture</li>
-            <li><strong>Kitchen Display Workflow:</strong> Real-time production queue tracking</li>
-            <li><strong>Recipe-Based Inventory System:</strong> Automatic ingredient deduction</li>
-            <li><strong>Role-Based Operations Control:</strong> Structured staff access and task control</li>
-            <li><strong>Performance Analytics Dashboard:</strong> Menu trends and operational KPIs</li>
-          </ul>
-        </div>
-
-        <!-- OPERATIONAL FLOW -->
-        <div class="chefos-block">
-          <h3>Operational Flow Logic</h3>
-          <ul class="techniques-list">
-            <li>POS Sale → Ingredient Deduction → Inventory Update</li>
-            <li>Order Entry → Kitchen Queue → Production Status</li>
-            <li>Inventory Levels → Low-Stock Alerts</li>
-            <li>Sales Data → Menu Performance Metrics</li>
-            <li>Workflow Visibility → Faster Service Decisions</li>
-          </ul>
-        </div>
-
-        <!-- BUSINESS IMPACT -->
-        <div class="chefos-block">
-          <h3>Business Impact</h3>
-
-          <div class="impact-metrics">
-            <div class="impact-metric">
-              <span class="metric-value">10%</span>
-              <span class="metric-label">Waste Reduction</span>
-            </div>
-            <div class="impact-metric">
-              <span class="metric-value">18%</span>
-              <span class="metric-label">Food Cost Control</span>
-            </div>
-            <div class="impact-metric">
-              <span class="metric-value">25%</span>
-              <span class="metric-label">Faster Order Flow</span>
             </div>
           </div>
-
-          <p>
-            ChefOS demonstrates how structured operational systems improve production consistency, protect margins, and support data-driven restaurant decision-making.
-          </p>
-        </div>
-
-        <!-- IMAGE 2 -->
-        <div class="chefos-image-block">
-          <img src="assets/images/chefos-control-panel.jpg" alt="ChefOS Control Panel Interface">
-          <p class="image-caption">ChefOS Control Panel — Kitchen workflow, production monitoring, and operational control</p>
-        </div>
-
-        <!-- BUTTONS -->
-        <div class="chefos-buttons">
-          <a href="projects.html" class="button button-primary">View ChefOS Case Study</a>
-          <a href="#" class="button button-secondary">Live System Demo (Coming Soon)</a>
-        </div>
-      </article>
+        </article>
+      </div>
     </section>
 
-    <!-- Call to Action Section -->
+    <!-- OPERATIONAL METHODOLOGY CARD (Full Width) -->
+    <section class="section-full">
+      <div class="container">
+        <article class="card culinary-card philosophy-card">
+          <div class="culinary-card-header">
+            <svg class="culinary-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
+            </svg>
+            <h3 class="culinary-card-title">Operational Methodology</h3>
+          </div>
+
+          <div class="culinary-card-content">
+            <p>
+              My approach to kitchen operations is structured around three principles: 
+              <strong>process precision</strong>, 
+              <strong>workflow efficiency</strong>, and 
+              <strong>data-informed decision-making</strong>. 
+              Culinary environments perform best when systems, timing, and measurable feedback loops work together to support consistency and control.
+            </p>
+          </div>
+
+          <div class="culinary-card-footer">
+            <span class="culinary-tag" aria-label="Specialization: Fine Dining">Fine Dining</span>
+            <span class="culinary-tag" aria-label="Specialization: Seasonal Focus">Seasonal Focus</span>
+            <span class="culinary-tag" aria-label="Specialization: Operational Efficiency">Operational Efficiency</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- OPERATIONAL CAPABILITIES CARD (Full Width) -->
+    <section class="section-full">
+      <div class="container">
+        <article class="card culinary-card techniques-card">
+          <div class="culinary-card-header">
+            <svg class="culinary-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M20.59 6.05L19.05 4.5 15.5 8.05 16.95 9.5l3.64-3.45M13 2h-2v5h2V2m-4 4.4L1 11v2l15 4 4-1v-1.61L19 14.26V22h-6v-5.5l-5-1.5v5.5c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-9.77L13 6.4z"/>
+            </svg>
+            <h3 class="culinary-card-title">Operational Capabilities</h3>
+          </div>
+
+          <div class="culinary-card-content">
+            <ul class="techniques-list">
+              <li>
+                <strong>Process Standardization:</strong> Structured preparation methods ensuring consistency across service
+              </li>
+              <li>
+                <strong>Production Flow Optimization:</strong> Station coordination and timing control for consistent results
+              </li>
+              <li>
+                <strong>Cost Control & Yield Awareness:</strong> Root-to-stem, nose-to-tail ingredient utilization strategies to minimize waste and protect margins
+              </li>
+              <li>
+                <strong>Quality Control Systems:</strong> Maintaining output standards through repeatable procedures
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- OPERATIONAL IMPACT + SIGNATURE DISH CARD (Full Width) -->
+    <section class="section-full">
+      <div class="container">
+        <article class="card culinary-card impact-card">
+          <div class="culinary-card-header">
+            <svg class="culinary-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h3 class="culinary-card-title">Operational Impact</h3>
+          </div>
+
+          <div class="culinary-card-content">
+            <!-- Metrics -->
+            <div class="impact-metrics">
+              <div class="impact-metric">
+                <span class="metric-value" aria-label="300 plus service outputs managed per shift">300+</span>
+                <span class="metric-label">Service outputs managed per shift</span>
+              </div>
+              <div class="impact-metric">
+                <span class="metric-value" aria-label="10 percent plus ingredient waste reduction">10%+</span>
+                <span class="metric-label">Ingredient waste reduction through process control</span>
+              </div>
+              <div class="impact-metric">
+                <span class="metric-value" aria-label="100 percent compliance">100%</span>
+                <span class="metric-label">HACCP & ISO 22000:2018 food safety compliance</span>
+              </div>
+            </div>
+
+            <p class="impact-description">
+              Applying structured workflow systems and performance tracking to maintain consistency at scale, improve cost control, and support data-driven operational decisions.
+            </p>
+
+            <!-- Signature Dish Section -->
+            <div class="signature-dish-section">
+              <h4 class="signature-dish-title">Signature Dish: Precision & Presentation</h4>
+              <div class="signature-dish-layout">
+                <div class="signature-dish-image">
+                  <img 
+                    src="assets/images/signature-dish.jpg" 
+                    alt="Signature plated dish showcasing precision plating and culinary technique" 
+                    width="600" 
+                    height="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="signature-dish-description">
+                  <p>
+                    <strong>Pan-Seared Ribeye with Roasted Vegetables & Thyme Reduction</strong>
+                  </p>
+                  <p>
+                    This dish exemplifies the intersection of culinary technique and operational precision—controlled searing for optimal crust development, precise timing for medium-rare doneness, and plating consistency that reflects systematic kitchen workflow.
+                  </p>
+                  <p class="dish-note">
+                    Each component represents repeatable process execution: standardized protein portioning, coordinated station timing, and controlled sauce reduction for consistent flavor profiles across service.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHEFOS SECTION (Full Width Card with Icons) -->
+    <section class="section-full">
+      <div class="container">
+        <article class="card chefos-master-card">
+          
+          <!-- HEADER WITH ICON -->
+          <div class="chefos-header">
+            <div class="chefos-header-with-icon">
+              <svg class="chefos-main-icon" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4-3h2v13h-2z"/>
+              </svg>
+              <h2 id="chefos-heading">ChefOS — Restaurant Operations & Kitchen Intelligence System</h2>
+            </div>
+            <p class="chefos-subtitle">
+              A systems-based approach to kitchen workflow, food cost control, and restaurant performance optimization.
+            </p>
+          </div>
+
+          <!-- INTRO -->
+          <div class="chefos-block">
+            <p>
+              ChefOS is a restaurant operations system designed to model how modern kitchens operate using structured workflows, integrated data systems, and real-time operational visibility. It connects production, inventory, and performance intelligence into one unified operational ecosystem.
+            </p>
+          </div>
+
+          <!-- IMAGE 1 -->
+          <div class="chefos-image-block">
+            <img src="assets/images/business-insights-dashboard.jpg" alt="Business Insights Dashboard" width="1200" height="675" loading="lazy">
+            <p class="image-caption">Business Insights Dashboard — Sales trends, food cost tracking, and menu performance analytics</p>
+          </div>
+
+          <!-- MODULES WITH ICON -->
+          <div class="chefos-block">
+            <div class="chefos-section-header">
+              <svg class="chefos-section-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+              </svg>
+              <h3>Operational System Modules</h3>
+            </div>
+            <ul class="techniques-list">
+              <li><strong>POS Transaction Layer:</strong> Structured order entry and sales data capture</li>
+              <li><strong>Kitchen Display Workflow:</strong> Real-time production queue tracking</li>
+              <li><strong>Recipe-Based Inventory System:</strong> Automatic ingredient deduction</li>
+              <li><strong>Role-Based Operations Control:</strong> Structured staff access and task control</li>
+              <li><strong>Performance Analytics Dashboard:</strong> Menu trends and operational KPIs</li>
+            </ul>
+          </div>
+
+          <!-- OPERATIONAL FLOW WITH ICON -->
+          <div class="chefos-block">
+            <div class="chefos-section-header">
+              <svg class="chefos-section-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z"/>
+              </svg>
+              <h3>Operational Flow Logic</h3>
+            </div>
+            <ul class="techniques-list">
+              <li>POS Sale → Ingredient Deduction → Inventory Update</li>
+              <li>Order Entry → Kitchen Queue → Production Status</li>
+              <li>Inventory Levels → Low-Stock Alerts</li>
+              <li>Sales Data → Menu Performance Metrics</li>
+              <li>Workflow Visibility → Faster Service Decisions</li>
+            </ul>
+          </div>
+
+          <!-- BUSINESS IMPACT WITH ICON -->
+          <div class="chefos-block">
+            <div class="chefos-section-header">
+              <svg class="chefos-section-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+              </svg>
+              <h3>Business Impact</h3>
+            </div>
+
+            <div class="impact-metrics">
+              <div class="impact-metric">
+                <span class="metric-value">10%</span>
+                <span class="metric-label">Waste Reduction</span>
+              </div>
+              <div class="impact-metric">
+                <span class="metric-value">18%</span>
+                <span class="metric-label">Food Cost Control</span>
+              </div>
+              <div class="impact-metric">
+                <span class="metric-value">25%</span>
+                <span class="metric-label">Faster Order Flow</span>
+              </div>
+            </div>
+
+            <p>
+              ChefOS demonstrates how structured operational systems improve production consistency, protect margins, and support data-driven restaurant decision-making.
+            </p>
+          </div>
+
+          <!-- IMAGE 2 -->
+          <div class="chefos-image-block">
+            <img src="assets/images/chefos-control-panel.jpg" alt="ChefOS Control Panel Interface" width="1200" height="675" loading="lazy">
+            <p class="image-caption">ChefOS Control Panel — Kitchen workflow, production monitoring, and operational control</p>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="chefos-buttons">
+            <a href="projects.html" class="button button-primary">View ChefOS Case Study</a>
+            <a href="#" class="button button-secondary">Live System Demo (Coming Soon)</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
     <section class="cta-section section-full" aria-labelledby="cta-heading">
       <div class="container">
         <h2 id="cta-heading" class="cta-heading">
@@ -345,7 +404,7 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="footer section-full" role="contentinfo">
     <div class="container">
       <div class="footer-content">
@@ -435,5 +494,9 @@
 
   <!-- JavaScript -->
   <script src="assets/js/script.js" defer></script>
+  <script>
+    // Set current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
