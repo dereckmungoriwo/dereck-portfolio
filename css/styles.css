@@ -456,6 +456,22 @@ a:hover {
   padding: var(--spacing-2xl);
 }
 
+/* Create a container that doesn't limit width */
+.container-full {
+  width: 100%;
+  padding: 0; /* Removes the side gaps */
+}
+
+/* Specific styling for full-width cards */
+.card-full {
+  width: 100%;
+  border-radius: 0; /* Usually looks better when hitting the screen edges */
+  border-left: none;
+  border-right: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* ================= GLOBAL BUTTONS ================= */
 .button {
   display: inline-flex;
