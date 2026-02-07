@@ -1,5 +1,5 @@
 /* ==========================================================================
-   REFINED GLOBAL STYLES - Consolidated & Optimized
+   REFINED GLOBAL STYLES - Fixed Footer & Full-Width Cards
    ========================================================================== */
 
 /* ================= CSS VARIABLES ================= */
@@ -136,12 +136,35 @@ img {
   top: 0;
 }
 
-/* ================= LAYOUT ================= */
+/* ================= LAYOUT - FULL WIDTH SUPPORT ================= */
 .container {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--spacing-2xl);
+}
+
+/* Override for home page full-width cards - but maintain footer padding */
+.home-page .section-card-spacing .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Home page footer must keep padding */
+.home-page .footer .container {
+  max-width: var(--container-max);
+  padding: 0 var(--spacing-2xl);
+}
+
+/* Standard pages keep container max-width */
+.about-page .container,
+.resume-page .container,
+.projects-page .container,
+.gallery-page .container,
+.contact-page .container {
+  max-width: var(--container-max);
+  padding: 0 var(--spacing-2xl);
+}
 }
 
 .main-content {
@@ -201,6 +224,11 @@ a:hover {
 
 .header.scrolled {
   box-shadow: 0 4px 20px rgba(32, 178, 170, 0.15);
+}
+
+.header .container {
+  max-width: var(--container-max);
+  padding: 0 var(--spacing-2xl);
 }
 
 .header-content {
@@ -330,6 +358,11 @@ a:hover {
   margin-bottom: var(--spacing-3xl);
   position: relative;
   overflow: hidden;
+}
+
+.page-header .container {
+  max-width: var(--container-max);
+  padding: 0 var(--spacing-2xl);
 }
 
 .page-header-content {
@@ -471,14 +504,9 @@ a:hover {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-white);
   text-align: center;
-  padding: var(--spacing-3xl) 0; /* Remove horizontal padding, keep vertical */
+  padding: var(--spacing-3xl) var(--spacing-2xl);
   margin-bottom: var(--spacing-4xl);
   width: 100%;
-}
-
-.cta-section .container {
-  /* Remove the double padding that was causing issues */
-  padding: 0 var(--spacing-2xl); /* Only horizontal padding for content */
 }
 
 .cta-content {
@@ -502,9 +530,10 @@ a:hover {
   display: flex;
   gap: var(--spacing-md);
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* ================= GLOBAL FOOTER ================= */
+/* ================= GLOBAL FOOTER - FIXED LAYOUT ================= */
 .footer {
   background-color: var(--color-black);
   color: var(--color-white);
@@ -512,18 +541,26 @@ a:hover {
   margin-top: auto;
 }
 
+.footer .container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-2xl);
+}
+
 .footer-content {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--spacing-3xl);
   margin-bottom: var(--spacing-3xl);
+  align-items: start;
 }
 
 /* Footer Brand */
 .footer-brand {
   display: flex;
-  flex-direction: column;
   gap: var(--spacing-md);
+  align-items: flex-start;
 }
 
 .footer-logo {
@@ -537,26 +574,39 @@ a:hover {
   font-weight: 700;
   font-size: var(--font-size-lg);
   border-radius: var(--border-radius);
+  flex-shrink: 0;
+}
+
+.footer-text {
+  flex: 1;
 }
 
 .footer-title {
   font-size: var(--font-size-lg);
   color: var(--color-white);
-  margin: 0;
+  margin: 0 0 var(--spacing-xs) 0;
 }
 
 .footer-tagline {
   color: var(--color-gray-400);
   font-size: var(--font-size-sm);
   margin: 0;
+  line-height: 1.4;
 }
 
 /* Footer Navigation */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-nav-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md) var(--spacing-lg);
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-nav-list a {
@@ -573,13 +623,13 @@ a:hover {
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 .contact-heading {
   font-size: var(--font-size-lg);
   color: var(--color-white);
-  margin: 0;
+  margin: 0 0 var(--spacing-xs) 0;
 }
 
 .contact-info {
@@ -587,6 +637,8 @@ a:hover {
   flex-direction: column;
   gap: var(--spacing-sm);
   font-style: normal;
+  margin: 0;
+  padding: 0;
 }
 
 .contact-link {
@@ -610,6 +662,7 @@ a:hover {
 .social-links {
   display: flex;
   gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
 }
 
 .social-links a {
@@ -783,7 +836,7 @@ a:hover {
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 1024px) {
   .footer-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
   }
 }
@@ -890,6 +943,12 @@ a:hover {
     width: 100%;
     max-width: 300px;
   }
+
+  /* Footer - Mobile Layout */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
   
   .footer-bottom {
     flex-direction: column;
@@ -913,7 +972,7 @@ a:hover {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 var(--spacing-sm);
+    padding: 0 var(--spacing-md);
   }
   
   .logo {
