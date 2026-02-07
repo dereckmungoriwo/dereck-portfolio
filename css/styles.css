@@ -421,9 +421,12 @@ a:hover {
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
   border-radius: var(--border-radius-lg);
+  border: 2px solid var(--color-primary-light);
   padding: var(--spacing-2xl);
   box-shadow: var(--shadow);
   transition: transform var(--transition), box-shadow var(--transition);
+  width: 100%;
+  max-width: 100%;
 }
 
 .card:hover {
@@ -442,34 +445,28 @@ a:hover {
 }
 
 /* ==========================================================================
-      GLOBAL CARD SYSTEM - FULL WIDTH
+      CONTAINER OVERRIDE FOR FULL-WIDTH CARDS
    ========================================================================== */
-
-.card {
-  width: 100% !important;
-  max-width: 100% !important;
-  border-radius: var(--border-radius-lg);
-  background: linear-gradient(135deg, var(--color-white), var(--color-gray-50));
-  border: 2px solid var(--color-primary-light);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  overflow: hidden;
-  padding: var(--spacing-2xl);
+/* Remove container padding/max-width constraints */
+.container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* Create a container that doesn't limit width */
+/* OR create a specific full-width container variant */
 .container-full {
   width: 100%;
-  padding: 0; /* Removes the side gaps */
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-/* Specific styling for full-width cards */
+/* Optional: Full-bleed card variant (edge-to-edge) */
 .card-full {
-  width: 100%;
-  border-radius: 0; /* Usually looks better when hitting the screen edges */
+  border-radius: 0;
   border-left: none;
   border-right: none;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* ================= GLOBAL BUTTONS ================= */
