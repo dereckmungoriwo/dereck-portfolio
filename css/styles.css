@@ -441,6 +441,21 @@ a:hover {
   gap: var(--spacing-sm);
 }
 
+/* ==========================================================================
+      GLOBAL CARD SYSTEM - FULL WIDTH
+   ========================================================================== */
+
+.card {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: var(--border-radius-lg);
+  background: linear-gradient(135deg, var(--color-white), var(--color-gray-50));
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  overflow: hidden;
+  padding: var(--spacing-2xl);
+}
+
 /* ================= GLOBAL BUTTONS ================= */
 .button {
   display: inline-flex;
