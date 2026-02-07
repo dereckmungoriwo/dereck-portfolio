@@ -806,17 +806,24 @@
   cursor: pointer;
   transition: all var(--transition);
   pointer-events: all;
+  box-shadow: var(--shadow-lg);
   z-index: 10;
 }
 
 .view-button:hover {
-  background: var(--color-primary-dark);
+  background: var(--color-primary-dark) !important;
   transform: scale(1.1);
+}
+
+.view-button: hover  .view-icon {
+  color: var(--color-white) !important;
 }
 
 .view-icon {
   width: 24px;
   height: 24px;
+  color: var(--color-primary) !important;
+  transition: color var(--transition)
 }
 
 /* Main gallery card container */
