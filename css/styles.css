@@ -234,9 +234,8 @@ a:hover {
 }
 
 .header .container {
-  width: 100%;
   max-width: var(--container-max);
-  padding: 0 var(--spacing-2xl);
+  padding: 0; /* Remove padding to make logo flush */
   margin: 0 auto;
 }
 
@@ -245,6 +244,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  padding: 0 var(--spacing-md); /* Add minimal padding here */
 }
 
 /* Logo Styles */
@@ -252,6 +252,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  margin-left: 0; /* Ensure flush to left */
 }
 
 .logo-image {
@@ -330,6 +331,8 @@ a:hover {
   list-style: none;
   gap: var(--spacing-xl);
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
