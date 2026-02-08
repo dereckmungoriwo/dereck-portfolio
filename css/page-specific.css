@@ -811,7 +811,7 @@
 }
 
 .view-button:hover {
-  background: var(--color-primary-dark) !important;
+  background: var(--color-white) !important;
   transform: scale(1.1);
 }
 
@@ -822,7 +822,7 @@
 .view-icon {
   width: 24px;
   height: 24px;
-  color: var(--color-primary) !important;
+  color: var(--color-white) !important;
   transition: color var(--transition)
 }
 
