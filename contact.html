@@ -137,7 +137,6 @@
     
  <!-- Contact Content -->
 <div class="contact-content">
-    <div class="container">
     <div class="card contact-main-card fade-in-up">
       
       <!-- Contact Options Grid -->
@@ -405,34 +404,7 @@
 </div>
 
 </main>
-```
 
-**Key changes:**
-
-1. **Wrapped all contact sections in a single card** - Added `<div class="card contact-main-card fade-in-up">` around all three sections
-2. **Removed individual card classes** - Changed `class="contact-options card"` to just `class="contact-options"` etc., since they're nested inside the main card
-3. **Added container wrapper** - Wrapped the main card in a container div for proper centering
-
-**Add this CSS:**
-
-```css
-/* Main contact card container */
-.contact-main-card {
-  padding: var(--spacing-2xl);
-}
-
-/* Section spacing within the contact card */
-.contact-options,
-.contact-form-section,
-.availability-section {
-  margin-bottom: var(--spacing-3xl);
-}
-
-.contact-options:last-child,
-.contact-form-section:last-child,
-.availability-section:last-child {
-  margin-bottom: 0;
-}
   <!-- ================= FOOTER ================= -->
   <footer class="footer" role="contentinfo">
     <div class="container">
