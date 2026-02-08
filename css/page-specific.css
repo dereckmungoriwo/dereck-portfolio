@@ -1168,6 +1168,24 @@
   line-height: 1.5;
 }
 
+/* Main contact card container */
+.contact-main-card {
+  padding: var(--spacing-2xl);
+}
+
+/* Section spacing within the contact card */
+.contact-options,
+.contact-form-section,
+.availability-section {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.contact-options:last-child,
+.contact-form-section:last-child,
+.availability-section:last-child {
+  margin-bottom: 0;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN FOR PAGE-SPECIFIC STYLES
    ========================================================================== */
