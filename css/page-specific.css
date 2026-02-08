@@ -811,7 +811,7 @@
 }
 
 .view-button:hover {
-  background: var(--color-white) !important;
+  background: var(--color-primary) !important;
   transform: scale(1.1);
 }
 
