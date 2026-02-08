@@ -816,7 +816,7 @@
 }
 
 .view-button: hover  .view-icon {
-  color: var(--color-white) !important;
+  color: var(--color-primary) !important;
 }
 
 .view-icon {
