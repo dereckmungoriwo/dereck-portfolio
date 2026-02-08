@@ -172,10 +172,10 @@ img {
 }
 
 .section-card-spacing:first-of-type {
-  padding-bottom: 3rem; /* More space before footer */
+  padding-bottom: 3rem; /* More space before cta */
 }
 
-.section-card-spacing {
+.section-card-spacing .cta .footer {
   padding: 1.5rem 0; /* 3rem total spacing between cards (1.5rem top + 1.5rem bottom) */
 }
 
