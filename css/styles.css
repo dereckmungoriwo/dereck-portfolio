@@ -234,8 +234,10 @@ a:hover {
 }
 
 .header .container {
+  width: 100%;
   max-width: var(--container-max);
   padding: 0 var(--spacing-2xl);
+  margin: 0 auto;
 }
 
 .header-content {
