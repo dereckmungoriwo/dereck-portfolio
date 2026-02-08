@@ -165,30 +165,18 @@ img {
   max-width: var(--container-max);
   padding: 0 var(--spacing-2xl);
 }
-}
 
 .main-content {
   flex: 1;
   padding-top: var(--spacing-2xl);
 }
 
-/* ==========================================================================
-   LAYOUT & SECTION SPACING - 3rem between cards
-   ========================================================================== */
+.section-card-spacing:first-of-type {
+  padding-bottom: 3rem; /* More space before footer */
+}
 
 .section-card-spacing {
   padding: 1.5rem 0; /* 3rem total spacing between cards (1.5rem top + 1.5rem bottom) */
-}
-
-.section-card-spacing:first-of-type {
-  padding-top: 3rem; /* More space after hero */
-}
-
-.container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
 }
 
 /* ================= GLOBAL TYPOGRAPHY ================= */
