@@ -172,6 +172,25 @@ img {
   padding-top: var(--spacing-2xl);
 }
 
+/* ==========================================================================
+   LAYOUT & SECTION SPACING - 3rem between cards
+   ========================================================================== */
+
+.section-card-spacing {
+  padding: 1.5rem 0; /* 3rem total spacing between cards (1.5rem top + 1.5rem bottom) */
+}
+
+.section-card-spacing:first-of-type {
+  padding-top: 3rem; /* More space after hero */
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 /* ================= GLOBAL TYPOGRAPHY ================= */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
